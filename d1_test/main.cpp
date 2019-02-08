@@ -7,6 +7,7 @@
 #include <QSqlQuery>
 #include <iostream>
 #include <vector>
+#include <Animal.h>
 using namespace std;
 
 void addValues(QString name, QString species, QString breed, QString weight, QString height, QString colour){
@@ -72,7 +73,7 @@ int main(int argc, char *argv[])
     }
 
     addValues("Bloo","dog","rottweiler","55","2.5","black");
-    //addValues("Red");
+    addValues("Red","dog","hound","40","2","brown");
 
 
     //reading from the db
@@ -87,15 +88,42 @@ int main(int argc, char *argv[])
     }
 
 
-    while(query2.next())
-    {
+    //do something with the data
+    //print some of it
+    query2.next();
+    //while(query2.next())
+    //{
         // access fields of current record
         //if(query2.first())
-            qDebug()<<query2.value(1).toString();
+            qDebug()<<query2.value(0).toString();
         //else
             //qDebug()<<"animal not found";
-    }
+    //}
 
+    //data structure for animals
+    vector<Animal> animals;
+    Animal *dummyAnl = new Animal("","","",0,"","");
+    dummyAnl->name = query2.value(0).toString();
+    dummyAnl->species = query2.value(1).toString();
+    dummyAnl->breed = query2.value(2).toString();
+    dummyAnl->weight = query2.value(3).toString();
+    dummyAnl->height = query2.value(4).toString();
+    dummyAnl->colour = query2.value(5).toString();
+
+    qDebug()<<"printing dummyAnl";
+    qDebug() << dummyAnl->name;
+    qDebug() << dummyAnl->species;
+    qDebug() << dummyAnl->breed;
+    qDebug() << dummyAnl->weight;
+    qDebug() << dummyAnl->height;
+    qDebug() << dummyAnl->colour;
+
+    animals.push_back(*dummyAnl);
+    for (size_t i = 0; i < animals.size(); i++) {
+        qDebug() << animals.at(i).name << endl;
+      }
+
+    delete dummyAnl;
 
     qDebug() << "ending";
     db.close();
@@ -104,3 +132,4 @@ int main(int argc, char *argv[])
 //https://www.youtube.com/watch?v=WQtblU13Cq4 <<-- the based lord himself
 //https://www.qtcentre.org/threads/27167-How-can-i-execute-a-database-script-within-Qt
 //http://blog.davidecoppola.com/2016/11/howto-embed-database-in-application-with-sqlite-and-qt/
+//https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.cbclx01/cplr376.htm
