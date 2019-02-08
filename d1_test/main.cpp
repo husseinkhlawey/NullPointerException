@@ -1,13 +1,18 @@
 #include <QCoreApplication>
+#include <QApplication>
 #include <QtSql>
 #include <QtDebug>
 #include <QSqlDatabase>
 #include <QSqlDriver>
 #include <QSqlError>
 #include <QSqlQuery>
-#include <iostream>
+#include <QtWidgets>
+#include "mainwindow.h"
+#include <QCommandLineParser>
+#include <QCommandLineOption>
+#include "Animal.h"
 #include <vector>
-#include <Animal.h>
+#include <iostream>
 using namespace std;
 
 void addValues(QString name, QString species, QString breed, QString weight, QString height, QString colour){
@@ -47,7 +52,27 @@ int main(int argc, char *argv[])
 
     qDebug() << "starting";
 
-    QCoreApplication a(argc, argv);
+    //QCoreApplication a(argc, argv);
+
+
+    Q_INIT_RESOURCE(application);
+
+    QApplication app(argc, argv);
+    QCoreApplication::setOrganizationName("QtProject");
+    QCoreApplication::setApplicationName("Application Example");
+    QCoreApplication::setApplicationVersion(QT_VERSION_STR);
+    QCommandLineParser parser;
+    parser.setApplicationDescription(QCoreApplication::applicationName());
+    parser.addHelpOption();
+    parser.addVersionOption();
+    parser.addPositionalArgument("file", "The file to open.");
+    parser.process(app);
+
+    MainWindow mainWin;
+        if (!parser.positionalArguments().isEmpty())
+            mainWin.loadFile(parser.positionalArguments().first());
+        mainWin.show();
+
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/Desktop/NullPointerException/d1_test/myDatabase");
@@ -127,9 +152,11 @@ int main(int argc, char *argv[])
 
     qDebug() << "ending";
     db.close();
-    return a.exec();
+    //return a.exec();
+    return app.exec();
 }
 //https://www.youtube.com/watch?v=WQtblU13Cq4 <<-- the based lord himself
 //https://www.qtcentre.org/threads/27167-How-can-i-execute-a-database-script-within-Qt
 //http://blog.davidecoppola.com/2016/11/howto-embed-database-in-application-with-sqlite-and-qt/
 //https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.cbclx01/cplr376.htm
+//https://doc.qt.io/qt-5/qtwidgets-mainwindows-application-example.html
