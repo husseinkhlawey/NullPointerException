@@ -23,5 +23,6 @@ void MainWindow::on_lineEdit_editingFinished()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    //add the inout to the database
+    //add the input to the database
 }
+//going to fully implement adding animals since its worth 25%
