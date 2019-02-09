@@ -78,7 +78,7 @@ public:
         lineEdit_3->setGeometry(QRect(150, 230, 113, 25));
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(500, 220, 83, 25));
+        pushButton_3->setGeometry(QRect(510, 190, 83, 25));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
