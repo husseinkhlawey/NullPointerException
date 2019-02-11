@@ -15,13 +15,19 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+<<<<<<< HEAD
 #include <QtWidgets/QListView>
+=======
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -53,18 +59,37 @@ public:
     QWidget *page_9;
     QVBoxLayout *verticalLayout;
     QLabel *label_4;
+<<<<<<< HEAD
     QListView *listView;
+=======
+    QListWidget *listWidget;
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
     QPushButton *pushButton_9;
     QPushButton *pushButton_7;
     QWidget *page_10;
     QVBoxLayout *verticalLayout_5;
     QLabel *label_5;
+<<<<<<< HEAD
     QListView *listView_2;
+=======
+    QTableView *tableView_2;
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
     QPushButton *pushButton_10;
     QPushButton *pushButton_8;
     QWidget *page_11;
     QVBoxLayout *verticalLayout_6;
     QLabel *label_6;
+<<<<<<< HEAD
+=======
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit_4;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_7;
+    QLineEdit *lineEdit_8;
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
     QPushButton *pushButton_11;
     QPushButton *pushButton_12;
     QMenuBar *menuBar;
@@ -190,10 +215,17 @@ public:
 
         verticalLayout->addWidget(label_4);
 
+<<<<<<< HEAD
         listView = new QListView(page_9);
         listView->setObjectName(QStringLiteral("listView"));
 
         verticalLayout->addWidget(listView);
+=======
+        listWidget = new QListWidget(page_9);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+
+        verticalLayout->addWidget(listWidget);
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
 
         pushButton_9 = new QPushButton(page_9);
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
@@ -219,10 +251,17 @@ public:
 
         verticalLayout_5->addWidget(label_5);
 
+<<<<<<< HEAD
         listView_2 = new QListView(page_10);
         listView_2->setObjectName(QStringLiteral("listView_2"));
 
         verticalLayout_5->addWidget(listView_2);
+=======
+        tableView_2 = new QTableView(page_10);
+        tableView_2->setObjectName(QStringLiteral("tableView_2"));
+
+        verticalLayout_5->addWidget(tableView_2);
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
 
         pushButton_10 = new QPushButton(page_10);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
@@ -248,6 +287,49 @@ public:
 
         verticalLayout_6->addWidget(label_6);
 
+<<<<<<< HEAD
+=======
+        lineEdit = new QLineEdit(page_11);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+
+        verticalLayout_6->addWidget(lineEdit);
+
+        lineEdit_2 = new QLineEdit(page_11);
+        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
+
+        verticalLayout_6->addWidget(lineEdit_2);
+
+        lineEdit_3 = new QLineEdit(page_11);
+        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
+
+        verticalLayout_6->addWidget(lineEdit_3);
+
+        lineEdit_4 = new QLineEdit(page_11);
+        lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
+
+        verticalLayout_6->addWidget(lineEdit_4);
+
+        lineEdit_5 = new QLineEdit(page_11);
+        lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
+
+        verticalLayout_6->addWidget(lineEdit_5);
+
+        lineEdit_6 = new QLineEdit(page_11);
+        lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
+
+        verticalLayout_6->addWidget(lineEdit_6);
+
+        lineEdit_7 = new QLineEdit(page_11);
+        lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
+
+        verticalLayout_6->addWidget(lineEdit_7);
+
+        lineEdit_8 = new QLineEdit(page_11);
+        lineEdit_8->setObjectName(QStringLiteral("lineEdit_8"));
+
+        verticalLayout_6->addWidget(lineEdit_8);
+
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
         pushButton_11 = new QPushButton(page_11);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
 
@@ -280,7 +362,11 @@ public:
 
         retranslateUi(MainWindow);
 
+<<<<<<< HEAD
         stackedWidget->setCurrentIndex(0);
+=======
+        stackedWidget->setCurrentIndex(5);
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -310,6 +396,17 @@ public:
         pushButton_10->setText(QApplication::translate("MainWindow", "Edit Profile", Q_NULLPTR));
         pushButton_8->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
         label_6->setText(QApplication::translate("MainWindow", "Add Animal", Q_NULLPTR));
+<<<<<<< HEAD
+=======
+        lineEdit->setText(QApplication::translate("MainWindow", "Name", Q_NULLPTR));
+        lineEdit_2->setText(QApplication::translate("MainWindow", "Gender", Q_NULLPTR));
+        lineEdit_3->setText(QApplication::translate("MainWindow", "Species", Q_NULLPTR));
+        lineEdit_4->setText(QApplication::translate("MainWindow", "Breed", Q_NULLPTR));
+        lineEdit_5->setText(QApplication::translate("MainWindow", "Age", Q_NULLPTR));
+        lineEdit_6->setText(QApplication::translate("MainWindow", "Weight", Q_NULLPTR));
+        lineEdit_7->setText(QApplication::translate("MainWindow", "Height", Q_NULLPTR));
+        lineEdit_8->setText(QApplication::translate("MainWindow", "Colour", Q_NULLPTR));
+>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
         pushButton_11->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
         pushButton_12->setText(QApplication::translate("MainWindow", "Cancel", Q_NULLPTR));
         menucuACS->setTitle(QApplication::translate("MainWindow", "Menu", Q_NULLPTR));

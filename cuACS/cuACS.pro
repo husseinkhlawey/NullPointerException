@@ -33,7 +33,13 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     animal.h \
-    storedatabase.h
+#<<<<<<< HEAD
+#    storedatabase.h
+#=======
+ #   sqlfunctions.h
+#>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
 
 FORMS += \
         mainwindow.ui
+
+DISTFILES +=

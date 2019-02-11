@@ -54,7 +54,7 @@ SOURCES       = ../cuACS/main.cpp \
 		../cuACS/mainwindow.cpp \
 		../cuACS/animal.cpp \
 <<<<<<< HEAD
-                ../cuACS/storedatabase.cpp moc_mainwindow.cpp \
+		../cuACS/storedatabase.cpp moc_mainwindow.cpp \
 		moc_storedatabase.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
