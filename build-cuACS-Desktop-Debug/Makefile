@@ -445,7 +445,8 @@ main.o: ../cuACS/main.cpp ../cuACS/mainwindow.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../cuACS/main.cpp
 
 mainwindow.o: ../cuACS/mainwindow.cpp ../cuACS/mainwindow.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../cuACS/storedatabase.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../cuACS/mainwindow.cpp
 
 animal.o: ../cuACS/animal.cpp ../cuACS/animal.h
