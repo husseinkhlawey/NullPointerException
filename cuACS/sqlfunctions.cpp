@@ -52,9 +52,9 @@ void buildDatabase() {
     runQuery(currentQuery);
 
     //adding values to database
-    addValues(0,"Bloo",1,"dog","rottweiler",7,55,2.5,"black");
-    addValues(1,"Red",1,"dog","hound",9,40,2,"brown");
-
+    addValues(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black");
+    addValues(1,"Red",1,"Dog","Hound",9,40,2,"brown");
+    addValues(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white");
 }
 
 //reading from the db

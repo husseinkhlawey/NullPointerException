@@ -40,6 +40,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QSqlQuery read_query;
+    //QSqlQueryModel *model;
 };
 
 #endif // MAINWINDOW_H

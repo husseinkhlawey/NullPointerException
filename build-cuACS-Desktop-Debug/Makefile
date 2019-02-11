@@ -436,7 +436,8 @@ main.o: ../cuACS/main.cpp ../cuACS/mainwindow.h \
 
 mainwindow.o: ../cuACS/mainwindow.cpp ../cuACS/mainwindow.h \
 		ui_mainwindow.h \
-		../cuACS/sqlfunctions.h
+		../cuACS/sqlfunctions.h \
+		../cuACS/animal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../cuACS/mainwindow.cpp
 
 animal.o: ../cuACS/animal.cpp ../cuACS/animal.h

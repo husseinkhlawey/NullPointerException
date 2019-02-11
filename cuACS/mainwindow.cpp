@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
     myDatabase.setDatabaseName("/home/student/Desktop/NullPointerException/cuACS/myDatabase");
 
@@ -19,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     buildDatabase();
     read_query = readDatabase();
+    //model = new QSqlQueryModel();
 }
 
 MainWindow::~MainWindow()
@@ -65,9 +67,25 @@ void MainWindow::on_pushButton_5_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 
-    //QSqlQuery query = readDatabase();
-    read_query.next();
-    qDebug() << "mainwindow:" << read_query.value(1).toString();
+    while (read_query.next()){
+        ui->listWidget->addItem(read_query.value(1).toString() + " " + read_query.value(3).toString() + " " + read_query.value(4).toString());
+    }
+    qDebug() << "End of data";
+
+    //qDebug() << "mainwindow:" << read_query.value(1).toString();
+
+    //ui->listWidget->addItem(read_query.value(1).toString());
+
+    /*
+    QString text = "AAAAAAAAAAAAAAA";
+
+    model->insertRows(model->rowCount(), 1);
+    model->setData(index(rowCount()-1,0), text);
+    */
+    //QModelIndex index = model->index(model->rowCount()-1, 0);
+    //model->setData(0, text);
+
+    //insertRows(rowCount(), 1);
 
 }
 
