@@ -24,11 +24,27 @@ Animal::Animal(int id, QString nam, QString spec, QString bree, int gend, QStrin
 
         }
 
+Animal::Animal(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour){
+    this->id = id;
+    this->name = name;
+    this->gender = gender;
+    this->species = species;
+    this-> breed = breed;
+    this->age = age;
+    this->weight = weight;
+    this->height = height;
+    this->colour = colour;
+}
+
+Animal::Animal(){}
+
+//Animal::~Animal(){}
+
 int     Animal::getID()                   { return id;  }
 QString Animal::getName()                 { return name;  }
 QString Animal::getSpecies()              { return species; }
 QString Animal::getBreed()                { return breed; }
-int Animal::getGender()               { return gender;  }
+int Animal::getGender()                   { return gender;  }
 QString Animal::getColour()               { return colour;  }
 QString Animal::getIntelligence()         { return intelligence;  }
 QString Animal::getHumor()                { return humor; }
@@ -47,7 +63,7 @@ void Animal::setID(int id)                           { this->id = id; }
 void Animal::setName(QString nam)                    { name = nam; }
 void Animal::setSpecies(QString spec)                { species = spec; }
 void Animal::setBreed(QString bree)                  { breed = bree; }
-void Animal::setGender(int gend)                 { gender = gend; }
+void Animal::setGender(int gend)                     { gender = gend; }
 void Animal::setColour(QString col)                  { colour = col; }
 void Animal::setIntelligence(QString intel)          { intelligence = intel; }
 void Animal::setHumor(QString hum)                   { humor = hum; }
@@ -58,6 +74,6 @@ void Animal::setTemperment(QString temper)           { temperment = temper; }
 void Animal::setCommunication_skill(QString comm_skl){ communication_skill = comm_skl; }
 void Animal::setCourage(QString cour)                { courage = cour; }
 void Animal::setIndependent(QString indep)           { independent = indep; }
-void Animal::setAge(int age)                         { age = age; }
+void Animal::setAge(int age)                         { this->age = age; }
 void Animal::setHeight(float heig)                   { height = heig; }
 void Animal::setWeight(float weig)                   { weight = weig; }

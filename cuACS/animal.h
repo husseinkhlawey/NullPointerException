@@ -13,6 +13,11 @@ class Animal{
   public:
 
     Animal(int, QString, QString, QString, int, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, int, float, float);
+    Animal(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour);
+    //Animal(int=99, QString="", int=0, QString="", QString="", int=0, float=0, float=0, QString="");
+    //Animal(int, QString, int, QString, QString, int, float, float, QString);
+    Animal();
+    //~Animal();
 
     int getID();
     QString getName();
