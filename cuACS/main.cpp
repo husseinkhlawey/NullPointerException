@@ -2,7 +2,7 @@
 #include <QApplication>
 #include <QtDebug>
 #include <QtSql>
-#include "sqlfunctions.cpp"
+#include "sqlfunctions.h"
 #include "animal.h"
 #include <vector>
 using namespace std;
@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 
     qDebug() << "Starting";
 
+    /*
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
     myDatabase.setDatabaseName("/home/student/Desktop/NullPointerException/cuACS/myDatabase");
 
@@ -25,13 +26,14 @@ int main(int argc, char *argv[])
     }
 
     buildDatabase();
+    */
 
-    QSqlQuery query = readDatabase();
+    //QSqlQuery query = readDatabase();
 
     //data structure for animals INCOMPLETE
     //try <*Animal>
-    vector<Animal> animals;
-    Animal *animal = new Animal();
+    //vector<Animal> animals;
+    //Animal *animal = new Animal();
 
     /*
     while(query.next()){
@@ -52,21 +54,21 @@ int main(int argc, char *argv[])
     }
     */
 
-    addAllAnimals(query, animals, animal);
+    //addAllAnimals(query, animals, animal);
 
-    qDebug()<<"size"<<animals.size();
+    //qDebug()<<"size"<<animals.size();
 
-    for (size_t i = 0; i < animals.size(); i++) {
+    /*for (size_t i = 0; i < animals.size(); i++) {
         printAnimal(&animals[i]);
-    }
+    }*/
 
     //while(animals.size() > 0){
         //delete &animals[0]);
     //}
 
     w.show();
-    qDebug() << "Ending";
     //animals.clear();
-    myDatabase.close();
+    //myDatabase.close();
     return a.exec();
+    qDebug() << "Ending";
 }

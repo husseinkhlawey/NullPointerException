@@ -31,7 +31,8 @@ SOURCES += \
 
 HEADERS += \
         mainwindow.h \
-    animal.h
+    animal.h \
+    sqlfunctions.h
 
 FORMS += \
         mainwindow.ui

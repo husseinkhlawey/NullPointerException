@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtSql>
 
 namespace Ui {
 class MainWindow;
@@ -38,6 +39,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QSqlQuery read_query;
 };
 
 #endif // MAINWINDOW_H

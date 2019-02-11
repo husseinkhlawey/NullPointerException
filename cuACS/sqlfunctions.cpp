@@ -1,6 +1,7 @@
-﻿#include <QtDebug>
-#include <QtSql>
+﻿#include "sqlfunctions.h"
 #include "animal.h"
+#include <QtDebug>
+#include <QtSql>
 
 //runs given sql queries on open database
 void runQuery(QString input){
