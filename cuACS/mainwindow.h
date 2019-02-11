@@ -37,10 +37,20 @@ private slots:
 
     void on_pushButton_12_clicked();
 
+    void on_pushButton_11_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlQuery read_query;
     //QSqlQueryModel *model;
+    QString inpName;
+    int inpGender;
+    QString inpSpecies;
+    QString inpBreed;
+    int inpAge;
+    float inpWeight;
+    float inpHeight;
+    QString inpColour;
 };
 
 #endif // MAINWINDOW_H

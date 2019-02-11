@@ -84,6 +84,16 @@ void printAnimal(Animal *animal) {
     qDebug() << animal->getColour();
 }
 
+//get number of animals
+int getNumAnimals(){
+    int total = 0;
+    QSqlQuery query = readDatabase();
+    while(query.next()){
+        total++;
+    }
+    return total;
+}
+
 //adds animals to data structure
 void addAllAnimals(QSqlQuery query, vector<Animal> animals, Animal *animal){
     while(query.next()){

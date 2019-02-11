@@ -19,6 +19,9 @@ QSqlQuery readDatabase();
 //for debugging print animal's information
 void printAnimal(Animal *animal);
 
+//get number of animals
+int getNumAnimals();
+
 //adds animals to data structure
 void addAllAnimals(QSqlQuery query, vector<Animal> animals, Animal *animal);
 

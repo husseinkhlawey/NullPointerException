@@ -67,6 +67,9 @@ void MainWindow::on_pushButton_5_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 
+    ui->listWidget->clear();
+    read_query = readDatabase();
+
     while (read_query.next()){
         ui->listWidget->addItem(read_query.value(1).toString() + " " + read_query.value(3).toString() + " " + read_query.value(4).toString());
     }
@@ -97,4 +100,27 @@ void MainWindow::on_pushButton_6_clicked()
 void MainWindow::on_pushButton_12_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
+    //refresh animal list
+    ui->listWidget->clear();
+    read_query = readDatabase();
+
+    while (read_query.next()){
+        ui->listWidget->addItem(read_query.value(1).toString() + " " + read_query.value(3).toString() + " " + read_query.value(4).toString());
+    }
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    //refresh animal list
+    inpName = ui->lineEdit->text();
+    inpGender = ui->lineEdit_2->text().toInt();
+    inpSpecies = ui->lineEdit_3->text();
+    inpBreed = ui->lineEdit_4->text();
+    inpAge = ui->lineEdit_5->text().toInt();
+    inpWeight = ui->lineEdit_6->text().toFloat();
+    inpHeight = ui->lineEdit_7->text().toFloat();
+    inpColour = ui->lineEdit_8->text();
+    int t = getNumAnimals();
+    qDebug()<<t;
+    addValues(t,inpName,inpGender,inpSpecies,inpBreed,inpAge,inpWeight,inpHeight,inpColour);
 }
