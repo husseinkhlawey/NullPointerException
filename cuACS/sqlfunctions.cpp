@@ -1,4 +1,4 @@
-#include <QtDebug>
+﻿#include <QtDebug>
 #include <QtSql>
 #include "animal.h"
 
@@ -84,9 +84,8 @@ void printAnimal(Animal *animal) {
 }
 
 //adds animals to data structure
-void addAllAnimals(QSqlQuery query, vector<Animal> *animals, Animal *animal){
+void addAllAnimals(QSqlQuery query, vector<Animal> animals, Animal *animal){
     while(query.next()){
-        animal = new Animal();
 
         animal->setID(query.value(0).toInt());
         animal->setName(query.value(1).toString());
@@ -98,7 +97,9 @@ void addAllAnimals(QSqlQuery query, vector<Animal> *animals, Animal *animal){
         animal->setHeight(query.value(7).toFloat());
         animal->setColour(query.value(8).toString());
 
-        animals->push_back(*animal);
+        animals.push_back(*animal);
+        animal = new Animal();
         qDebug()<<"loop ran";
     }
+    qDebug() << "size sql" << animals.size();
 }

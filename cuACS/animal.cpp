@@ -18,7 +18,7 @@ Animal::Animal(int id, QString nam, QString spec, QString bree, int gend, QStrin
           communication_skill   = comm_skl;
           courage               = cour;
           independent           = indep;
-          age                   = age;
+          this->age                   = age;
           height                = heig;
           weight                = weig;
 
@@ -36,7 +36,17 @@ Animal::Animal(int id, QString name, int gender, QString species, QString breed,
     this->colour = colour;
 }
 
-Animal::Animal(){}
+Animal::Animal(){
+    this->id = 99;
+    this->name = "name";
+    this->gender = 0;
+    this->species = "species";
+    this-> breed = "breed";
+    this->age = 99;
+    this->weight = 0.0;
+    this->height = 0.0;
+    this->colour = "colour";
+}
 
 //Animal::~Animal(){}
 
