@@ -51,9 +51,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../cuACS/main.cpp \
-		../cuACS/mainwindow.cpp moc_mainwindow.cpp
+		../cuACS/mainwindow.cpp \
+		../cuACS/animal.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		animal.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -144,8 +146,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		../cuACS/cuACS.pro ../cuACS/mainwindow.h ../cuACS/main.cpp \
-		../cuACS/mainwindow.cpp
+		../cuACS/cuACS.pro ../cuACS/mainwindow.h \
+		../cuACS/animal.h ../cuACS/main.cpp \
+		../cuACS/mainwindow.cpp \
+		../cuACS/animal.cpp
 QMAKE_TARGET  = cuACS
 DESTDIR       = 
 TARGET        = cuACS
@@ -361,8 +365,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../cuACS/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../cuACS/main.cpp ../cuACS/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../cuACS/mainwindow.h ../cuACS/animal.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../cuACS/main.cpp ../cuACS/mainwindow.cpp ../cuACS/animal.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../cuACS/mainwindow.ui $(DISTDIR)/
 
 
@@ -421,12 +425,17 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-main.o: ../cuACS/main.cpp ../cuACS/mainwindow.h
+main.o: ../cuACS/main.cpp ../cuACS/mainwindow.h \
+		../cuACS/sqlfunctions.cpp \
+		../cuACS/animal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../cuACS/main.cpp
 
 mainwindow.o: ../cuACS/mainwindow.cpp ../cuACS/mainwindow.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../cuACS/mainwindow.cpp
+
+animal.o: ../cuACS/animal.cpp ../cuACS/animal.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o animal.o ../cuACS/animal.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

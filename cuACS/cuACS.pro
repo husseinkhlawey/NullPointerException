@@ -25,10 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    animal.cpp \
+    sqlfunctions.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    animal.h
 
 FORMS += \
         mainwindow.ui
