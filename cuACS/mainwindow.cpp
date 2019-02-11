@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "storedatabase.h"
+#include <QSqlQueryModel>
+#include <QSqlQuery>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -51,6 +54,23 @@ void MainWindow::on_pushButton_9_clicked()
 void MainWindow::on_pushButton_5_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
+
+    storeDatabase data;
+    QSqlQueryModel *M = new QSqlQueryModel();
+
+    data.opens();
+
+    QSqlQuery *Q = new  QSqlQuery(data.databass);
+
+    Q->prepare("select * from animals");
+
+    Q->exec();
+
+    M->setQuery(*Q);
+
+    ui->listView->setModel(M);
+
+    data.closes();
 }
 
 void MainWindow::on_pushButton_6_clicked()
