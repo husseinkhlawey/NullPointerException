@@ -24,8 +24,26 @@ int main(int argc, char *argv[])
 
     buildDatabase();
 
-    qDebug() << "Ending";
-    myDatabase.close();
+    QSqlQuery query = readDatabase();
+
+    //data structure for animals
+    vector<Animal> *animals {};
+    Animal *animal = new Animal();
+
+    addAllAnimals(query,animals,animal);
+
+    qDebug()<<animals->size();
+    for (size_t i = 0; i < animals->size(); i++) {
+        printAnimal(&animals->at(i));
+    }
+
+    //while(animals.size() > 0){
+        //delete &animals.at(0);
+    //}
+
     w.show();
+    qDebug() << "Ending";
+    //animals.clear();
+    myDatabase.close();
     return a.exec();
 }
