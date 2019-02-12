@@ -97,7 +97,7 @@ int getNumAnimals(){
     return total;
 }
 
-//adds animals to data structure
+//adds animals to data structure, for future use
 void addAllAnimals(QSqlQuery query, vector<Animal> animals, Animal *animal){
     while(query.next()){
 
