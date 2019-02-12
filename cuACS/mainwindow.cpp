@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
-    myDatabase.setDatabaseName("/home/student/Desktop/NullPointerException/cuACS/myDatabase");
+    myDatabase.setDatabaseName(CUACS_ROOT_DIR"_Database");
 
     if(!myDatabase.open()){
             qDebug() << "Can't open database";
