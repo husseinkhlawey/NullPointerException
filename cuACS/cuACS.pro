@@ -16,6 +16,10 @@ TEMPLATE = app
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+<<<<<<< HEAD
+=======
+DEFINES += CUACS_ROOT_DIR=\\\"$$_PRO_FILE_PWD_\\\"
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -27,17 +31,25 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     animal.cpp \
+<<<<<<< HEAD
     sqlfunctions.cpp \
     storedatabase.cpp
+=======
+    sqlfunctions.cpp
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 
 HEADERS += \
         mainwindow.h \
     animal.h \
+<<<<<<< HEAD
 #<<<<<<< HEAD
 #    storedatabase.h
 #=======
  #   sqlfunctions.h
 #>>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
+=======
+    sqlfunctions.h
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 
 FORMS += \
         mainwindow.ui

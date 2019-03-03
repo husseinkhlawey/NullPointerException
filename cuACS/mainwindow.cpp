@@ -1,12 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "storedatabase.h"
 #include <QSqlQueryModel>
 #include <QSqlQuery>
 =======
 #include "sqlfunctions.h"
 >>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
+=======
+#include "sqlfunctions.h"
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,7 +19,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
+<<<<<<< HEAD
     myDatabase.setDatabaseName("/home/student/Desktop/NullPointerException/cuACS/myDatabase");
+=======
+    myDatabase.setDatabaseName(CUACS_ROOT_DIR"_Database");
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 
     if(!myDatabase.open()){
             qDebug() << "Can't open database";
@@ -26,7 +34,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     buildDatabase();
     read_query = readDatabase();
+<<<<<<< HEAD
     //model = new QSqlQueryModel();
+=======
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 }
 
 MainWindow::~MainWindow()
@@ -74,6 +85,7 @@ void MainWindow::on_pushButton_5_clicked()
     ui->stackedWidget->setCurrentIndex(3);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     storeDatabase data;
     QSqlQueryModel *M = new QSqlQueryModel();
 
@@ -91,6 +103,9 @@ void MainWindow::on_pushButton_5_clicked()
 
     data.closes();
 =======
+=======
+    //refresh animal list
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
     ui->listWidget->clear();
     read_query = readDatabase();
 
@@ -98,6 +113,7 @@ void MainWindow::on_pushButton_5_clicked()
         ui->listWidget->addItem(read_query.value(1).toString() + " " + read_query.value(3).toString() + " " + read_query.value(4).toString());
     }
     qDebug() << "End of data";
+<<<<<<< HEAD
 
     //qDebug() << "mainwindow:" << read_query.value(1).toString();
 
@@ -115,6 +131,8 @@ void MainWindow::on_pushButton_5_clicked()
     //insertRows(rowCount(), 1);
 
 >>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
+=======
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 }
 
 void MainWindow::on_pushButton_6_clicked()
@@ -125,6 +143,10 @@ void MainWindow::on_pushButton_6_clicked()
 void MainWindow::on_pushButton_12_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
     //refresh animal list
     ui->listWidget->clear();
     read_query = readDatabase();
@@ -132,6 +154,10 @@ void MainWindow::on_pushButton_12_clicked()
     while (read_query.next()){
         ui->listWidget->addItem(read_query.value(1).toString() + " " + read_query.value(3).toString() + " " + read_query.value(4).toString());
     }
+<<<<<<< HEAD
+=======
+    qDebug() << "End of data";
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 }
 
 void MainWindow::on_pushButton_11_clicked()
@@ -145,6 +171,11 @@ void MainWindow::on_pushButton_11_clicked()
     inpWeight = ui->lineEdit_6->text().toFloat();
     inpHeight = ui->lineEdit_7->text().toFloat();
     inpColour = ui->lineEdit_8->text();
+<<<<<<< HEAD
+=======
+
+    //generate animal id
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
     int t = getNumAnimals();
     qDebug()<<t;
     addValues(t,inpName,inpGender,inpSpecies,inpBreed,inpAge,inpWeight,inpHeight,inpColour);

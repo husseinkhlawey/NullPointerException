@@ -1,7 +1,10 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 
+<<<<<<< HEAD
 //#include <instream>
+=======
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 #include <iomanip>
 #include <sstream>
 #include <QString>
@@ -14,10 +17,14 @@ class Animal{
 
     Animal(int, QString, QString, QString, int, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, int, float, float);
     Animal(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour);
+<<<<<<< HEAD
     //Animal(int=99, QString="", int=0, QString="", QString="", int=0, float=0, float=0, QString="");
     //Animal(int, QString, int, QString, QString, int, float, float, QString);
     Animal();
     //~Animal();
+=======
+    Animal();
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 
     int getID();
     QString getName();

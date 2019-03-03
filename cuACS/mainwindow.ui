@@ -19,10 +19,14 @@
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
 <<<<<<< HEAD
+<<<<<<< HEAD
        <number>0</number>
 =======
        <number>5</number>
 >>>>>>> b348d456ac3be69c3775c03836bbc01f7766812e
+=======
+       <number>0</number>
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
       </property>
       <widget class="QWidget" name="page_1">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -189,7 +193,11 @@ Staff</string>
          </widget>
         </item>
         <item>
+<<<<<<< HEAD
          <widget class="QListView" name="listView"/>
+=======
+         <widget class="QListWidget" name="listWidget"/>
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_9">
@@ -226,7 +234,11 @@ Staff</string>
          </widget>
         </item>
         <item>
+<<<<<<< HEAD
          <widget class="QListView" name="listView_2"/>
+=======
+         <widget class="QTableView" name="tableView_2"/>
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_10">

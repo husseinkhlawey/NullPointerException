@@ -42,7 +42,11 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QSqlQuery read_query;
+<<<<<<< HEAD
     //QSqlQueryModel *model;
+=======
+    //for getting user input
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
     QString inpName;
     int inpGender;
     QString inpSpecies;

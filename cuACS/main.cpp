@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 
     qDebug() << "Starting";
 
+<<<<<<< HEAD
     /*
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
     myDatabase.setDatabaseName("/home/student/Desktop/NullPointerException/cuACS/myDatabase");
@@ -71,4 +72,8 @@ int main(int argc, char *argv[])
     //myDatabase.close();
     return a.exec();
     //qDebug() << "Ending";
+=======
+    w.show();
+    return a.exec();
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 }

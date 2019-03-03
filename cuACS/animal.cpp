@@ -48,8 +48,11 @@ Animal::Animal(){
     this->colour = "colour";
 }
 
+<<<<<<< HEAD
 //Animal::~Animal(){}
 
+=======
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 int     Animal::getID()                   { return id;  }
 QString Animal::getName()                 { return name;  }
 QString Animal::getSpecies()              { return species; }

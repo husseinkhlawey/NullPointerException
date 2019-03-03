@@ -55,6 +55,12 @@ void buildDatabase() {
     addValues(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black");
     addValues(1,"Red",1,"Dog","Hound",9,40,2,"brown");
     addValues(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white");
+<<<<<<< HEAD
+=======
+    addValues(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise");
+    addValues(4,"Fenrir",1,"Ancient Wolf","Dire Wolf",1,30,3,"White");
+    addValues(5,"Jon Snow", 0.5, "Ape King","G.O.D",454300000,8,100,"gold");
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 }
 
 //reading from the db
@@ -94,7 +100,11 @@ int getNumAnimals(){
     return total;
 }
 
+<<<<<<< HEAD
 //adds animals to data structure
+=======
+//adds animals to data structure, for future use
+>>>>>>> ca38f583b8a57816c80298cadfecfda00eb74cfa
 void addAllAnimals(QSqlQuery query, vector<Animal> animals, Animal *animal){
     while(query.next()){
 
