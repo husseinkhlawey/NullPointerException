@@ -28,12 +28,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     animal.cpp \
-    sqlfunctions.cpp
+    sqlfunctions.cpp \
+    client.cpp
 
 HEADERS += \
         mainwindow.h \
     animal.h \
-    sqlfunctions.h
+    sqlfunctions.h \
+    client.h
 
 FORMS += \
         mainwindow.ui

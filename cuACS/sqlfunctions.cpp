@@ -16,8 +16,8 @@ void runQuery(QString input){
     }
 }
 
-//adds animals values to databse
-void addValues(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour){
+//adds animal values to database
+void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour){
     QSqlQuery qry;
     qry.prepare("INSERT OR REPLACE INTO animals VALUES (?,?,?,?,?,?,?,?,?);");
 
@@ -32,7 +32,27 @@ void addValues(int id, QString name, int gender, QString species, QString breed,
     qry.addBindValue(colour);
 
     if(!qry.exec()){
-        qDebug() << "Can't add values";
+        qDebug() << "Can't add animal values";
+    }
+    else{
+        qDebug() <<"Added values";
+    }
+}
+
+//adds client values to database
+void addClients (int id, QString fname, QString lname, QString email, QString address, QString phone){
+    QSqlQuery qry;
+    qry.prepare("INSERT OR REPLACE INTO clients VALUES (?,?,?,?,?,?);");
+
+    qry.addBindValue(id);
+    qry.addBindValue(fname);
+    qry.addBindValue(lname);
+    qry.addBindValue(email);
+    qry.addBindValue(address);
+    qry.addBindValue(phone);
+
+    if(!qry.exec()){
+        qDebug() << "Can't add client values";
     }
     else{
         qDebug() <<"Added values";
@@ -41,9 +61,14 @@ void addValues(int id, QString name, int gender, QString species, QString breed,
 
 //populates database and removes old data
 void buildDatabase() {
+    //deleting existing data
     QString currentQuery = "DROP TABLE IF EXISTS animals;";
     runQuery(currentQuery);
 
+    currentQuery = "DROP TABLE IF EXISTS clients;";
+    runQuery(currentQuery);
+
+    //creating tables
     //gender: 0 is female, 1 is male
     currentQuery = "CREATE TABLE IF NOT EXISTS animals (id INTEGER PRIMARY KEY,"
                    "name TEXT, gender INTEGER, species TEXT, breed TEXT, age INTEGER,"
@@ -51,22 +76,42 @@ void buildDatabase() {
 
     runQuery(currentQuery);
 
+    currentQuery = "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY, firstName TEXT, lastName TEXT, email TEXT, address TEXT, phone TEXT);";
+
+    runQuery(currentQuery);
+
     //adding values to database
-    addValues(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black");
-    addValues(1,"Red",1,"Dog","Hound",9,40,2,"brown");
-    addValues(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white");
-    addValues(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise");
-    addValues(4,"Fenrir",1,"Ancient Wolf","Dire Wolf",1,30,3,"White");
-    addValues(5,"Jon Snow", 0.5, "Ape King","G.O.D",454300000,8,100,"gold");
+    addAnimals(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black");
+    addAnimals(1,"Red",1,"Dog","Hound",9,40,2,"brown");
+    addAnimals(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white");
+    addAnimals(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise");
+    addAnimals(4,"Fenrir",1,"Ancient Wolf","Dire Wolf",1,30,3,"White");
+    addAnimals(5,"Jon Snow", 0.5, "Ape King","G.O.D",454300000,8,100,"gold");
+
+    addClients(0,"Bob","Ross","bob.ross@gmail.com","1234 Some Street","(257) 323-9812");
 }
 
 //reading from the db
-QSqlQuery readDatabase() {
+QSqlQuery readAnimalTable() {
     QSqlQuery query;
     query.prepare("select * from animals");
 
     if(!query.exec()){
-        qDebug()<<"Can't read";
+        qDebug()<<"Can't read animals";
+    }
+    else{
+        qDebug()<<"Read from db";
+    }
+    return query;
+}
+
+//make read query for clients
+QSqlQuery readClientTable() {
+    QSqlQuery query;
+    query.prepare("select * from clients");
+
+    if(!query.exec()){
+        qDebug()<<"Can't read clients";
     }
     else{
         qDebug()<<"Read from db";
@@ -90,7 +135,7 @@ void printAnimal(Animal *animal) {
 //get number of animals
 int getNumAnimals(){
     int total = 0;
-    QSqlQuery query = readDatabase();
+    QSqlQuery query = readAnimalTable();
     while(query.next()){
         total++;
     }

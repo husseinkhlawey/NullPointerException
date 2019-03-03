@@ -8,13 +8,13 @@
 void runQuery(QString input);
 
 //adds animals values to databse
-void addValues(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour);
+void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour);
 
 //populates database and removes old data
 void buildDatabase();
 
 //reading from the db
-QSqlQuery readDatabase();
+QSqlQuery readAnimalTable();
 
 //for debugging print animal's information
 void printAnimal(Animal *animal);

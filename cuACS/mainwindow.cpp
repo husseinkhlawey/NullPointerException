@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
-    myDatabase.setDatabaseName(CUACS_ROOT_DIR"_Database");
+    myDatabase.setDatabaseName(CUACS_ROOT_DIR"/cuACS_Database.sqlite");
 
     if(!myDatabase.open()){
             qDebug() << "Can't open database";
@@ -19,7 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     buildDatabase();
-    read_query = readDatabase();
+    read_animal_query = readAnimalTable();
+    read_client_query = readAnimalTable();
 }
 
 MainWindow::~MainWindow()
@@ -68,10 +69,10 @@ void MainWindow::on_pushButton_5_clicked()
 
     //refresh animal list
     ui->listWidget->clear();
-    read_query = readDatabase();
+    read_animal_query = readAnimalTable();
 
-    while (read_query.next()){
-        ui->listWidget->addItem(read_query.value(1).toString() + " " + read_query.value(3).toString() + " " + read_query.value(4).toString());
+    while (read_animal_query.next()){
+        ui->listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
     }
     qDebug() << "End of data";
 }
@@ -87,10 +88,10 @@ void MainWindow::on_pushButton_12_clicked()
 
     //refresh animal list
     ui->listWidget->clear();
-    read_query = readDatabase();
+    read_animal_query = readAnimalTable();
 
-    while (read_query.next()){
-        ui->listWidget->addItem(read_query.value(1).toString() + " " + read_query.value(3).toString() + " " + read_query.value(4).toString());
+    while (read_animal_query.next()){
+        ui->listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
     }
     qDebug() << "End of data";
 }
@@ -110,5 +111,5 @@ void MainWindow::on_pushButton_11_clicked()
     //generate animal id
     int t = getNumAnimals();
     qDebug()<<t;
-    addValues(t,inpName,inpGender,inpSpecies,inpBreed,inpAge,inpWeight,inpHeight,inpColour);
+    addAnimals(t,inpName,inpGender,inpSpecies,inpBreed,inpAge,inpWeight,inpHeight,inpColour);
 }

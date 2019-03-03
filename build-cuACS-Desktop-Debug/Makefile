@@ -53,11 +53,13 @@ OBJECTS_DIR   = ./
 SOURCES       = ../cuACS/main.cpp \
 		../cuACS/mainwindow.cpp \
 		../cuACS/animal.cpp \
-		../cuACS/sqlfunctions.cpp moc_mainwindow.cpp
+		../cuACS/sqlfunctions.cpp \
+		../cuACS/client.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		animal.o \
 		sqlfunctions.o \
+		client.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -129,7 +131,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		../.qmake.stash \
+		../cuACS/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -150,10 +152,12 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../cuACS/cuACS.pro ../cuACS/mainwindow.h \
 		../cuACS/animal.h \
-		../cuACS/sqlfunctions.h ../cuACS/main.cpp \
+		../cuACS/sqlfunctions.h \
+		../cuACS/client.h ../cuACS/main.cpp \
 		../cuACS/mainwindow.cpp \
 		../cuACS/animal.cpp \
-		../cuACS/sqlfunctions.cpp
+		../cuACS/sqlfunctions.cpp \
+		../cuACS/client.cpp
 QMAKE_TARGET  = cuACS
 DESTDIR       = 
 TARGET        = cuACS
@@ -235,7 +239,7 @@ Makefile: ../cuACS/cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		../.qmake.stash \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -330,7 +334,7 @@ Makefile: ../cuACS/cuACS.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qma
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
-../.qmake.stash:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -369,8 +373,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../cuACS/mainwindow.h ../cuACS/animal.h ../cuACS/sqlfunctions.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../cuACS/main.cpp ../cuACS/mainwindow.cpp ../cuACS/animal.cpp ../cuACS/sqlfunctions.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../cuACS/mainwindow.h ../cuACS/animal.h ../cuACS/sqlfunctions.h ../cuACS/client.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../cuACS/main.cpp ../cuACS/mainwindow.cpp ../cuACS/animal.cpp ../cuACS/sqlfunctions.cpp ../cuACS/client.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../cuACS/mainwindow.ui $(DISTDIR)/
 
 
@@ -381,6 +385,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) $(TARGET) 
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -446,6 +451,9 @@ animal.o: ../cuACS/animal.cpp ../cuACS/animal.h
 sqlfunctions.o: ../cuACS/sqlfunctions.cpp ../cuACS/sqlfunctions.h \
 		../cuACS/animal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sqlfunctions.o ../cuACS/sqlfunctions.cpp
+
+client.o: ../cuACS/client.cpp ../cuACS/client.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client.o ../cuACS/client.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
