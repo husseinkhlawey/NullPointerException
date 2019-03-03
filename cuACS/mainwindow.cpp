@@ -21,8 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     buildDatabase();
     read_animal_query = readAnimalTable();
-    read_client_query = readAnimalTable();
-
+    read_client_query = readClientTable();
 }
 
 MainWindow::~MainWindow()
