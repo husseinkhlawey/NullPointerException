@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>7</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="page_1">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -248,7 +248,7 @@ Staff</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_9">
+      <widget class="QWidget" name="animalList_Staff">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QLabel" name="label_4">
@@ -267,7 +267,7 @@ Staff</string>
          </widget>
         </item>
         <item>
-         <widget class="QListWidget" name="listWidget"/>
+         <widget class="QListWidget" name="ALS_listWidget"/>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_9">
@@ -285,7 +285,7 @@ Staff</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_10">
+      <widget class="QWidget" name="animalProfile_Staff">
        <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
          <widget class="QLabel" name="label_5">
@@ -304,17 +304,17 @@ Staff</string>
          </widget>
         </item>
         <item>
-         <widget class="QTableView" name="tableView_2"/>
+         <widget class="QListWidget" name="APS_listWidget"/>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_10">
+         <widget class="QPushButton" name="APS_EditProfile">
           <property name="text">
            <string>Edit Profile</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_8">
+         <widget class="QPushButton" name="APS_Back">
           <property name="text">
            <string>Back</string>
           </property>

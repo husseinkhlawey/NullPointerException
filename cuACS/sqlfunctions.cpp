@@ -100,7 +100,7 @@ QSqlQuery readAnimalTable() {
         qDebug()<<"Can't read animals";
     }
     else{
-        qDebug()<<"Read from db";
+        qDebug()<<"Read animals from db";
     }
     return query;
 }

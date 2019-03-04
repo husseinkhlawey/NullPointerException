@@ -69,11 +69,11 @@ void MainWindow::on_pushButton_5_clicked()
     ui->stackedWidget->setCurrentIndex(5);
 
     //refresh animal list
-    ui->listWidget->clear();
+    ui->ALS_listWidget->clear();
     read_animal_query = readAnimalTable();
 
     while (read_animal_query.next()){
-        ui->listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
+        ui->ALS_listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
     }
     qDebug() << "End of data";
 }
@@ -88,11 +88,11 @@ void MainWindow::on_pushButton_12_clicked()
     ui->stackedWidget->setCurrentIndex(5);
 
     //refresh animal list
-    ui->listWidget->clear();
+    ui->ALS_listWidget->clear();
     read_animal_query = readAnimalTable();
 
     while (read_animal_query.next()){
-        ui->listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
+        ui->ALS_listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
     }
     qDebug() << "End of data";
 }
@@ -117,11 +117,11 @@ void MainWindow::on_pushButton_11_clicked()
     ui->stackedWidget->setCurrentIndex(5);
 
     //refresh animal list
-    ui->listWidget->clear();
+    ui->ALS_listWidget->clear();
     read_animal_query = readAnimalTable();
 
     while (read_animal_query.next()){
-        ui->listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
+        ui->ALS_listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
     }
     qDebug() << "End of data";
 
@@ -231,7 +231,39 @@ void MainWindow::on_pushButton_21_clicked()
     qDebug() << "End of data";
 }
 
-void MainWindow::on_listWidget_activated(const QModelIndex &index)
-{
+void MainWindow::on_listWidget_activated(const QModelIndex &index){}
 
+void MainWindow::on_listWidget_4_itemClicked(QListWidgetItem *item)
+{
+    if(item->text() == "Bob Ross (257) 323-9812"){
+            qDebug() << "clicked on client";
+        }
+}
+
+void MainWindow::on_ALS_listWidget_itemClicked(QListWidgetItem *item)
+{
+    read_animal_query = readAnimalTable();
+    QSqlRecord animalRecord = read_animal_query.record();
+    qDebug() << item->text();
+
+    //check if what user clicked matches current value of read_animal_query
+    while(read_animal_query.next()){
+        if(item->text() == read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString()){
+            ui->APS_listWidget->clear();
+            //display selected animal's profile info
+            for (int i = 0; i < animalRecord.count(); i++) {
+                QString column = animalRecord.fieldName(i);
+                ui->APS_listWidget->addItem(column + ":      " + read_animal_query.value(i).toString());
+            }
+            //switch to new page
+            ui->stackedWidget->setCurrentIndex(6);
+            break;
+        }
+    }
+    qDebug() << "While loop end: " + read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString();
+}
+
+void MainWindow::on_APS_Back_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
 }
