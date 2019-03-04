@@ -4,6 +4,7 @@
 #include <QtSql>
 #include "sqlfunctions.h"
 #include "animal.h"
+#include "client.h"
 #include <vector>
 using namespace std;
 

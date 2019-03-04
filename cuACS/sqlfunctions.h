@@ -2,6 +2,7 @@
 #define SQLFUNCTIONS_H
 
 #include "animal.h"
+#include "client.h"
 #include <QtSql>
 
 //runs given sql queries on open database
@@ -25,10 +26,19 @@ QSqlQuery readClientTable();
 //for debugging print animal's information
 void printAnimal(Animal *animal);
 
+//for debugging print animal's information
+void printClient(Client *client);
+
 //get number of animals
 int getNumAnimals();
 
+//get number of clients
+int getNumClients();
+
 //adds animals to data structure
 void addAllAnimals(QSqlQuery query, vector<Animal> animals, Animal *animal);
+
+//adds clients to data structure
+void addAllClients(QSqlQuery query, vector<Client> clients, Animal *client);
 
 #endif // SQLFUNCTIONS_H

@@ -54,7 +54,7 @@ QT_MOC_LITERAL(19, 433, 24), // "on_pushButton_17_clicked"
 QT_MOC_LITERAL(20, 458, 24), // "on_pushButton_16_clicked"
 QT_MOC_LITERAL(21, 483, 24), // "on_pushButton_19_clicked"
 QT_MOC_LITERAL(22, 508, 24), // "on_pushButton_20_clicked"
-QT_MOC_LITERAL(23, 533, 23), // "on_listWidget_activated"
+//QT_MOC_LITERAL(23, 533, 23), // "on_listWidget_activated"
 QT_MOC_LITERAL(24, 557, 5) // "index"
 
     },

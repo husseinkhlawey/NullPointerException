@@ -1,5 +1,6 @@
 ﻿#include "sqlfunctions.h"
 #include "animal.h"
+#include "client.h"
 #include <QtDebug>
 #include <QtSql>
 
@@ -131,10 +132,29 @@ void printAnimal(Animal *animal) {
     qDebug() << animal->getColour();
 }
 
+void printClient(Client *client) {
+    qDebug() << client->getID();
+    qDebug() << client->getFname();
+    qDebug() << client->getLname();
+    qDebug() << client->getEmail();
+    qDebug() << client->getAddress();
+    qDebug() << client->getPhone();
+}
+
 //get number of animals
 int getNumAnimals(){
     int total = 0;
     QSqlQuery query = readAnimalTable();
+    while(query.next()){
+        total++;
+    }
+    return total;
+}
+
+//get number of clients
+int getNumClients(){
+    int total = 0;
+    QSqlQuery query = readClientTable();
     while(query.next()){
         total++;
     }
@@ -160,4 +180,22 @@ void addAllAnimals(QSqlQuery query, vector<Animal> animals, Animal *animal){
         qDebug()<<"loop ran";
     }
     qDebug() << "size sql" << animals.size();
+}
+
+//adds animals to data structure, for future use
+void addAllClients(QSqlQuery query, vector<Client> clients, Client *client){
+    while(query.next()){
+
+        client->setID(query.value(0).toInt());
+        client->setFname(query.value(1).toString());
+        client->setLname(query.value(2).toString());
+        client->setEmail(query.value(3).toString());
+        client->setAddress(query.value(4).toString());
+        client->setPhone(query.value(4).toString());
+
+        clients.push_back(*client);
+        client = new Client();
+        qDebug()<<"loop ran";
+    }
+    qDebug() << "size sql" << clients.size();
 }

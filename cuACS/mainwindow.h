@@ -62,10 +62,13 @@ private slots:
 
     void on_listWidget_activated(const QModelIndex &index);
 
+    void on_pushButton_21_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlQuery read_animal_query;
     QSqlQuery read_client_query;
+
     //for getting user input
     QString inpName;
     int inpGender;
@@ -75,6 +78,12 @@ private:
     float inpWeight;
     float inpHeight;
     QString inpColour;
+
+    QString inpFname;
+    QString inpLname;
+    QString inpEmail;
+    QString inpAddress;
+    QString inpPhone;
 };
 
 #endif // MAINWINDOW_H

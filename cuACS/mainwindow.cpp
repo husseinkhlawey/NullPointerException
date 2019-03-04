@@ -113,6 +113,18 @@ void MainWindow::on_pushButton_11_clicked()
     int t = getNumAnimals();
     qDebug()<<t;
     addAnimals(t,inpName,inpGender,inpSpecies,inpBreed,inpAge,inpWeight,inpHeight,inpColour);
+
+    ui->stackedWidget->setCurrentIndex(5);
+
+    //refresh animal list
+    ui->listWidget->clear();
+    read_animal_query = readAnimalTable();
+
+    while (read_animal_query.next()){
+        ui->listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
+    }
+    qDebug() << "End of data";
+
 }
 
 void MainWindow::on_pushButton_3_clicked()
@@ -145,9 +157,18 @@ void MainWindow::on_pushButton_10_clicked()
     ui->stackedWidget->setCurrentIndex(7);
 }
 
-void MainWindow::on_pushButton_14_clicked()
+void MainWindow::on_pushButton_14_clicked()//view client (staff side) listwidget_4
 {
     ui->stackedWidget->setCurrentIndex(8);
+
+    //refresh animal list
+    ui->listWidget_4->clear();
+    read_client_query = readClientTable();
+
+    while (read_client_query.next()){
+        ui->listWidget_4->addItem(read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString());
+    }
+    qDebug() << "End of data";
 }
 
 void MainWindow::on_pushButton_15_clicked()
@@ -173,4 +194,44 @@ void MainWindow::on_pushButton_19_clicked()
 void MainWindow::on_pushButton_20_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
+
+    //refresh animal list
+    ui->listWidget_4->clear();
+    read_client_query = readClientTable();
+
+    while (read_client_query.next()){
+        ui->listWidget_4->addItem(read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString());
+    }
+    qDebug() << "End of data";
+}
+
+void MainWindow::on_pushButton_21_clicked()
+{
+    //refresh animal list
+    inpFname = ui->lineEdit_9->text();
+    inpLname = ui->lineEdit_10->text();
+    inpEmail = ui->lineEdit_11->text();
+    inpAddress = ui->lineEdit_12->text();
+    inpPhone = ui->lineEdit_13->text();
+
+    //generate animal id
+    int t = getNumClients();
+    qDebug()<<t;
+    addClients(t,inpFname,inpLname,inpEmail,inpAddress,inpPhone);
+
+    ui->stackedWidget->setCurrentIndex(8);
+
+    //refresh animal list
+    ui->listWidget_4->clear();
+    read_client_query = readClientTable();
+
+    while (read_client_query.next()){
+        ui->listWidget_4->addItem(read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString());
+    }
+    qDebug() << "End of data";
+}
+
+void MainWindow::on_listWidget_activated(const QModelIndex &index)
+{
+
 }
