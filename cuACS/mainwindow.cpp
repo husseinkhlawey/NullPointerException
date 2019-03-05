@@ -147,7 +147,7 @@ void MainWindow::on_pushButton_4_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_pushButton_13_clicked()
+void MainWindow::on_pushButton_13_clicked()//back
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
@@ -235,9 +235,25 @@ void MainWindow::on_listWidget_activated(const QModelIndex &index){}
 
 void MainWindow::on_listWidget_4_itemClicked(QListWidgetItem *item)
 {
-    if(item->text() == "Bob Ross (257) 323-9812"){
-            qDebug() << "clicked on client";
+    read_client_query = readClientTable();
+    QSqlRecord clientRecord = read_client_query.record();
+    qDebug() << item->text();
+
+    //check if what user clicked matches current value of read_animal_query
+    while(read_client_query.next()){
+        if(item->text() == read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString()){
+            ui->listWidget_5->clear();
+            //display selected animal's profile info
+            for (int i = 0; i < clientRecord.count(); i++) {
+                QString column = clientRecord.fieldName(i);
+                ui->listWidget_5->addItem(column + ":      " + read_client_query.value(i).toString());
+            }
+            //switch to new page
+            ui->stackedWidget->setCurrentIndex(9);
+            break;
         }
+    }
+    qDebug() << "While loop end: " + read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString();
 }
 
 void MainWindow::on_ALS_listWidget_itemClicked(QListWidgetItem *item)
@@ -266,4 +282,27 @@ void MainWindow::on_ALS_listWidget_itemClicked(QListWidgetItem *item)
 void MainWindow::on_APS_Back_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_listWidget_2_itemClicked(QListWidgetItem *item)
+{
+    read_animal_query = readAnimalTable();
+    QSqlRecord animalRecord = read_animal_query.record();
+    qDebug() << item->text();
+
+    //check if what user clicked matches current value of read_animal_query
+    while(read_animal_query.next()){
+        if(item->text() == read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString()){
+            ui->listWidget_3->clear();
+            //display selected animal's profile info
+            for (int i = 0; i < animalRecord.count(); i++) {
+                QString column = animalRecord.fieldName(i);
+                ui->listWidget_3->addItem(column + ":      " + read_animal_query.value(i).toString());
+            }
+            //switch to new page
+            ui->stackedWidget->setCurrentIndex(3);
+            break;
+        }
+    }
+    qDebug() << "While loop end: " + read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString();
 }
