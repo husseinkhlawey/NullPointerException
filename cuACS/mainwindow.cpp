@@ -54,11 +54,6 @@ void MainWindow::on_pushButton_7_clicked()
     ui->stackedWidget->setCurrentIndex(4);
 }
 
-void MainWindow::on_pushButton_8_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(5);
-}
-
 void MainWindow::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
@@ -108,11 +103,22 @@ void MainWindow::on_pushButton_11_clicked()
     inpWeight = ui->lineEdit_6->text().toFloat();
     inpHeight = ui->lineEdit_7->text().toFloat();
     inpColour = ui->lineEdit_8->text();
+    inpindependence = ui->lineEdit_14->text();
+    inpobedience = ui->lineEdit_15->text();
+    inptraining = ui->lineEdit_16->text();
+    inpcostOfMaintenance = ui->lineEdit_17->text().toInt();
+    inptimeOfMaintenance = ui->lineEdit_18->text().toInt();
+    inployalty = ui->lineEdit_19->text();
+    inpdiet = ui->lineEdit_20->text();
+    inpLoudness = ui->lineEdit_22->text();
+    inplifespan = ui->lineEdit_23->text().toInt();
+    inpsocialNeeds = ui->lineEdit_21->text();
 
     //generate animal id
     int t = getNumAnimals();
     qDebug()<<t;
-    addAnimals(t,inpName,inpGender,inpSpecies,inpBreed,inpAge,inpWeight,inpHeight,inpColour);
+    addAnimals(t,inpName,inpGender,inpSpecies,inpBreed,inpAge,inpWeight,inpHeight,inpColour,inpindependence,inpobedience,inptraining,
+               inpcostOfMaintenance,inptimeOfMaintenance,inployalty,inpdiet,inpLoudness,inplifespan,inpsocialNeeds);
 
     ui->stackedWidget->setCurrentIndex(5);
 
@@ -150,11 +156,6 @@ void MainWindow::on_pushButton_4_clicked()
 void MainWindow::on_pushButton_13_clicked()//back
 {
     ui->stackedWidget->setCurrentIndex(2);
-}
-
-void MainWindow::on_pushButton_10_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(7);
 }
 
 void MainWindow::on_pushButton_14_clicked()//view client (staff side) listwidget_4
@@ -231,6 +232,7 @@ void MainWindow::on_pushButton_21_clicked()
     qDebug() << "End of data";
 }
 
+//for future use.
 void MainWindow::on_listWidget_activated(const QModelIndex &index){}
 
 void MainWindow::on_listWidget_4_itemClicked(QListWidgetItem *item)
@@ -239,11 +241,11 @@ void MainWindow::on_listWidget_4_itemClicked(QListWidgetItem *item)
     QSqlRecord clientRecord = read_client_query.record();
     qDebug() << item->text();
 
-    //check if what user clicked matches current value of read_animal_query
+    //check if what user clicked matches current value of read_client_query
     while(read_client_query.next()){
         if(item->text() == read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString()){
             ui->listWidget_5->clear();
-            //display selected animal's profile info
+            //display selected client's profile info
             for (int i = 0; i < clientRecord.count(); i++) {
                 QString column = clientRecord.fieldName(i);
                 ui->listWidget_5->addItem(column + ":      " + read_client_query.value(i).toString());

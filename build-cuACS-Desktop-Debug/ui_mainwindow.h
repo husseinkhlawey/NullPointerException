@@ -94,6 +94,8 @@ public:
     QLineEdit *lineEdit_18;
     QLineEdit *lineEdit_19;
     QLineEdit *lineEdit_20;
+    QLineEdit *lineEdit_22;
+    QLineEdit *lineEdit_23;
     QLineEdit *lineEdit_21;
     QPushButton *pushButton_11;
     QPushButton *pushButton_12;
@@ -128,7 +130,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(316, 606);
+        MainWindow->resize(316, 687);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayout_2 = new QHBoxLayout(centralWidget);
@@ -439,6 +441,16 @@ public:
 
         verticalLayout_6->addWidget(lineEdit_20);
 
+        lineEdit_22 = new QLineEdit(page_11);
+        lineEdit_22->setObjectName(QStringLiteral("lineEdit_22"));
+
+        verticalLayout_6->addWidget(lineEdit_22);
+
+        lineEdit_23 = new QLineEdit(page_11);
+        lineEdit_23->setObjectName(QStringLiteral("lineEdit_23"));
+
+        verticalLayout_6->addWidget(lineEdit_23);
+
         lineEdit_21 = new QLineEdit(page_11);
         lineEdit_21->setObjectName(QStringLiteral("lineEdit_21"));
 
@@ -583,7 +595,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(7);
+        stackedWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -592,8 +604,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
-        label->setText(QApplication::translate("MainWindow", "Welcome \n"
-"to \n"
+        label->setText(QApplication::translate("MainWindow", "Welcome\n"
+"to\n"
 " cuACS ", Q_NULLPTR));
         pushButton_Client->setText(QApplication::translate("MainWindow", "Client", Q_NULLPTR));
         pushButton_Staff->setText(QApplication::translate("MainWindow", "Staff", Q_NULLPTR));
@@ -627,6 +639,16 @@ public:
         lineEdit_6->setText(QApplication::translate("MainWindow", "Weight", Q_NULLPTR));
         lineEdit_7->setText(QApplication::translate("MainWindow", "Height", Q_NULLPTR));
         lineEdit_8->setText(QApplication::translate("MainWindow", "Colour", Q_NULLPTR));
+        lineEdit_14->setText(QApplication::translate("MainWindow", "Independence", Q_NULLPTR));
+        lineEdit_15->setText(QApplication::translate("MainWindow", "Obedience", Q_NULLPTR));
+        lineEdit_16->setText(QApplication::translate("MainWindow", "Training", Q_NULLPTR));
+        lineEdit_17->setText(QApplication::translate("MainWindow", "CostOfMaintenance", Q_NULLPTR));
+        lineEdit_18->setText(QApplication::translate("MainWindow", "TimeOfMaintenance", Q_NULLPTR));
+        lineEdit_19->setText(QApplication::translate("MainWindow", "Loyalty", Q_NULLPTR));
+        lineEdit_20->setText(QApplication::translate("MainWindow", "Diet", Q_NULLPTR));
+        lineEdit_22->setText(QApplication::translate("MainWindow", "Loudness", Q_NULLPTR));
+        lineEdit_23->setText(QApplication::translate("MainWindow", "Lifespan", Q_NULLPTR));
+        lineEdit_21->setText(QApplication::translate("MainWindow", "SocialNeeds", Q_NULLPTR));
         pushButton_11->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
         pushButton_12->setText(QApplication::translate("MainWindow", "Cancel", Q_NULLPTR));
         label_9->setText(QApplication::translate("MainWindow", "Client List", Q_NULLPTR));

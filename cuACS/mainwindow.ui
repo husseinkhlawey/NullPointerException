@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>316</width>
-    <height>606</height>
+    <height>687</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="page_1">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -397,28 +397,74 @@ Staff</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_14"/>
+         <widget class="QLineEdit" name="lineEdit_14">
+          <property name="text">
+           <string>Independence</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_15"/>
+         <widget class="QLineEdit" name="lineEdit_15">
+          <property name="text">
+           <string>Obedience</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_16"/>
+         <widget class="QLineEdit" name="lineEdit_16">
+          <property name="text">
+           <string>Training</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_17"/>
+         <widget class="QLineEdit" name="lineEdit_17">
+          <property name="text">
+           <string>CostOfMaintenance</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_18"/>
+         <widget class="QLineEdit" name="lineEdit_18">
+          <property name="text">
+           <string>TimeOfMaintenance</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_19"/>
+         <widget class="QLineEdit" name="lineEdit_19">
+          <property name="text">
+           <string>Loyalty</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_20"/>
+         <widget class="QLineEdit" name="lineEdit_20">
+          <property name="text">
+           <string>Diet</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_21"/>
+         <widget class="QLineEdit" name="lineEdit_22">
+          <property name="text">
+           <string>Loudness</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_23">
+          <property name="text">
+           <string>Lifespan</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_21">
+          <property name="text">
+           <string>SocialNeeds</string>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_11">

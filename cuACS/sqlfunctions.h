@@ -9,7 +9,9 @@
 void runQuery(QString input);
 
 //adds animals values to databse
-void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour);
+void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour,
+                QString independence, QString obedience, QString training, int costOfMaintenance, int timeOfMaintenance, QString loyalty,
+                QString diet, QString loudness, int lifespan, QString socialNeeds);
 
 //adds client values to database
 void addClients (int id, QString fname, QString lname, QString email, QString address, QString phone);

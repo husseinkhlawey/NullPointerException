@@ -29,8 +29,6 @@ private slots:
 
     void on_pushButton_7_clicked();
 
-    void on_pushButton_8_clicked();
-
     void on_pushButton_9_clicked();
 
     void on_pushButton_5_clicked();
@@ -46,8 +44,6 @@ private slots:
     void on_pushButton_4_clicked();
 
     void on_pushButton_13_clicked();
-
-    void on_pushButton_10_clicked();
 
     void on_pushButton_14_clicked();
 
@@ -66,10 +62,6 @@ private slots:
     void on_pushButton_21_clicked();
 
     void on_listWidget_4_itemClicked(QListWidgetItem *item);
-
-    void on_listWidget_itemClicked(QListWidgetItem *item);
-
-    void on_APS_listWidget_itemClicked(QListWidgetItem *item);
 
     void on_ALS_listWidget_itemClicked(QListWidgetItem *item);
 
@@ -91,6 +83,16 @@ private:
     float inpWeight;
     float inpHeight;
     QString inpColour;
+    QString inpindependence;
+    QString inpobedience;
+    QString inptraining;
+    int inpcostOfMaintenance;
+    int inptimeOfMaintenance;
+    QString inployalty;
+    QString inpdiet;
+    QString inpLoudness;
+    int inplifespan;
+    QString inpsocialNeeds;
 
     QString inpFname;
     QString inpLname;

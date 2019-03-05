@@ -18,9 +18,12 @@ void runQuery(QString input){
 }
 
 //adds animal values to database
-void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour){
+void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour,
+                QString independence, QString obedience, QString training, int costOfMaintenance, int timeOfMaintenance, QString loyalty,
+                QString diet, QString loudness, int lifespan, QString socialNeeds)
+{
     QSqlQuery qry;
-    qry.prepare("INSERT OR REPLACE INTO animals VALUES (?,?,?,?,?,?,?,?,?);");
+    qry.prepare("INSERT OR REPLACE INTO animals VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
 
     qry.addBindValue(id);
     qry.addBindValue(name);
@@ -31,6 +34,16 @@ void addAnimals(int id, QString name, int gender, QString species, QString breed
     qry.addBindValue(weight);
     qry.addBindValue(height);
     qry.addBindValue(colour);
+    qry.addBindValue(independence);
+    qry.addBindValue(obedience);
+    qry.addBindValue(training);
+    qry.addBindValue(costOfMaintenance);
+    qry.addBindValue(timeOfMaintenance);
+    qry.addBindValue(loyalty);
+    qry.addBindValue(diet);
+    qry.addBindValue(loudness);
+    qry.addBindValue(lifespan);
+    qry.addBindValue(socialNeeds);
 
     if(!qry.exec()){
         qDebug() << "Can't add animal values";
@@ -73,7 +86,9 @@ void buildDatabase() {
     //gender: 0 is female, 1 is male
     currentQuery = "CREATE TABLE IF NOT EXISTS animals (id INTEGER PRIMARY KEY,"
                    "name TEXT, gender INTEGER, species TEXT, breed TEXT, age INTEGER,"
-                   "weight INTEGER, height INTEGER, colour TEXT);";
+                   "weight INTEGER, height INTEGER, colour TEXT, independence TEXT, obedience TEXT, "
+                   "training TEXT, costOfMaintenance INTEGER, timeOfMaintenance INTEGER, loyalty TEXT, diet TEXT, "
+                   "loudness TEXT, lifespan INTEGER, socialNeeds TEXT);";
 
     runQuery(currentQuery);
     currentQuery = "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY, firstName TEXT, lastName TEXT, email TEXT, address TEXT, phone TEXT);";
@@ -81,12 +96,12 @@ void buildDatabase() {
     runQuery(currentQuery);
 
     //adding values to database
-    addAnimals(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black");
-    addAnimals(1,"Red",1,"Dog","Hound",9,40,2,"brown");
-    addAnimals(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white");
-    addAnimals(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise");
-    addAnimals(4,"Fenrir",1,"Ancient Wolf","Dire Wolf",1,30,3,"White");
-    addAnimals(5,"Jon Snow", 0.5, "Ape King","G.O.D",454300000,8,100,"gold");
+    addAnimals(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black","medium","high","easy",90,45,"high","2-3 meals","medium",12,"10 hours/week");
+    addAnimals(1,"Red",1,"Dog","Hound",9,40,2,"brown","medium","high","easy",80,40,"high","2-3 meals","high",12,"10 hours/week");
+    addAnimals(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white","high","low","none",60,3,"medium","3-4 meals","low",10,"3 hours/week");
+    //addAnimals(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise");
+    //addAnimals(4,"Fenrir",1,"Ancient Wolf","Dire Wolf",1,30,3,"White");
+    //addAnimals(5,"Jon Snow", 0.5, "Ape King","G.O.D",454300000,8,100,"gold");
 
     addClients(0,"Bob","Ross","bob.ross@gmail.com","1234 Some Street","(257) 323-9812");
 }
