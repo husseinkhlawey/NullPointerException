@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>5</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="page_1">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -395,6 +395,30 @@ Staff</string>
            <string>Colour</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_14"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_15"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_16"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_17"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_18"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_19"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_20"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_21"/>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_11">

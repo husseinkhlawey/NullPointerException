@@ -87,6 +87,14 @@ public:
     QLineEdit *lineEdit_6;
     QLineEdit *lineEdit_7;
     QLineEdit *lineEdit_8;
+    QLineEdit *lineEdit_14;
+    QLineEdit *lineEdit_15;
+    QLineEdit *lineEdit_16;
+    QLineEdit *lineEdit_17;
+    QLineEdit *lineEdit_18;
+    QLineEdit *lineEdit_19;
+    QLineEdit *lineEdit_20;
+    QLineEdit *lineEdit_21;
     QPushButton *pushButton_11;
     QPushButton *pushButton_12;
     QWidget *page;
@@ -396,6 +404,46 @@ public:
 
         verticalLayout_6->addWidget(lineEdit_8);
 
+        lineEdit_14 = new QLineEdit(page_11);
+        lineEdit_14->setObjectName(QStringLiteral("lineEdit_14"));
+
+        verticalLayout_6->addWidget(lineEdit_14);
+
+        lineEdit_15 = new QLineEdit(page_11);
+        lineEdit_15->setObjectName(QStringLiteral("lineEdit_15"));
+
+        verticalLayout_6->addWidget(lineEdit_15);
+
+        lineEdit_16 = new QLineEdit(page_11);
+        lineEdit_16->setObjectName(QStringLiteral("lineEdit_16"));
+
+        verticalLayout_6->addWidget(lineEdit_16);
+
+        lineEdit_17 = new QLineEdit(page_11);
+        lineEdit_17->setObjectName(QStringLiteral("lineEdit_17"));
+
+        verticalLayout_6->addWidget(lineEdit_17);
+
+        lineEdit_18 = new QLineEdit(page_11);
+        lineEdit_18->setObjectName(QStringLiteral("lineEdit_18"));
+
+        verticalLayout_6->addWidget(lineEdit_18);
+
+        lineEdit_19 = new QLineEdit(page_11);
+        lineEdit_19->setObjectName(QStringLiteral("lineEdit_19"));
+
+        verticalLayout_6->addWidget(lineEdit_19);
+
+        lineEdit_20 = new QLineEdit(page_11);
+        lineEdit_20->setObjectName(QStringLiteral("lineEdit_20"));
+
+        verticalLayout_6->addWidget(lineEdit_20);
+
+        lineEdit_21 = new QLineEdit(page_11);
+        lineEdit_21->setObjectName(QStringLiteral("lineEdit_21"));
+
+        verticalLayout_6->addWidget(lineEdit_21);
+
         pushButton_11 = new QPushButton(page_11);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
 
@@ -535,7 +583,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(7);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
