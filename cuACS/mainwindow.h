@@ -75,6 +75,8 @@ private slots:
 
     void on_APS_Back_clicked();
 
+    void on_listWidget_2_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::MainWindow *ui;
     QSqlQuery read_animal_query;
