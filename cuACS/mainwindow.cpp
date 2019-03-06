@@ -232,9 +232,6 @@ void MainWindow::on_pushButton_21_clicked()
     qDebug() << "End of data";
 }
 
-//for future use.
-void MainWindow::on_listWidget_activated(const QModelIndex &index){}
-
 void MainWindow::on_listWidget_4_itemClicked(QListWidgetItem *item)
 {
     read_client_query = readClientTable();
