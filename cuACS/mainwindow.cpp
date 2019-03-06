@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
-    myDatabase.setDatabaseName(CUACS_ROOT_DIR"/cuACS_Database.sqlite");
+    myDatabase.setDatabaseName(QDir::currentPath()+"/cuACS_Database.sqlite");
 
     if(!myDatabase.open()){
             qDebug() << "Can't open database";
@@ -22,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
     buildDatabase();
     read_animal_query = readAnimalTable();
     read_client_query = readClientTable();
+
+    qDebug() << "DB Path: " << myDatabase.databaseName();
 }
 
 MainWindow::~MainWindow()

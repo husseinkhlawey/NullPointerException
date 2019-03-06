@@ -11,9 +11,11 @@ void runQuery(QString input){
 
     if(!query.exec()){
         qDebug() << "Can't run query";
+        qDebug() << input;
     }
     else{
         qDebug() << "Ran query";
+        qDebug() << input;
     }
 }
 
@@ -95,6 +97,9 @@ void buildDatabase() {
 
     runQuery(currentQuery);
 
+    //currentQuery = "CREATE TABLE IF NOT EXISTS sample (id INTEGER PRIMARY KEY);";
+    //runQuery(currentQuery);
+
     //adding values to database
     addAnimals(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black","medium","high","easy",90,45,"high","2-3 meals","medium",12,"10 hours/week");
     addAnimals(1,"Red",1,"Dog","Hound",9,40,2,"brown","medium","high","easy",80,40,"high","2-3 meals","high",12,"10 hours/week");
@@ -155,7 +160,7 @@ QSqlQuery readClientTable() {
         qDebug()<<"Can't read clients";
     }
     else{
-        qDebug()<<"Read from db";
+        qDebug()<<"Read clients from db";
     }
     return query;
 }
