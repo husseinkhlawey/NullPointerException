@@ -308,3 +308,27 @@ void MainWindow::on_listWidget_2_itemClicked(QListWidgetItem *item)
     }
     qDebug() << "While loop end: " + read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString();
 }
+
+//staff animal profile edit
+void MainWindow::on_APS_EditProfile_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+    QSqlQuery query;
+    qDebug() << "Edit: " << read_animal_query.value(0).toString();
+    query = runQuery2("select * from animals where id = " + read_animal_query.value(0).toString() + ";");
+    query.next();
+    ui->lineEdit_24->setText(query.value(0).toString());
+    ui->lineEdit_25->setText(query.value(1).toString());
+    ui->lineEdit_26->setText(query.value(3).toString());
+    ui->lineEdit_27->setText(query.value(4).toString());
+}
+
+void MainWindow::on_EAP_save_clicked()
+{
+    //replace existing info with new
+}
+
+void MainWindow::on_EAP_cancel_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}

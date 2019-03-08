@@ -8,6 +8,9 @@
 //runs given sql queries on open database
 void runQuery(QString input);
 
+//returns query result
+QSqlQuery runQuery2(QString input);
+
 //adds animals values to databse
 void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour,
                 QString independence, QString obedience, QString training, int costOfMaintenance, int timeOfMaintenance, QString loyalty,

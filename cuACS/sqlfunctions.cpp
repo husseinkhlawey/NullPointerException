@@ -19,6 +19,21 @@ void runQuery(QString input){
     }
 }
 
+QSqlQuery runQuery2(QString input){
+    QSqlQuery query;
+    query.prepare(input);
+
+    if(!query.exec()){
+        qDebug() << "Can't run query";
+        qDebug() << input;
+    }
+    else{
+        qDebug() << "Ran query";
+        qDebug() << input;
+    }
+    return query;
+}
+
 //adds animal values to database
 void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour,
                 QString independence, QString obedience, QString training, int costOfMaintenance, int timeOfMaintenance, QString loyalty,

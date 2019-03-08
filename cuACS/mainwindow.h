@@ -67,6 +67,12 @@ private slots:
 
     void on_listWidget_2_itemClicked(QListWidgetItem *item);
 
+    void on_APS_EditProfile_clicked();
+
+    void on_EAP_save_clicked();
+
+    void on_EAP_cancel_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlQuery read_animal_query;
