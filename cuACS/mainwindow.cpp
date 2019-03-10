@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
     myDatabase.setDatabaseName(cuACS_MAIN_DIR"/cuACS_Database.sqlite");
-    //QDir::currentPath()
+    //QDir::currentPath() can use if db wont open
 
     if(!myDatabase.open()){
             qDebug() << "Can't open database";
@@ -309,23 +309,56 @@ void MainWindow::on_listWidget_2_itemClicked(QListWidgetItem *item)
     qDebug() << "While loop end: " + read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString();
 }
 
-//staff animal profile edit
+//when staff clicks edit profile button
 void MainWindow::on_APS_EditProfile_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
     QSqlQuery query;
+    //print id of viewed animal
     qDebug() << "Edit: " << read_animal_query.value(0).toString();
+    //get it's profile info form a query
     query = runQuery2("select * from animals where id = " + read_animal_query.value(0).toString() + ";");
     query.next();
+    //put its info to the gui for edit page
     ui->lineEdit_24->setText(query.value(0).toString());
     ui->lineEdit_25->setText(query.value(1).toString());
     ui->lineEdit_26->setText(query.value(3).toString());
     ui->lineEdit_27->setText(query.value(4).toString());
 }
 
+//update animal info
 void MainWindow::on_EAP_save_clicked()
 {
-    //replace existing info with new
+    //read_animal_query is currently on the animal the user clicked to see it's profile.
+    runQuery("UPDATE animals SET name = \"" + ui->lineEdit_25->text() + "\" WHERE id = " + read_animal_query.value(0).toString() + ";");
+
+    //run readAnimalTable() to update the database with the new animal's info
+
+    //refresh animal list
+    ui->ALS_listWidget->clear();
+    read_animal_query = readAnimalTable();
+
+    while (read_animal_query.next()){
+        ui->ALS_listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
+    }
+    qDebug() << "End of data";
+    //go to animal list
+    ui->stackedWidget->setCurrentIndex(5);
+
+    //if want save button to go to edit profile screen then
+    //need to store the previous index of read_animal_query then re-read the db and find that same index again.
+
+    //put new info in profile screen
+    /*
+    ui->APS_listWidget->clear();
+    QSqlRecord animalRecord = read_animal_query.record();
+    for (int i = 0; i < animalRecord.count(); i++) {
+        QString column = animalRecord.fieldName(i);
+        ui->APS_listWidget->addItem(column + ":      " + read_animal_query.value(i).toString());
+    }
+    qDebug() << "Saving changes: " + read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString();
+    ui->stackedWidget->setCurrentIndex(6);
+    */
 }
 
 void MainWindow::on_EAP_cancel_clicked()

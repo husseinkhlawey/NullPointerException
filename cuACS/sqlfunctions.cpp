@@ -108,6 +108,7 @@ void buildDatabase() {
                    "loudness TEXT, lifespan INTEGER, socialNeeds TEXT);";
 
     runQuery(currentQuery);
+
     currentQuery = "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY, firstName TEXT, lastName TEXT, email TEXT, address TEXT, phone TEXT);";
 
     runQuery(currentQuery);
