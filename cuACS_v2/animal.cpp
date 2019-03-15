@@ -84,4 +84,4 @@ void Animal::setCourage(QString cour)                { courage = cour; }
 void Animal::setIndependent(QString indep)           { independent = indep; }
 void Animal::setAge(int age)                         { this->age = age; }
 void Animal::setHeight(float heig)                   { height = heig; }
-void Animal::setWeight(float weig)                   { weight = weig; }
+void Animal::setWeight(float weig) { weight = weig; }

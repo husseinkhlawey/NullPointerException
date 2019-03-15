@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QObject>
+#include <QListWidgetItem>
 
 namespace Ui {
 class MainWindow;
@@ -53,6 +56,10 @@ private slots:
     void on_editClient_clientProfile_Staff_clicked();
 
     void on_Back_clientProfile_Staff_clicked();
+
+    void on_back_addAnimal_clicked();
+
+    void on_back_addClient_clicked();
 
 private:
     Ui::MainWindow *ui;

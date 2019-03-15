@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "sqlfunctions.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,7 +18,7 @@ MainWindow::~MainWindow()
 }
 
 
-//Main Page
+//Main Page=====================================================
 //Client Button
 void MainWindow::on_client_clicked()
 {
@@ -30,7 +31,7 @@ void MainWindow::on_staff_clicked()
     ui->stackedWidget->setCurrentIndex(4);
 }
 
-//Client Page
+//Client Page==================================================
 //View Animals Button
 void MainWindow::on_viewAnimal_Client_clicked()
 {
@@ -43,21 +44,21 @@ void MainWindow::on_back_Client_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-//Animal List (Client) Page
+//Animal List (Client) Page====================================
 //Back Button
 void MainWindow::on_back_animalList_Client_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-//Animal Profile (Client) Page
+//Animal Profile (Client) Page=================================
 //Back Button
 void MainWindow::on_back_animalProfile_Client_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
 
-//Staff Page
+//Staff Page===================================================
 //View Animals Button
 void MainWindow::on_viewAnimal_Staff_clicked()
 {
@@ -88,7 +89,7 @@ void MainWindow::on_Back_Staff_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-//Animal List (Staff) Page
+//Animal List (Staff) Page=======================================
 //Add Animal Button
 void MainWindow::on_addAnimal_animalList_Staff_clicked()
 {
@@ -101,7 +102,7 @@ void MainWindow::on_Back_animalList_Staff_clicked()
     ui->stackedWidget->setCurrentIndex(4);
 }
 
-//Animal Profile (Staff) Page
+//Animal Profile (Staff) Page====================================
 //Edit Profile Button
 void MainWindow::on_editAnimal_animalProfile_Staff_clicked()
 {
@@ -114,7 +115,14 @@ void MainWindow::on_Back_animalProfile_Staff_clicked()
     ui->stackedWidget->setCurrentIndex(5);
 }
 
-//Client List (Staff) Page
+//Add Animal Page=================================================
+//Back Button
+void MainWindow::on_back_addAnimal_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+//Client List (Staff) Page========================================
 //Add Client Button
 void MainWindow::on_addClient_clientList_Staff_clicked()
 {
@@ -127,7 +135,7 @@ void MainWindow::on_Back_clientList_Staff_clicked()
     ui->stackedWidget->setCurrentIndex(4);
 }
 
-//Client Profile (Staff) Page
+//Client Profile (Staff) Page======================================
 //Edit Profile Button
 void MainWindow::on_editClient_clientProfile_Staff_clicked()
 {
@@ -136,6 +144,13 @@ void MainWindow::on_editClient_clientProfile_Staff_clicked()
 
 //Back Button
 void MainWindow::on_Back_clientProfile_Staff_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+}
+
+//Add Client Page===================================================
+//Back Button
+void MainWindow::on_back_addClient_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
 }
