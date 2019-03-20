@@ -69,12 +69,19 @@ private slots:
 
     void on_listWidget_2_itemClicked(QListWidgetItem *item);
 
+    void on_APS_EditProfile_clicked();
+
+    void on_pushButton_22_clicked();
+
+    void on_pushButton_23_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlQuery read_animal_query;
     QSqlQuery read_client_query;
 
     //for getting user input
+    int inpId;
     QString inpName;
     int inpGender;
     QString inpSpecies;

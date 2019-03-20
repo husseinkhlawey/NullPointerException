@@ -124,12 +124,27 @@ void buildDatabase() {
     addAnimals(25,"Tim", 0, "Fish","Golden",2,60,1,"black","high","low","none",60,3,"medium","3-4 meals","low",10,"13 hours/week");
     addAnimals(26,"Polla", 1, "Fish","Guppy",7,55,23,"blue","medium","high","easy",90,45,"high","2-5 meals","medium",12,"15 hours/week");
 
-    addClients(0,"Bob","Ross","bob.ross@gmail.com","1234 Some Street","(257) 323-9812");
-    addClients(1,"Boon","Jacob","Bjacob.ross@hotmail.com","13 Street Street","(543) 179-8984");
-    addClients(2,"Jay","Johnson","jj34234@hotmail.com","12 Somerset Street","(613) 789-3676");
-    addClients(3,"John","Dave","johnD@gmail.com","4 Henderson Street","(813) 676-5463");
-    addClients(4,"Ray","Richard","ray009s@gmail.com","256 Chapel Street","(647) 874-9786");
-    addClients(5,"Jim","Smith","jimsmith00@hotmail.com","2655 Sweetland Street","(367) 887-8954");
+    addClients(0,"Bob","Ross","bob.ross@gmail.com","1234 Some Street","561-437-6464");
+    addClients(1,"Boon","Jacob","Bjacob.ross@hotmail.com","123 Street Street","407-451-2131");
+    addClients(2,"Jay","Johnson","jj34234@hotmail.com","12 Somerset Street","360-655-3643");
+    addClients(3,"John","Dave","johnD@gmail.com","4 Henderson Street","908-754-4044");
+    addClients(4,"Ray","Richard","ray009s@gmail.com","256 Chapel Street","908-405-5950");
+    addClients(5,"Jim","Smith","jimsmith00@hotmail.com","2655 Sweetland Street","337-626-5802");
+    addClients(6,"Alexandria","Yoder","balchen@verizon.net","8 Oak Avenue","337-965-7874");
+    addClients(7,"Izayah","Sanders","jaesenj@yahoo.com","2329 Kyle Street","702-987-6792");
+    addClients(8,"Jarrett","Haley","dbanarse@msn.com","1190 Hardman Road","702-353-1657");
+    addClients(9,"Samir","Estrada","harryh@yahoo.ca","3668 Sycamore Street","616-431-0311");
+    addClients(10,"Dax","Lopez","cyrus@verizon.net","4958 Jerry Dove Drive","309-734-5292");
+    addClients(11,"Tyshawn","Garza","keiji@verizon.net","2751 Valley Drive","254-381-3599");
+    addClients(12,"Drew","Perkins","maikelnai@sbcglobal.net","920 Southern Avenue","310-777-5101");
+    addClients(13,"Xander","Hester","vsprintf@yahoo.ca","3944 Jacobs Street","828-231-9403");
+    addClients(14,"Giovanni","Massey","doormat@yahoo.ca","650 Rivendell Drive","917-733-5239");
+    addClients(15,"Denisse","Bass","ianbuck@optonline.net","3138 Brannon Avenue","337-591-9384");
+    addClients(16,"Janessa","Parsons","world@icloud.com","4428 Rainy Day Drive","412-750-0612");
+    addClients(17,"Carlee","Reilly","richard@comcast.net","2051 Rocket Drive","915-621-8279");
+    addClients(18,"Bailey","Patrick","sartak@yahoo.ca","2979 Hall Street","281-418-3487");
+    addClients(19,"Paul","Mosley","mahbub@optonline.net","3340 John Daniel Drive","330-358-8186");
+    addClients(20,"Glenn","Jordan","ardagna@live.com","1788 Wyatt Street","213-639-1101");
 }
 
 //reading from the db
@@ -239,4 +254,30 @@ void addAllClients(QSqlQuery query, vector<Client> clients, Client *client){
         qDebug()<<"loop ran";
     }
     qDebug() << "size sql" << clients.size();
+}
+
+void editAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour,
+                QString independence, QString obedience, QString training, int costOfMaintenance, int timeOfMaintenance, QString loyalty,
+                 QString diet, QString loudness, int lifespan, QString socialNeeds){
+
+    QSqlQuery qry;
+    qry.prepare("UPDATE animals SET name = '" + name + "', gender = " + gender + ", species = '" + species + "', breed = '" + breed + "', age = " + age + ", weight = "
+                     + weight + ", height = " + height + ", colour = '" + colour + "', independence = '" + independence + "', obedience = '"
+                     + obedience + "', training = '" + training + "', costOfMaintenance = " + costOfMaintenance + ", timeOfMaintenance = " + timeOfMaintenance +
+                     ", loyalty = '" + loyalty + "', diet = '" + diet + "', loudness = '" + loudness + "', lifespan = " + lifespan + ", socialNeeds = '" + socialNeeds +
+                     "' WHERE id = " + id);
+
+    if(!qry.exec()){
+        qDebug()<<"animals updated";
+    }
+    else{
+        qDebug()<<"Can't update animals";
+    }
+
+    QString currentQuery = "UPDATE animals SET name = '" + name + "', gender = " + gender + ", species = '" + species + "', breed = '" + breed + "', age = " + age + ", weight = "
+                     + weight + ", height = " + height + ", colour = '" + colour + "', independence = '" + independence + "', obedience = '"
+                     + obedience + "', training = '" + training + "', costOfMaintenance = " + costOfMaintenance + ", timeOfMaintenance = " + timeOfMaintenance +
+                     ", loyalty = '" + loyalty + "', diet = '" + diet + "', loudness = '" + loudness + "', lifespan = " + lifespan + ", socialNeeds = '" + socialNeeds +
+                     "' WHERE id = " + id;
+    runQuery(currentQuery);
 }

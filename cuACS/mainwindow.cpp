@@ -308,3 +308,83 @@ void MainWindow::on_listWidget_2_itemClicked(QListWidgetItem *item)
     }
     qDebug() << "While loop end: " + read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString();
 }
+
+void MainWindow::on_APS_EditProfile_clicked()//edit animal (Staff)
+{
+    read_animal_query = readAnimalTable();
+    QSqlRecord animalRecord = read_animal_query.record();
+    QString item = ui->APS_listWidget->item(0)->text();
+    QString substring = item.mid(9);
+
+    while(read_animal_query.next()){
+        if(substring == read_animal_query.value(0).toString()){
+            ui->lineEdit_29->setText(read_animal_query.value(1).toString());
+            ui->lineEdit_34->setText(read_animal_query.value(2).toString());
+            ui->lineEdit_25->setText(read_animal_query.value(3).toString());
+            ui->lineEdit_41->setText(read_animal_query.value(4).toString());
+            ui->lineEdit_38->setText(read_animal_query.value(5).toString());
+            ui->lineEdit_40->setText(read_animal_query.value(6).toString());
+            ui->lineEdit_36->setText(read_animal_query.value(7).toString());
+            ui->lineEdit_30->setText(read_animal_query.value(8).toString());
+            ui->lineEdit_24->setText(read_animal_query.value(9).toString());
+            ui->lineEdit_32->setText(read_animal_query.value(10).toString());
+            ui->lineEdit_28->setText(read_animal_query.value(11).toString());
+            ui->lineEdit_33->setText(read_animal_query.value(12).toString());
+            ui->lineEdit_37->setText(read_animal_query.value(13).toString());
+            ui->lineEdit_26->setText(read_animal_query.value(14).toString());
+            ui->lineEdit_39->setText(read_animal_query.value(15).toString());
+            ui->lineEdit_31->setText(read_animal_query.value(16).toString());
+            ui->lineEdit_27->setText(read_animal_query.value(17).toString());
+            ui->lineEdit_35->setText(read_animal_query.value(18).toString());
+        }
+        ui->stackedWidget->setCurrentIndex(11);
+        //break;
+    }
+}
+
+void MainWindow::on_pushButton_22_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_pushButton_23_clicked()//save edited animal
+{
+
+    QString item = ui->APS_listWidget->item(0)->text();
+    QString substring = item.mid(9);
+
+    inpId = substring.toInt();
+    inpName = ui->lineEdit_29->text();
+    inpGender = ui->lineEdit_34->text().toInt();
+    inpSpecies = ui->lineEdit_25->text();
+    inpBreed = ui->lineEdit_41->text();
+    inpAge = ui->lineEdit_38->text().toInt();
+    inpWeight = ui->lineEdit_40->text().toFloat();
+    inpHeight = ui->lineEdit_36->text().toFloat();
+    inpColour = ui->lineEdit_30->text();
+    inpindependence = ui->lineEdit_24->text();
+    inpobedience = ui->lineEdit_32->text();
+    inptraining = ui->lineEdit_28->text();
+    inpcostOfMaintenance = ui->lineEdit_33->text().toInt();
+    inptimeOfMaintenance = ui->lineEdit_37->text().toInt();
+    inployalty = ui->lineEdit_26->text();
+    inpdiet = ui->lineEdit_39->text();
+    inpLoudness = ui->lineEdit_31->text();
+    inplifespan = ui->lineEdit_27->text().toInt();
+    inpsocialNeeds = ui->lineEdit_35->text();
+
+    qDebug()<<inpId;
+    editAnimals(inpId,inpName,inpGender,inpSpecies,inpBreed,inpAge,inpWeight,inpHeight,inpColour,inpindependence,inpobedience,inptraining,
+               inpcostOfMaintenance,inptimeOfMaintenance,inployalty,inpdiet,inpLoudness,inplifespan,inpsocialNeeds);
+
+    ui->stackedWidget->setCurrentIndex(5);
+
+    //refresh animal list
+    ui->ALS_listWidget->clear();
+    read_animal_query = readAnimalTable();
+
+    while (read_animal_query.next()){
+        ui->ALS_listWidget->addItem(read_animal_query.value(1).toString() + " " + read_animal_query.value(3).toString() + " " + read_animal_query.value(4).toString());
+    }
+    qDebug() << "End of data";
+}
