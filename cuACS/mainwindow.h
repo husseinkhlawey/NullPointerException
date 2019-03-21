@@ -75,6 +75,20 @@ private slots:
 
     void on_pushButton_23_clicked();
 
+    void on_pushButton_18_clicked();
+
+    void on_listWidget_6_itemClicked(QListWidgetItem *item);
+
+    void on_pushButton_24_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_26_clicked();
+
+    void on_pushButton_25_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlQuery read_animal_query;
@@ -106,6 +120,12 @@ private:
     QString inpEmail;
     QString inpAddress;
     QString inpPhone;
+    QString inpKids;
+    QString inplTime;
+    QString inpSalary;
+    QString inpHouse;
+    QString inpAllergies;
+    QString inpLifestyle;
 };
 
 #endif // MAINWINDOW_H

@@ -14,7 +14,7 @@ void addAnimals(int id, QString name, int gender, QString species, QString breed
                 QString diet, QString loudness, int lifespan, QString socialNeeds);
 
 //adds client values to database
-void addClients (int id, QString fname, QString lname, QString email, QString address, QString phone);
+void addClients (int id, QString fname, QString lname, QString email, QString address, QString phone, QString numKids, QString leisure, QString salary, QString housing, QString allergies, QString lifestyle);
 
 //populates database and removes old data
 void buildDatabase();
@@ -43,8 +43,10 @@ void addAllAnimals(QSqlQuery query, vector<Animal> animals, Animal *animal);
 //adds clients to data structure
 void addAllClients(QSqlQuery query, vector<Client> clients, Animal *client);
 
-void editAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour,
-                QString independence, QString obedience, QString training, int costOfMaintenance, int timeOfMaintenance, QString loyalty,
-                QString diet, QString loudness, int lifespan, QString socialNeeds);
+void editAnimals(QString id, QString name, QString gender, QString species, QString breed, QString age, QString weight, QString height, QString colour,
+                QString independence, QString obedience, QString training, QString costOfMaintenance, QString timeOfMaintenance, QString loyalty,
+                QString diet, QString loudness, QString lifespan, QString socialNeeds);
+
+void editClients(QString id, QString fName, QString lName, QString email, QString address, QString phone, QString numKids, QString leisure, QString salary, QString housing, QString allergies, QString lifestyle);
 
 #endif // SQLFUNCTIONS_H
