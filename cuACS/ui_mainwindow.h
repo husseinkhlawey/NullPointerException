@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -34,7 +33,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout_3;
     QStackedWidget *stackedWidget;
     QWidget *page_1;
     QVBoxLayout *verticalLayout_2;
@@ -42,9 +41,10 @@ public:
     QPushButton *pushButton_Client;
     QPushButton *pushButton_Staff;
     QWidget *page_3;
-    QVBoxLayout *verticalLayout_3;
+    QVBoxLayout *verticalLayout_12;
     QLabel *label_3;
     QPushButton *pushButton_3;
+    QPushButton *pushButton_26;
     QPushButton *pushButton;
     QWidget *animalList_Client;
     QVBoxLayout *verticalLayout_7;
@@ -77,7 +77,7 @@ public:
     QPushButton *APS_EditProfile;
     QPushButton *APS_Back;
     QWidget *editAnimalProfile;
-    QVBoxLayout *verticalLayout_12;
+    QVBoxLayout *verticalLayout_121;
     QLabel *label_12;
     QLineEdit *lineEdit_24;
     QLineEdit *lineEdit_25;
@@ -118,7 +118,6 @@ public:
     QVBoxLayout *verticalLayout_10;
     QLabel *label_10;
     QListWidget *listWidget_5;
-    QPushButton *pushButton_18;
     QPushButton *pushButton_19;
     QWidget *page_4;
     QVBoxLayout *verticalLayout_11;
@@ -128,8 +127,91 @@ public:
     QLineEdit *lineEdit_11;
     QLineEdit *lineEdit_12;
     QLineEdit *lineEdit_13;
+    QLineEdit *lineEdit_42;
+    QLineEdit *lineEdit_43;
+    QLineEdit *lineEdit_44;
+    QLineEdit *lineEdit_45;
+    QLineEdit *lineEdit_46;
+    QLineEdit *lineEdit_47;
     QPushButton *pushButton_21;
     QPushButton *pushButton_20;
+    QWidget *page_5;
+    QLineEdit *lineEdit_241;
+    QLabel *label_121;
+    QPushButton *pushButton_22;
+    QLineEdit *lineEdit_251;
+    QLineEdit *lineEdit_261;
+    QLineEdit *lineEdit_271;
+    QPushButton *pushButton_23;
+    QLineEdit *lineEdit_28;
+    QLineEdit *lineEdit_29;
+    QLineEdit *lineEdit_30;
+    QLineEdit *lineEdit_31;
+    QLineEdit *lineEdit_32;
+    QLineEdit *lineEdit_33;
+    QLineEdit *lineEdit_34;
+    QLineEdit *lineEdit_35;
+    QLineEdit *lineEdit_36;
+    QLineEdit *lineEdit_37;
+    QLineEdit *lineEdit_38;
+    QLineEdit *lineEdit_39;
+    QLineEdit *lineEdit_40;
+    QLineEdit *lineEdit_41;
+    QLabel *label_13;
+    QLabel *label_14;
+    QLabel *label_15;
+    QLabel *label_16;
+    QLabel *label_17;
+    QLabel *label_18;
+    QLabel *label_19;
+    QLabel *label_20;
+    QLabel *label_21;
+    QLabel *label_22;
+    QLabel *label_23;
+    QLabel *label_24;
+    QLabel *label_25;
+    QLabel *label_26;
+    QLabel *label_27;
+    QLabel *label_28;
+    QLabel *label_29;
+    QLabel *label_30;
+    QWidget *page_6;
+    QLabel *label_31;
+    QLineEdit *lineEdit_49;
+    QLineEdit *lineEdit_53;
+    QLineEdit *lineEdit_54;
+    QLineEdit *lineEdit_56;
+    QPushButton *pushButton_25;
+    QLineEdit *lineEdit_58;
+    QLineEdit *lineEdit_52;
+    QLineEdit *lineEdit_48;
+    QLineEdit *lineEdit_51;
+    QLineEdit *lineEdit_55;
+    QLineEdit *lineEdit_50;
+    QPushButton *pushButton_24;
+    QLineEdit *lineEdit_57;
+    QLabel *label_32;
+    QLabel *label_33;
+    QLabel *label_34;
+    QLabel *label_35;
+    QLabel *label_36;
+    QLabel *label_37;
+    QLabel *label_38;
+    QLabel *label_39;
+    QLabel *label_40;
+    QLabel *label_41;
+    QLabel *label_42;
+    QWidget *page_7;
+    QVBoxLayout *verticalLayout_13;
+    QLabel *label_43;
+    QListWidget *listWidget_6;
+    QPushButton *pushButton_18;
+    QWidget *page_9;
+    QVBoxLayout *verticalLayout_14;
+    QLabel *label_44;
+    QListWidget *listWidget_7;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_10;
     QMenuBar *menuBar;
     QMenu *menucuACS;
     QToolBar *mainToolBar;
@@ -142,10 +224,10 @@ public:
         MainWindow->resize(316, 749);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayout_2 = new QHBoxLayout(centralWidget);
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        verticalLayout_3 = new QVBoxLayout(centralWidget);
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         stackedWidget = new QStackedWidget(centralWidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
         page_1 = new QWidget();
@@ -180,16 +262,16 @@ public:
         stackedWidget->addWidget(page_1);
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
-        verticalLayout_3 = new QVBoxLayout(page_3);
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_12 = new QVBoxLayout(page_3);
+        verticalLayout_12->setSpacing(6);
+        verticalLayout_12->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_12->setObjectName(QStringLiteral("verticalLayout_12"));
         label_3 = new QLabel(page_3);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setFont(font);
         label_3->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_3->addWidget(label_3);
+        verticalLayout_12->addWidget(label_3);
 
         pushButton_3 = new QPushButton(page_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
@@ -198,12 +280,20 @@ public:
         font1.setPointSize(30);
         pushButton_3->setFont(font1);
 
-        verticalLayout_3->addWidget(pushButton_3);
+        verticalLayout_12->addWidget(pushButton_3);
+
+        pushButton_26 = new QPushButton(page_3);
+        pushButton_26->setObjectName(QStringLiteral("pushButton_26"));
+        QFont font2;
+        font2.setPointSize(30);
+        pushButton_26->setFont(font2);
+
+        verticalLayout_12->addWidget(pushButton_26);
 
         pushButton = new QPushButton(page_3);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
-        verticalLayout_3->addWidget(pushButton);
+        verticalLayout_12->addWidget(pushButton);
 
         stackedWidget->addWidget(page_3);
         animalList_Client = new QWidget();
@@ -214,9 +304,9 @@ public:
         verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
         label_7 = new QLabel(animalList_Client);
         label_7->setObjectName(QStringLiteral("label_7"));
-        QFont font2;
-        font2.setPointSize(20);
-        label_7->setFont(font2);
+        QFont font3;
+        font3.setPointSize(20);
+        label_7->setFont(font3);
         label_7->setAlignment(Qt::AlignCenter);
 
         verticalLayout_7->addWidget(label_7);
@@ -240,7 +330,7 @@ public:
         verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
         label_8 = new QLabel(animalProfile_Client);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setFont(font2);
+        label_8->setFont(font3);
         label_8->setAlignment(Qt::AlignCenter);
 
         verticalLayout_8->addWidget(label_8);
@@ -283,15 +373,13 @@ public:
 
         pushButton_14 = new QPushButton(page_8);
         pushButton_14->setObjectName(QStringLiteral("pushButton_14"));
-        QFont font3;
-        font3.setPointSize(30);
-        pushButton_14->setFont(font3);
+        pushButton_14->setFont(font2);
 
         verticalLayout_4->addWidget(pushButton_14);
 
         pushButton_15 = new QPushButton(page_8);
         pushButton_15->setObjectName(QStringLiteral("pushButton_15"));
-        pushButton_15->setFont(font3);
+        pushButton_15->setFont(font2);
 
         verticalLayout_4->addWidget(pushButton_15);
 
@@ -364,44 +452,44 @@ public:
         stackedWidget->addWidget(animalProfile_Staff);
         editAnimalProfile = new QWidget();
         editAnimalProfile->setObjectName(QStringLiteral("editAnimalProfile"));
-        verticalLayout_12 = new QVBoxLayout(editAnimalProfile);
-        verticalLayout_12->setSpacing(6);
-        verticalLayout_12->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_12->setObjectName(QStringLiteral("verticalLayout_12"));
+        verticalLayout_121 = new QVBoxLayout(editAnimalProfile);
+        verticalLayout_121->setSpacing(6);
+        verticalLayout_121->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_121->setObjectName(QStringLiteral("verticalLayout_121"));
         label_12 = new QLabel(editAnimalProfile);
         label_12->setObjectName(QStringLiteral("label_12"));
 
-        verticalLayout_12->addWidget(label_12);
+        verticalLayout_121->addWidget(label_12);
 
         lineEdit_24 = new QLineEdit(editAnimalProfile);
         lineEdit_24->setObjectName(QStringLiteral("lineEdit_24"));
 
-        verticalLayout_12->addWidget(lineEdit_24);
+        verticalLayout_121->addWidget(lineEdit_24);
 
         lineEdit_25 = new QLineEdit(editAnimalProfile);
         lineEdit_25->setObjectName(QStringLiteral("lineEdit_25"));
 
-        verticalLayout_12->addWidget(lineEdit_25);
+        verticalLayout_121->addWidget(lineEdit_25);
 
         lineEdit_26 = new QLineEdit(editAnimalProfile);
         lineEdit_26->setObjectName(QStringLiteral("lineEdit_26"));
 
-        verticalLayout_12->addWidget(lineEdit_26);
+        verticalLayout_121->addWidget(lineEdit_26);
 
         lineEdit_27 = new QLineEdit(editAnimalProfile);
         lineEdit_27->setObjectName(QStringLiteral("lineEdit_27"));
 
-        verticalLayout_12->addWidget(lineEdit_27);
+        verticalLayout_121->addWidget(lineEdit_27);
 
         EAP_save = new QPushButton(editAnimalProfile);
         EAP_save->setObjectName(QStringLiteral("EAP_save"));
 
-        verticalLayout_12->addWidget(EAP_save);
+        verticalLayout_121->addWidget(EAP_save);
 
         EAP_cancel = new QPushButton(editAnimalProfile);
         EAP_cancel->setObjectName(QStringLiteral("EAP_cancel"));
 
-        verticalLayout_12->addWidget(EAP_cancel);
+        verticalLayout_121->addWidget(EAP_cancel);
 
         stackedWidget->addWidget(editAnimalProfile);
         page_11 = new QWidget();
@@ -526,7 +614,7 @@ public:
         verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
         label_9 = new QLabel(page);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setFont(font2);
+        label_9->setFont(font3);
         label_9->setAlignment(Qt::AlignCenter);
 
         verticalLayout_9->addWidget(label_9);
@@ -555,7 +643,7 @@ public:
         verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
         label_10 = new QLabel(page_2);
         label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setFont(font2);
+        label_10->setFont(font3);
         label_10->setAlignment(Qt::AlignCenter);
 
         verticalLayout_10->addWidget(label_10);
@@ -564,11 +652,6 @@ public:
         listWidget_5->setObjectName(QStringLiteral("listWidget_5"));
 
         verticalLayout_10->addWidget(listWidget_5);
-
-        pushButton_18 = new QPushButton(page_2);
-        pushButton_18->setObjectName(QStringLiteral("pushButton_18"));
-
-        verticalLayout_10->addWidget(pushButton_18);
 
         pushButton_19 = new QPushButton(page_2);
         pushButton_19->setObjectName(QStringLiteral("pushButton_19"));
@@ -584,7 +667,7 @@ public:
         verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
         label_11 = new QLabel(page_4);
         label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setFont(font2);
+        label_11->setFont(font3);
         label_11->setAlignment(Qt::AlignCenter);
 
         verticalLayout_11->addWidget(label_11);
@@ -614,6 +697,36 @@ public:
 
         verticalLayout_11->addWidget(lineEdit_13);
 
+        lineEdit_42 = new QLineEdit(page_4);
+        lineEdit_42->setObjectName(QStringLiteral("lineEdit_42"));
+
+        verticalLayout_11->addWidget(lineEdit_42);
+
+        lineEdit_43 = new QLineEdit(page_4);
+        lineEdit_43->setObjectName(QStringLiteral("lineEdit_43"));
+
+        verticalLayout_11->addWidget(lineEdit_43);
+
+        lineEdit_44 = new QLineEdit(page_4);
+        lineEdit_44->setObjectName(QStringLiteral("lineEdit_44"));
+
+        verticalLayout_11->addWidget(lineEdit_44);
+
+        lineEdit_45 = new QLineEdit(page_4);
+        lineEdit_45->setObjectName(QStringLiteral("lineEdit_45"));
+
+        verticalLayout_11->addWidget(lineEdit_45);
+
+        lineEdit_46 = new QLineEdit(page_4);
+        lineEdit_46->setObjectName(QStringLiteral("lineEdit_46"));
+
+        verticalLayout_11->addWidget(lineEdit_46);
+
+        lineEdit_47 = new QLineEdit(page_4);
+        lineEdit_47->setObjectName(QStringLiteral("lineEdit_47"));
+
+        verticalLayout_11->addWidget(lineEdit_47);
+
         pushButton_21 = new QPushButton(page_4);
         pushButton_21->setObjectName(QStringLiteral("pushButton_21"));
 
@@ -625,8 +738,263 @@ public:
         verticalLayout_11->addWidget(pushButton_20);
 
         stackedWidget->addWidget(page_4);
+        page_5 = new QWidget();
+        page_5->setObjectName(QStringLiteral("page_5"));
+        lineEdit_241 = new QLineEdit(page_5);
+        lineEdit_241->setObjectName(QStringLiteral("lineEdit_241"));
+        lineEdit_241->setGeometry(QRect(108, 295, 181, 25));
+        label_121 = new QLabel(page_5);
+        label_121->setObjectName(QStringLiteral("label_121"));
+        label_121->setGeometry(QRect(9, 9, 280, 32));
+        label_121->setFont(font4);
+        label_121->setAlignment(Qt::AlignCenter);
+        pushButton_22 = new QPushButton(page_5);
+        pushButton_22->setObjectName(QStringLiteral("pushButton_22"));
+        pushButton_22->setGeometry(QRect(9, 636, 280, 25));
+        lineEdit_251 = new QLineEdit(page_5);
+        lineEdit_251->setObjectName(QStringLiteral("lineEdit_251"));
+        lineEdit_251->setGeometry(QRect(68, 109, 221, 25));
+        lineEdit_261 = new QLineEdit(page_5);
+        lineEdit_261->setObjectName(QStringLiteral("lineEdit_261"));
+        lineEdit_261->setGeometry(QRect(68, 450, 221, 25));
+        lineEdit_271 = new QLineEdit(page_5);
+        lineEdit_271->setObjectName(QStringLiteral("lineEdit_271"));
+        lineEdit_271->setGeometry(QRect(68, 543, 221, 25));
+        pushButton_23 = new QPushButton(page_5);
+        pushButton_23->setObjectName(QStringLiteral("pushButton_23"));
+        pushButton_23->setGeometry(QRect(9, 605, 280, 25));
+        lineEdit_28 = new QLineEdit(page_5);
+        lineEdit_28->setObjectName(QStringLiteral("lineEdit_28"));
+        lineEdit_28->setGeometry(QRect(68, 357, 221, 25));
+        lineEdit_29 = new QLineEdit(page_5);
+        lineEdit_29->setObjectName(QStringLiteral("lineEdit_29"));
+        lineEdit_29->setGeometry(QRect(58, 47, 231, 25));
+        lineEdit_30 = new QLineEdit(page_5);
+        lineEdit_30->setObjectName(QStringLiteral("lineEdit_30"));
+        lineEdit_30->setGeometry(QRect(58, 264, 231, 25));
+        lineEdit_31 = new QLineEdit(page_5);
+        lineEdit_31->setObjectName(QStringLiteral("lineEdit_31"));
+        lineEdit_31->setGeometry(QRect(78, 512, 211, 25));
+        lineEdit_32 = new QLineEdit(page_5);
+        lineEdit_32->setObjectName(QStringLiteral("lineEdit_32"));
+        lineEdit_32->setGeometry(QRect(88, 326, 201, 25));
+        lineEdit_33 = new QLineEdit(page_5);
+        lineEdit_33->setObjectName(QStringLiteral("lineEdit_33"));
+        lineEdit_33->setGeometry(QRect(148, 388, 141, 25));
+        lineEdit_34 = new QLineEdit(page_5);
+        lineEdit_34->setObjectName(QStringLiteral("lineEdit_34"));
+        lineEdit_34->setGeometry(QRect(68, 78, 221, 25));
+        lineEdit_35 = new QLineEdit(page_5);
+        lineEdit_35->setObjectName(QStringLiteral("lineEdit_35"));
+        lineEdit_35->setGeometry(QRect(98, 574, 191, 25));
+        lineEdit_36 = new QLineEdit(page_5);
+        lineEdit_36->setObjectName(QStringLiteral("lineEdit_36"));
+        lineEdit_36->setGeometry(QRect(58, 233, 231, 25));
+        lineEdit_37 = new QLineEdit(page_5);
+        lineEdit_37->setObjectName(QStringLiteral("lineEdit_37"));
+        lineEdit_37->setGeometry(QRect(148, 419, 141, 25));
+        lineEdit_38 = new QLineEdit(page_5);
+        lineEdit_38->setObjectName(QStringLiteral("lineEdit_38"));
+        lineEdit_38->setGeometry(QRect(48, 171, 241, 25));
+        lineEdit_39 = new QLineEdit(page_5);
+        lineEdit_39->setObjectName(QStringLiteral("lineEdit_39"));
+        lineEdit_39->setGeometry(QRect(44, 481, 245, 25));
+        lineEdit_40 = new QLineEdit(page_5);
+        lineEdit_40->setObjectName(QStringLiteral("lineEdit_40"));
+        lineEdit_40->setGeometry(QRect(68, 202, 221, 25));
+        lineEdit_41 = new QLineEdit(page_5);
+        lineEdit_41->setObjectName(QStringLiteral("lineEdit_41"));
+        lineEdit_41->setGeometry(QRect(58, 140, 231, 25));
+        label_13 = new QLabel(page_5);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setGeometry(QRect(9, 574, 91, 25));
+        label_14 = new QLabel(page_5);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setGeometry(QRect(9, 543, 61, 25));
+        label_15 = new QLabel(page_5);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(9, 512, 71, 25));
+        label_16 = new QLabel(page_5);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(9, 481, 31, 25));
+        label_17 = new QLabel(page_5);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setGeometry(QRect(9, 450, 51, 25));
+        label_18 = new QLabel(page_5);
+        label_18->setObjectName(QStringLiteral("label_18"));
+        label_18->setGeometry(QRect(9, 419, 141, 25));
+        label_19 = new QLabel(page_5);
+        label_19->setObjectName(QStringLiteral("label_19"));
+        label_19->setGeometry(QRect(9, 388, 131, 25));
+        label_20 = new QLabel(page_5);
+        label_20->setObjectName(QStringLiteral("label_20"));
+        label_20->setGeometry(QRect(9, 357, 61, 25));
+        label_21 = new QLabel(page_5);
+        label_21->setObjectName(QStringLiteral("label_21"));
+        label_21->setGeometry(QRect(9, 326, 81, 25));
+        label_22 = new QLabel(page_5);
+        label_22->setObjectName(QStringLiteral("label_22"));
+        label_22->setGeometry(QRect(9, 295, 101, 25));
+        label_23 = new QLabel(page_5);
+        label_23->setObjectName(QStringLiteral("label_23"));
+        label_23->setGeometry(QRect(9, 264, 51, 25));
+        label_24 = new QLabel(page_5);
+        label_24->setObjectName(QStringLiteral("label_24"));
+        label_24->setGeometry(QRect(9, 233, 51, 25));
+        label_25 = new QLabel(page_5);
+        label_25->setObjectName(QStringLiteral("label_25"));
+        label_25->setGeometry(QRect(9, 202, 51, 25));
+        label_26 = new QLabel(page_5);
+        label_26->setObjectName(QStringLiteral("label_26"));
+        label_26->setGeometry(QRect(9, 171, 51, 25));
+        label_27 = new QLabel(page_5);
+        label_27->setObjectName(QStringLiteral("label_27"));
+        label_27->setGeometry(QRect(9, 140, 51, 25));
+        label_28 = new QLabel(page_5);
+        label_28->setObjectName(QStringLiteral("label_28"));
+        label_28->setGeometry(QRect(9, 109, 61, 25));
+        label_29 = new QLabel(page_5);
+        label_29->setObjectName(QStringLiteral("label_29"));
+        label_29->setGeometry(QRect(9, 78, 61, 25));
+        label_30 = new QLabel(page_5);
+        label_30->setObjectName(QStringLiteral("label_30"));
+        label_30->setGeometry(QRect(9, 47, 51, 25));
+        stackedWidget->addWidget(page_5);
+        page_6 = new QWidget();
+        page_6->setObjectName(QStringLiteral("page_6"));
+        label_31 = new QLabel(page_6);
+        label_31->setObjectName(QStringLiteral("label_31"));
+        label_31->setGeometry(QRect(9, 9, 280, 249));
+        label_31->setFont(font3);
+        label_31->setAlignment(Qt::AlignCenter);
+        lineEdit_49 = new QLineEdit(page_6);
+        lineEdit_49->setObjectName(QStringLiteral("lineEdit_49"));
+        lineEdit_49->setGeometry(QRect(88, 264, 201, 25));
+        lineEdit_53 = new QLineEdit(page_6);
+        lineEdit_53->setObjectName(QStringLiteral("lineEdit_53"));
+        lineEdit_53->setGeometry(QRect(68, 512, 221, 25));
+        lineEdit_54 = new QLineEdit(page_6);
+        lineEdit_54->setObjectName(QStringLiteral("lineEdit_54"));
+        lineEdit_54->setGeometry(QRect(58, 481, 231, 25));
+        lineEdit_56 = new QLineEdit(page_6);
+        lineEdit_56->setObjectName(QStringLiteral("lineEdit_56"));
+        lineEdit_56->setGeometry(QRect(78, 543, 211, 25));
+        pushButton_25 = new QPushButton(page_6);
+        pushButton_25->setObjectName(QStringLiteral("pushButton_25"));
+        pushButton_25->setGeometry(QRect(9, 636, 280, 25));
+        lineEdit_58 = new QLineEdit(page_6);
+        lineEdit_58->setObjectName(QStringLiteral("lineEdit_58"));
+        lineEdit_58->setGeometry(QRect(88, 295, 201, 25));
+        lineEdit_52 = new QLineEdit(page_6);
+        lineEdit_52->setObjectName(QStringLiteral("lineEdit_52"));
+        lineEdit_52->setGeometry(QRect(78, 388, 211, 25));
+        lineEdit_48 = new QLineEdit(page_6);
+        lineEdit_48->setObjectName(QStringLiteral("lineEdit_48"));
+        lineEdit_48->setGeometry(QRect(68, 357, 221, 25));
+        lineEdit_51 = new QLineEdit(page_6);
+        lineEdit_51->setObjectName(QStringLiteral("lineEdit_51"));
+        lineEdit_51->setGeometry(QRect(138, 419, 151, 25));
+        lineEdit_55 = new QLineEdit(page_6);
+        lineEdit_55->setObjectName(QStringLiteral("lineEdit_55"));
+        lineEdit_55->setGeometry(QRect(98, 450, 191, 25));
+        lineEdit_50 = new QLineEdit(page_6);
+        lineEdit_50->setObjectName(QStringLiteral("lineEdit_50"));
+        lineEdit_50->setGeometry(QRect(68, 574, 221, 25));
+        pushButton_24 = new QPushButton(page_6);
+        pushButton_24->setObjectName(QStringLiteral("pushButton_24"));
+        pushButton_24->setGeometry(QRect(9, 605, 280, 25));
+        lineEdit_57 = new QLineEdit(page_6);
+        lineEdit_57->setObjectName(QStringLiteral("lineEdit_57"));
+        lineEdit_57->setGeometry(QRect(58, 326, 231, 25));
+        label_32 = new QLabel(page_6);
+        label_32->setObjectName(QStringLiteral("label_32"));
+        label_32->setGeometry(QRect(9, 264, 81, 25));
+        label_33 = new QLabel(page_6);
+        label_33->setObjectName(QStringLiteral("label_33"));
+        label_33->setGeometry(QRect(9, 295, 81, 25));
+        label_34 = new QLabel(page_6);
+        label_34->setObjectName(QStringLiteral("label_34"));
+        label_34->setGeometry(QRect(9, 326, 41, 25));
+        label_35 = new QLabel(page_6);
+        label_35->setObjectName(QStringLiteral("label_35"));
+        label_35->setGeometry(QRect(9, 357, 61, 25));
+        label_36 = new QLabel(page_6);
+        label_36->setObjectName(QStringLiteral("label_36"));
+        label_36->setGeometry(QRect(9, 388, 61, 25));
+        label_37 = new QLabel(page_6);
+        label_37->setObjectName(QStringLiteral("label_37"));
+        label_37->setGeometry(QRect(9, 419, 121, 25));
+        label_38 = new QLabel(page_6);
+        label_38->setObjectName(QStringLiteral("label_38"));
+        label_38->setGeometry(QRect(9, 450, 91, 25));
+        label_39 = new QLabel(page_6);
+        label_39->setObjectName(QStringLiteral("label_39"));
+        label_39->setGeometry(QRect(9, 481, 51, 25));
+        label_40 = new QLabel(page_6);
+        label_40->setObjectName(QStringLiteral("label_40"));
+        label_40->setGeometry(QRect(9, 512, 61, 25));
+        label_41 = new QLabel(page_6);
+        label_41->setObjectName(QStringLiteral("label_41"));
+        label_41->setGeometry(QRect(9, 543, 61, 25));
+        label_42 = new QLabel(page_6);
+        label_42->setObjectName(QStringLiteral("label_42"));
+        label_42->setGeometry(QRect(9, 574, 61, 25));
+        stackedWidget->addWidget(page_6);
+        page_7 = new QWidget();
+        page_7->setObjectName(QStringLiteral("page_7"));
+        verticalLayout_13 = new QVBoxLayout(page_7);
+        verticalLayout_13->setSpacing(6);
+        verticalLayout_13->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_13->setObjectName(QStringLiteral("verticalLayout_13"));
+        label_43 = new QLabel(page_7);
+        label_43->setObjectName(QStringLiteral("label_43"));
+        label_43->setFont(font3);
+        label_43->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout_2->addWidget(stackedWidget);
+        verticalLayout_13->addWidget(label_43);
+
+        listWidget_6 = new QListWidget(page_7);
+        listWidget_6->setObjectName(QStringLiteral("listWidget_6"));
+
+        verticalLayout_13->addWidget(listWidget_6);
+
+        pushButton_18 = new QPushButton(page_7);
+        pushButton_18->setObjectName(QStringLiteral("pushButton_18"));
+
+        verticalLayout_13->addWidget(pushButton_18);
+
+        stackedWidget->addWidget(page_7);
+        page_9 = new QWidget();
+        page_9->setObjectName(QStringLiteral("page_9"));
+        verticalLayout_14 = new QVBoxLayout(page_9);
+        verticalLayout_14->setSpacing(6);
+        verticalLayout_14->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_14->setObjectName(QStringLiteral("verticalLayout_14"));
+        label_44 = new QLabel(page_9);
+        label_44->setObjectName(QStringLiteral("label_44"));
+        label_44->setFont(font3);
+        label_44->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_14->addWidget(label_44);
+
+        listWidget_7 = new QListWidget(page_9);
+        listWidget_7->setObjectName(QStringLiteral("listWidget_7"));
+
+        verticalLayout_14->addWidget(listWidget_7);
+
+        pushButton_8 = new QPushButton(page_9);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+
+        verticalLayout_14->addWidget(pushButton_8);
+
+        pushButton_10 = new QPushButton(page_9);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+
+        verticalLayout_14->addWidget(pushButton_10);
+
+        stackedWidget->addWidget(page_9);
+
+        verticalLayout_3->addWidget(stackedWidget);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -646,7 +1014,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(13);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -663,6 +1031,7 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "Hello\n"
 "Client", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("MainWindow", "View Animal", Q_NULLPTR));
+        pushButton_26->setText(QApplication::translate("MainWindow", "Edit Profile", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
         label_7->setText(QApplication::translate("MainWindow", "Animal List", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
@@ -710,7 +1079,6 @@ public:
         pushButton_17->setText(QApplication::translate("MainWindow", "Add Client", Q_NULLPTR));
         pushButton_16->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
         label_10->setText(QApplication::translate("MainWindow", "Client Profile", Q_NULLPTR));
-        pushButton_18->setText(QApplication::translate("MainWindow", "Edit Client", Q_NULLPTR));
         pushButton_19->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
         label_11->setText(QApplication::translate("MainWindow", "Add Client", Q_NULLPTR));
         lineEdit_9->setText(QApplication::translate("MainWindow", "First Name", Q_NULLPTR));
@@ -718,8 +1086,83 @@ public:
         lineEdit_11->setText(QApplication::translate("MainWindow", "Email", Q_NULLPTR));
         lineEdit_12->setText(QApplication::translate("MainWindow", "Address", Q_NULLPTR));
         lineEdit_13->setText(QApplication::translate("MainWindow", "Phone #", Q_NULLPTR));
+        lineEdit_42->setText(QApplication::translate("MainWindow", "# Kids", Q_NULLPTR));
+        lineEdit_43->setText(QApplication::translate("MainWindow", "Leisure Time", Q_NULLPTR));
+        lineEdit_44->setText(QApplication::translate("MainWindow", "Salary", Q_NULLPTR));
+        lineEdit_45->setText(QApplication::translate("MainWindow", "Housing", Q_NULLPTR));
+        lineEdit_46->setText(QApplication::translate("MainWindow", "Allergies", Q_NULLPTR));
+        lineEdit_47->setText(QApplication::translate("MainWindow", "Lifestyle", Q_NULLPTR));
         pushButton_21->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
         pushButton_20->setText(QApplication::translate("MainWindow", "Cancel", Q_NULLPTR));
+        lineEdit_241->setText(QString());
+        label_121->setText(QApplication::translate("MainWindow", "Edit Animal", Q_NULLPTR));
+        pushButton_22->setText(QApplication::translate("MainWindow", "Cancel", Q_NULLPTR));
+        lineEdit_251->setText(QString());
+        lineEdit_261->setText(QString());
+        lineEdit_271->setText(QString());
+        pushButton_23->setText(QApplication::translate("MainWindow", "Save Edit", Q_NULLPTR));
+        lineEdit_28->setText(QString());
+        lineEdit_29->setText(QString());
+        lineEdit_30->setText(QString());
+        lineEdit_31->setText(QString());
+        lineEdit_32->setText(QString());
+        lineEdit_33->setText(QString());
+        lineEdit_34->setText(QString());
+        lineEdit_35->setText(QString());
+        lineEdit_36->setText(QString());
+        lineEdit_37->setText(QString());
+        lineEdit_38->setText(QString());
+        lineEdit_39->setText(QString());
+        lineEdit_40->setText(QString());
+        lineEdit_41->setText(QString());
+        label_13->setText(QApplication::translate("MainWindow", "SocialNeeds:", Q_NULLPTR));
+        label_14->setText(QApplication::translate("MainWindow", "Lifespan:", Q_NULLPTR));
+        label_15->setText(QApplication::translate("MainWindow", "Loudness:", Q_NULLPTR));
+        label_16->setText(QApplication::translate("MainWindow", "Diet:", Q_NULLPTR));
+        label_17->setText(QApplication::translate("MainWindow", "Loyalty:", Q_NULLPTR));
+        label_18->setText(QApplication::translate("MainWindow", "TimeOfMaintenance:", Q_NULLPTR));
+        label_19->setText(QApplication::translate("MainWindow", "CostOfMaintenance:", Q_NULLPTR));
+        label_20->setText(QApplication::translate("MainWindow", "Training:", Q_NULLPTR));
+        label_21->setText(QApplication::translate("MainWindow", "Obedience:", Q_NULLPTR));
+        label_22->setText(QApplication::translate("MainWindow", "Independence:", Q_NULLPTR));
+        label_23->setText(QApplication::translate("MainWindow", "Colour:", Q_NULLPTR));
+        label_24->setText(QApplication::translate("MainWindow", "Height:", Q_NULLPTR));
+        label_25->setText(QApplication::translate("MainWindow", "Weight:", Q_NULLPTR));
+        label_26->setText(QApplication::translate("MainWindow", "Age:", Q_NULLPTR));
+        label_27->setText(QApplication::translate("MainWindow", "Breed:", Q_NULLPTR));
+        label_28->setText(QApplication::translate("MainWindow", "Species:", Q_NULLPTR));
+        label_29->setText(QApplication::translate("MainWindow", "Gender:", Q_NULLPTR));
+        label_30->setText(QApplication::translate("MainWindow", "Name:", Q_NULLPTR));
+        label_31->setText(QApplication::translate("MainWindow", "Edit Client", Q_NULLPTR));
+        lineEdit_49->setText(QString());
+        lineEdit_53->setText(QString());
+        lineEdit_54->setText(QString());
+        lineEdit_56->setText(QString());
+        pushButton_25->setText(QApplication::translate("MainWindow", "Cancel", Q_NULLPTR));
+        lineEdit_58->setText(QString());
+        lineEdit_52->setText(QString());
+        lineEdit_48->setText(QString());
+        lineEdit_51->setText(QString());
+        lineEdit_55->setText(QString());
+        lineEdit_50->setText(QString());
+        pushButton_24->setText(QApplication::translate("MainWindow", "Save Edit", Q_NULLPTR));
+        lineEdit_57->setText(QString());
+        label_32->setText(QApplication::translate("MainWindow", "First Name:", Q_NULLPTR));
+        label_33->setText(QApplication::translate("MainWindow", "Last Name:", Q_NULLPTR));
+        label_34->setText(QApplication::translate("MainWindow", "Email:", Q_NULLPTR));
+        label_35->setText(QApplication::translate("MainWindow", "Address:", Q_NULLPTR));
+        label_36->setText(QApplication::translate("MainWindow", "Phone #:", Q_NULLPTR));
+        label_37->setText(QApplication::translate("MainWindow", "# Dependent Kids:", Q_NULLPTR));
+        label_38->setText(QApplication::translate("MainWindow", "Leisure Time:", Q_NULLPTR));
+        label_39->setText(QApplication::translate("MainWindow", "Salary:", Q_NULLPTR));
+        label_40->setText(QApplication::translate("MainWindow", "Housing:", Q_NULLPTR));
+        label_41->setText(QApplication::translate("MainWindow", "Allergies:", Q_NULLPTR));
+        label_42->setText(QApplication::translate("MainWindow", "Lifestyle:", Q_NULLPTR));
+        label_43->setText(QApplication::translate("MainWindow", "Who Are You?", Q_NULLPTR));
+        pushButton_18->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
+        label_44->setText(QApplication::translate("MainWindow", "Is This You?", Q_NULLPTR));
+        pushButton_8->setText(QApplication::translate("MainWindow", "Yes", Q_NULLPTR));
+        pushButton_10->setText(QApplication::translate("MainWindow", "No", Q_NULLPTR));
         menucuACS->setTitle(QApplication::translate("MainWindow", "Menu", Q_NULLPTR));
     } // retranslateUi
 
