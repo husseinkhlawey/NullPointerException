@@ -69,9 +69,23 @@ private slots:
 
     void on_APS_EditProfile_clicked();
 
-    void on_EAP_save_clicked();
+    void on_pushButton_22_clicked();
 
-    void on_EAP_cancel_clicked();
+    void on_pushButton_23_clicked();
+
+    void on_pushButton_18_clicked();
+
+    void on_listWidget_6_itemClicked(QListWidgetItem *item);
+
+    void on_pushButton_24_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_26_clicked();
+
+    void on_pushButton_25_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -79,6 +93,7 @@ private:
     QSqlQuery read_client_query;
 
     //for getting user input
+    int inpId;
     QString inpName;
     int inpGender;
     QString inpSpecies;
@@ -103,6 +118,12 @@ private:
     QString inpEmail;
     QString inpAddress;
     QString inpPhone;
+    QString inpKids;
+    QString inplTime;
+    QString inpSalary;
+    QString inpHouse;
+    QString inpAllergies;
+    QString inpLifestyle;
 };
 
 #endif // MAINWINDOW_H
