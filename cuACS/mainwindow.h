@@ -57,8 +57,6 @@ private slots:
 
     void on_pushButton_20_clicked();
 
-    void on_listWidget_activated(const QModelIndex &index);
-
     void on_pushButton_21_clicked();
 
     void on_listWidget_4_itemClicked(QListWidgetItem *item);
