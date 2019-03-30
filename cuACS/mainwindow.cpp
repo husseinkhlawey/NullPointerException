@@ -10,8 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->setCurrentIndex(0);
 
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
-    myDatabase.setDatabaseName(cuACS_MAIN_DIR"/cuACS_Database.sqlite");
-    //QDir::currentPath() can use if db wont open
+    myDatabase.setDatabaseName(CUACS_ROOT_DIR"/cuACS_Database.sqlite");
 
     if(!myDatabase.open()){
             qDebug() << "Can't open database";
@@ -23,8 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
     buildDatabase();
     read_animal_query = readAnimalTable();
     read_client_query = readClientTable();
-
-    qDebug() << "DB Path: " << myDatabase.databaseName();
 }
 
 MainWindow::~MainWindow()
@@ -33,7 +30,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_pushButton_Client_clicked()
-{
+{    
     ui->stackedWidget->setCurrentIndex(13);
 
     //list the clients
@@ -248,6 +245,9 @@ void MainWindow::on_pushButton_21_clicked()
     }
     qDebug() << "End of data";
 }
+
+//for future use.
+void MainWindow::on_listWidget_activated(const QModelIndex &index){}
 
 void MainWindow::on_listWidget_4_itemClicked(QListWidgetItem *item)
 {

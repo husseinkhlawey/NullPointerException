@@ -334,47 +334,6 @@ Staff</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="editAnimalProfile">
-       <layout class="QVBoxLayout" name="verticalLayout_12">
-        <item>
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Edit Profile&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_24"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_25"/>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_26">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_27"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="EAP_save">
-          <property name="text">
-           <string>Save</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="EAP_cancel">
-          <property name="text">
-           <string>Cancel</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
       <widget class="QWidget" name="page_11">
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
