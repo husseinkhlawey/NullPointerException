@@ -5,6 +5,8 @@
 #include <QtSql>
 #include <QObject>
 #include <QListWidgetItem>
+#include "staff.h"
+#include "client.h"
 
 namespace Ui {
 class MainWindow;
@@ -89,6 +91,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    Staff staff;
+    Client client;
+
     QSqlQuery read_animal_query;
     QSqlQuery read_client_query;
 

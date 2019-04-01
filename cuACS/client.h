@@ -11,6 +11,7 @@ class Client{
     public:
         Client();
         Client(int id, QString fname, QString lname, QString email, QString address, QString phone);
+        ~Client();
 
         int getID();
         QString getFname();

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "sqlfunctions.h"
+#include "staff.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -9,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
 
+    //put in DB manager
     QSqlDatabase myDatabase = QSqlDatabase::addDatabase("QSQLITE");
     myDatabase.setDatabaseName(CUACS_ROOT_DIR"/cuACS_Database.sqlite");
 
@@ -31,7 +33,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_Client_clicked()
 {    
-    ui->stackedWidget->setCurrentIndex(13);
+    //setup client object
+    client = Client();
 
     //list the clients
     ui->listWidget_6->clear();
@@ -41,6 +44,7 @@ void MainWindow::on_pushButton_Client_clicked()
         ui->listWidget_6->addItem(read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString());
     }
     qDebug() << "End of data";
+    ui->stackedWidget->setCurrentIndex(13);
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -55,6 +59,8 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_Staff_clicked()
 {
+    //setup staff object
+    staff = Staff();
     ui->stackedWidget->setCurrentIndex(4);
 }
 

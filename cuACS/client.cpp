@@ -22,6 +22,8 @@ Client::Client(int id, QString fname, QString lname , QString email, QString add
 
 }
 
+Client::~Client() {}
+
 int Client::getID(){
     return id;
 }
