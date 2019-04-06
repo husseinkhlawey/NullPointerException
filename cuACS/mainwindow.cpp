@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "sqlfunctions.h"
 #include "staff.h"
+#include "linkedlist.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -24,6 +25,15 @@ MainWindow::MainWindow(QWidget *parent) :
     buildDatabase();
     read_animal_query = readAnimalTable();
     read_client_query = readClientTable();
+
+    // make objects and list
+    //LinkedList<Animal> animals = new LinkedList();
+    //Animal *animal = new Animal();
+
+    //animals += animal; 
+
+
+
 }
 
 MainWindow::~MainWindow()
@@ -32,7 +42,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_pushButton_Client_clicked()
-{    
+{
     //setup client object
     client = Client();
 

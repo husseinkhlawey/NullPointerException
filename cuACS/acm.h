@@ -18,7 +18,7 @@ public:
 private:
     LinkedList<Animal> animals;
     LinkedList<Client> clients;
-    LinkedList<Match> matches;
+    LinkedList<Match>  matches;
 };
 
 #endif // ACM_H
