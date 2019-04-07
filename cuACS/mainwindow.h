@@ -89,7 +89,7 @@ private slots:
 
     void on_pushButton_25_clicked();
 
-    void on_comboBox_2_activated(int index);
+    //void on_comboBox_2_activated(int index);
 
     void on_comboBox_activated(int index);
 

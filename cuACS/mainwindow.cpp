@@ -645,8 +645,8 @@ void MainWindow::on_pushButton_25_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_comboBox_2_activated(int index)
-{
+//void MainWindow::on_comboBox_2_activated(int index)
+//{
 //    ui->comboBox_2->clear();
 //    breedList = {{"select item"},
 //                 {"select item", "Persian", "Maine Coon", "Siamese", "American Shorthair", "Abyssinian", "Ragdoll", "Burmese", "Himalayan", "Sphynx"},
@@ -662,7 +662,7 @@ void MainWindow::on_comboBox_2_activated(int index)
 //    for (int j = 0; j < breedList[index].length(); j++ ){
 //       ui->comboBox_2->addItem(breedList[index][j]);
 //    }
-}
+//}
 
 void MainWindow::on_comboBox_activated(int index)
 {
