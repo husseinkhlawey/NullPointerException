@@ -32,7 +32,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::on_pushButton_Client_clicked()
-{    
+{
     //setup client object
     client = Client();
 
@@ -69,8 +69,60 @@ void MainWindow::on_pushButton_7_clicked()
     ui->stackedWidget->setCurrentIndex(4);
 }
 
-void MainWindow::on_pushButton_9_clicked()
+void MainWindow::on_pushButton_9_clicked()//go to add animal page from animal list
 {
+    ui->comboBox->clear();
+    ui->comboBox_2->clear();
+    ui->comboBox_3->clear();
+    ui->spinBox->setValue(0);
+    ui->comboBox_4->clear();
+    ui->comboBox_5->clear();
+    ui->comboBox_6->clear();
+    ui->comboBox_7->clear();
+    ui->comboBox_8->clear();
+    ui->comboBox_9->clear();
+    ui->comboBox_10->clear();
+    ui->spinBox_2->setValue(0);
+    ui->lineEdit->clear();
+    ui->lineEdit_6->clear();
+    ui->lineEdit_7->clear();
+    ui->lineEdit_17->clear();
+    ui->lineEdit_18->clear();
+    ui->lineEdit_21->clear();
+
+    speciesList = {"select species", "Cat", "Dog", "Fish", "Bird", "Horse", "Turtle", "Lizard", "Rabbit", "Hamster"};
+    genderList = {"select gender", "Male", "Female"};
+    colourList = {"select colour", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "White", "Black", "Grey", "Pink", "Multi-Coloured"};
+    dietList = {"select diet", "1-2 meals/day", "2-3 meals/day", "3-4 meals/day", "4-5 meals/day", "5-6 meals/day"};
+    hmlList = {"High", "Medium", "Low"};
+
+    ui->comboBox_2->addItem("select breed");
+    ui->comboBox_5->addItem("select independence");
+    ui->comboBox_6->addItem("select obedience");
+    ui->comboBox_7->addItem("select training");
+    ui->comboBox_8->addItem("select loyalty");
+    ui->comboBox_10->addItem("select loudness");
+
+    for (int i = 0; i < speciesList.length(); i++ ){
+       ui->comboBox->addItem(speciesList[i]);
+    }
+    for (int i = 0; i < genderList.length(); i++ ){
+       ui->comboBox_3->addItem(genderList[i]);
+    }
+    for (int i = 0; i < colourList.length(); i++ ){
+       ui->comboBox_4->addItem(colourList[i]);
+    }
+    for (int i = 0; i < hmlList.length(); i++ ){
+        ui->comboBox_5->addItem(hmlList[i]);
+        ui->comboBox_6->addItem(hmlList[i]);
+        ui->comboBox_7->addItem(hmlList[i]);
+        ui->comboBox_8->addItem(hmlList[i]);
+        ui->comboBox_10->addItem(hmlList[i]);
+    }
+    for (int i = 0; i < dietList.length(); i++ ){
+       ui->comboBox_9->addItem(dietList[i]);
+    }
+
     ui->stackedWidget->setCurrentIndex(7);
 }
 
@@ -88,8 +140,60 @@ void MainWindow::on_pushButton_5_clicked()
     qDebug() << "End of data";
 }
 
-void MainWindow::on_pushButton_6_clicked()
+void MainWindow::on_pushButton_6_clicked()//go to staff page
 {
+    ui->comboBox->clear();
+    ui->comboBox_2->clear();
+    ui->comboBox_3->clear();
+    ui->spinBox->setValue(0);
+    ui->comboBox_4->clear();
+    ui->comboBox_5->clear();
+    ui->comboBox_6->clear();
+    ui->comboBox_7->clear();
+    ui->comboBox_8->clear();
+    ui->comboBox_9->clear();
+    ui->comboBox_10->clear();
+    ui->spinBox_2->setValue(0);
+    ui->lineEdit->clear();
+    ui->lineEdit_6->clear();
+    ui->lineEdit_7->clear();
+    ui->lineEdit_17->clear();
+    ui->lineEdit_18->clear();
+    ui->lineEdit_21->clear();
+
+    speciesList = {"select species", "Cat", "Dog", "Fish", "Bird", "Horse", "Turtle", "Lizard", "Rabbit", "Hamster"};
+    genderList = {"select gender", "Male", "Female"};
+    colourList = {"select colour", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "White", "Black", "Grey", "Pink", "Multi-Coloured"};
+    dietList = {"select diet", "1-2 meals/day", "2-3 meals/day", "3-4 meals/day", "4-5 meals/day", "5-6 meals/day"};
+    hmlList = {"High", "Medium", "Low"};
+
+    ui->comboBox_2->addItem("select breed");
+    ui->comboBox_5->addItem("select independence");
+    ui->comboBox_6->addItem("select obedience");
+    ui->comboBox_7->addItem("select training");
+    ui->comboBox_8->addItem("select loyalty");
+    ui->comboBox_10->addItem("select loudness");
+
+    for (int i = 0; i < speciesList.length(); i++ ){
+       ui->comboBox->addItem(speciesList[i]);
+    }
+    for (int i = 0; i < genderList.length(); i++ ){
+       ui->comboBox_3->addItem(genderList[i]);
+    }
+    for (int i = 0; i < colourList.length(); i++ ){
+       ui->comboBox_4->addItem(colourList[i]);
+    }
+    for (int i = 0; i < hmlList.length(); i++ ){
+        ui->comboBox_5->addItem(hmlList[i]);
+        ui->comboBox_6->addItem(hmlList[i]);
+        ui->comboBox_7->addItem(hmlList[i]);
+        ui->comboBox_8->addItem(hmlList[i]);
+        ui->comboBox_10->addItem(hmlList[i]);
+    }
+    for (int i = 0; i < dietList.length(); i++ ){
+       ui->comboBox_9->addItem(dietList[i]);
+    }
+
     ui->stackedWidget->setCurrentIndex(7);
 }
 
@@ -107,26 +211,32 @@ void MainWindow::on_pushButton_12_clicked()
     qDebug() << "End of data";
 }
 
-void MainWindow::on_pushButton_11_clicked()
+void MainWindow::on_pushButton_11_clicked()//save Animal
 {
     //refresh animal list
     inpName = ui->lineEdit->text();
-    inpGender = ui->lineEdit_2->text().toInt();
-    inpSpecies = ui->lineEdit_3->text();
-    inpBreed = ui->lineEdit_4->text();
-    inpAge = ui->lineEdit_5->text().toInt();
+
+    if (ui->comboBox_3->currentText() == "Male"){
+        inpGender = 1;
+    }
+    else{
+        inpGender = 0;
+    }
+    inpSpecies = ui->comboBox->currentText();
+    inpBreed = ui->comboBox_2->currentText();
+    inpAge = ui->spinBox->text().toInt();
     inpWeight = ui->lineEdit_6->text().toFloat();
     inpHeight = ui->lineEdit_7->text().toFloat();
-    inpColour = ui->lineEdit_8->text();
-    inpindependence = ui->lineEdit_14->text();
-    inpobedience = ui->lineEdit_15->text();
-    inptraining = ui->lineEdit_16->text();
+    inpColour = ui->comboBox_4->currentText();
+    inpindependence = ui->comboBox_5->currentText();
+    inpobedience = ui->comboBox_6->currentText();
+    inptraining = ui->comboBox_7->currentText();
     inpcostOfMaintenance = ui->lineEdit_17->text().toInt();
     inptimeOfMaintenance = ui->lineEdit_18->text().toInt();
-    inployalty = ui->lineEdit_19->text();
-    inpdiet = ui->lineEdit_20->text();
-    inpLoudness = ui->lineEdit_22->text();
-    inplifespan = ui->lineEdit_23->text().toInt();
+    inployalty = ui->comboBox_8->currentText();
+    inpdiet = ui->comboBox_9->currentText();
+    inpLoudness = ui->comboBox_10->currentText();
+    inplifespan = ui->spinBox_2->text().toInt();
     inpsocialNeeds = ui->lineEdit_21->text();
 
     //generate animal id
@@ -187,13 +297,65 @@ void MainWindow::on_pushButton_14_clicked()//view client (staff side) listwidget
     qDebug() << "End of data";
 }
 
-void MainWindow::on_pushButton_15_clicked()
+void MainWindow::on_pushButton_15_clicked()//go to add client page from staff pagee
 {
+    ui->lineEdit_9->clear();
+    ui->lineEdit_10->clear();
+    ui->lineEdit_11->clear();
+    ui->lineEdit_12->clear();
+    ui->lineEdit_13->clear();
+    ui->spinBox_3->setValue(0);
+    ui->lineEdit_43->clear();
+    ui->lineEdit_44->clear();
+    ui->comboBox_11->clear();
+    ui->comboBox_13->clear();
+    ui->comboBox_12->clear();
+
+    houseList = {"select house type", "Apartment", "Bungalow", "Townhouse", "Semi-Detached", "Detached", "Mansion"};
+    allergiesList = {"select allergies", "None", "Fur"};
+    lifestyleList = {"select lifestyle", "Extremely inactive", "Sedentary", "Moderately active", "Vigorously active", "Extremely active"};
+
+    for(int i = 0; i < houseList.length(); i++){
+        ui->comboBox_11->addItem(houseList[i]);
+    }
+    for(int i = 0; i < allergiesList.length(); i++){
+        ui->comboBox_13->addItem(allergiesList[i]);
+    }
+    for(int i = 0; i < lifestyleList.length(); i++){
+        ui->comboBox_12->addItem(lifestyleList[i]);
+    }
+
     ui->stackedWidget->setCurrentIndex(10);
 }
 
 void MainWindow::on_pushButton_17_clicked()
 {
+    ui->lineEdit_9->clear();
+    ui->lineEdit_10->clear();
+    ui->lineEdit_11->clear();
+    ui->lineEdit_12->clear();
+    ui->lineEdit_13->clear();
+    ui->spinBox_3->setValue(0);
+    ui->lineEdit_43->clear();
+    ui->lineEdit_44->clear();
+    ui->comboBox_11->clear();
+    ui->comboBox_13->clear();
+    ui->comboBox_12->clear();
+
+    houseList = {"select house type", "Apartment", "Bungalow", "Townhouse", "Semi-Detached", "Detached", "Mansion"};
+    allergiesList = {"select allergies", "None", "Fur"};
+    lifestyleList = {"select lifestyle", "Extremely inactive", "Sedentary", "Moderately active", "Vigorously active", "Extremely active"};
+
+    for(int i = 0; i < houseList.length(); i++){
+        ui->comboBox_11->addItem(houseList[i]);
+    }
+    for(int i = 0; i < allergiesList.length(); i++){
+        ui->comboBox_13->addItem(allergiesList[i]);
+    }
+    for(int i = 0; i < lifestyleList.length(); i++){
+        ui->comboBox_12->addItem(lifestyleList[i]);
+    }
+
     ui->stackedWidget->setCurrentIndex(10);
 }
 
@@ -209,7 +371,7 @@ void MainWindow::on_pushButton_19_clicked()
 
 void MainWindow::on_pushButton_20_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(8);
+    ui->stackedWidget->setCurrentIndex(4);
 
     //refresh animal list
     ui->listWidget_4->clear();
@@ -228,12 +390,12 @@ void MainWindow::on_pushButton_21_clicked()
     inpEmail = ui->lineEdit_11->text();
     inpAddress = ui->lineEdit_12->text();
     inpPhone = ui->lineEdit_13->text();
-    inpKids = ui->lineEdit_42->text();
+    inpKids = ui->spinBox_3->text();
     inplTime = ui->lineEdit_43->text();
     inpSalary = ui->lineEdit_44->text();
-    inpHouse = ui->lineEdit_45->text();
-    inpAllergies = ui->lineEdit_46->text();
-    inpLifestyle = ui->lineEdit_47->text();
+    inpHouse = ui->comboBox_11->currentText();
+    inpAllergies = ui->comboBox_13->currentText();
+    inpLifestyle = ui->comboBox_12->currentText();
 
     //generate animal id
     int t = getNumClients();
@@ -481,4 +643,42 @@ void MainWindow::on_pushButton_26_clicked()
 void MainWindow::on_pushButton_25_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_comboBox_2_activated(int index)
+{
+//    ui->comboBox_2->clear();
+//    breedList = {{"select item"},
+//                 {"select item", "Persian", "Maine Coon", "Siamese", "American Shorthair", "Abyssinian", "Ragdoll", "Burmese", "Himalayan", "Sphynx"},
+//                 {"select item", "Bulldog", "Poodle", "German Shepherd", "Beagle", "Chihuahua", "Greyhound", "Golden Retriever", "Rottweiler", "Pomeranian"},
+//                 {"select item", "Neon Tetra", "Guppies", "Oscar", "Mollies", "Zebra Danios", "Platies", "Cherry Barb", "Goldfish", "Swordtail"},
+//                 {"select item", "Parrot", "Cockatiel", "Budgerigar", "Caique", "Conure", "Finch", "Canary"},
+//                 {"select item", "Arabian", "Quarter", "Thoroughbred", "Tennessee Walker", "Morgan", "Paint", "Appaloosa", "Miniature Horse", "Warmblood"},
+//                 {"select item", "Red-Eared Slider", "Eastern Box", "Western Painted", "Map", "Wood"},
+//                 {"select item", "Leopard Gecko", "Red Ackie", "Bearded Dragon", "Crested Gecko"},
+//                 {"select item", "Mini Rex", "Holland Lop", "Dutch Lop", "Dwarf Hotot", "Mini Lop", "Mini Satin", "Netherland Dwarf", "Polish", "Lionhead"},
+//                 {"select item", "Syrian", "Dwarf", "Chinese"}};
+
+//    for (int j = 0; j < breedList[index].length(); j++ ){
+//       ui->comboBox_2->addItem(breedList[index][j]);
+//    }
+}
+
+void MainWindow::on_comboBox_activated(int index)
+{
+    ui->comboBox_2->clear();
+    breedList = {{"select breed"},
+                 {"select breed", "Persian", "Maine Coon", "Siamese", "American Shorthair", "Abyssinian", "Ragdoll", "Burmese", "Himalayan", "Sphynx"},
+                 {"select breed", "Bulldog", "Poodle", "German Shepherd", "Beagle", "Chihuahua", "Greyhound", "Golden Retriever", "Rottweiler", "Pomeranian"},
+                 {"select breed", "Neon Tetra", "Guppies", "Oscar", "Mollies", "Zebra Danios", "Platies", "Cherry Barb", "Goldfish", "Swordtail"},
+                 {"select breed", "Parrot", "Cockatiel", "Budgerigar", "Caique", "Conure", "Finch", "Canary"},
+                 {"select breed", "Arabian", "Quarter", "Thoroughbred", "Tennessee Walker", "Morgan", "Paint", "Appaloosa", "Miniature Horse", "Warmblood"},
+                 {"select breed", "Red-Eared Slider", "Eastern Box", "Western Painted", "Map", "Wood"},
+                 {"select breed", "Leopard Gecko", "Red Ackie", "Bearded Dragon", "Crested Gecko"},
+                 {"select breed", "Mini Rex", "Holland Lop", "Dutch Lop", "Dwarf Hotot", "Mini Lop", "Mini Satin", "Netherland Dwarf", "Polish", "Lionhead"},
+                 {"select breed", "Syrian", "Dwarf", "Chinese"}};
+
+    for (int j = 0; j < breedList[index].length(); j++ ){
+       ui->comboBox_2->addItem(breedList[index][j]);
+    }
 }

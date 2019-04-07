@@ -89,6 +89,10 @@ private slots:
 
     void on_pushButton_25_clicked();
 
+    void on_comboBox_2_activated(int index);
+
+    void on_comboBox_activated(int index);
+
 private:
     Ui::MainWindow *ui;
 
@@ -130,6 +134,16 @@ private:
     QString inpHouse;
     QString inpAllergies;
     QString inpLifestyle;
+
+    QList<QString> speciesList;
+    QList<QList<QString>> breedList;
+    QList<QString> genderList;
+    QList<QString> colourList;
+    QList<QString> dietList;
+    QList<QString> hmlList;
+    QList<QString> houseList;
+    QList<QString> allergiesList;
+    QList<QString> lifestyleList;
 };
 
 #endif // MAINWINDOW_H
