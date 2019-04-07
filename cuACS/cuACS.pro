@@ -29,13 +29,19 @@ SOURCES += \
         mainwindow.cpp \
     animal.cpp \
     sqlfunctions.cpp \
-    client.cpp
+    client.cpp \
+    staff.cpp \
+    acm.cpp
 
 HEADERS += \
         mainwindow.h \
     animal.h \
     sqlfunctions.h \
-    client.h
+    client.h \
+    staff.h \
+    acm.h \
+    linkedlist.h \
+    match.h
 
 FORMS += \
         mainwindow.ui

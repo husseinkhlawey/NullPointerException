@@ -10,14 +10,17 @@ class Client{
 
     public:
         Client();
-        Client(QString fname, QString lname, QString email, QString address, QString phone);
+        Client(int id, QString fname, QString lname, QString email, QString address, QString phone);
+        ~Client();
 
+        int getID();
         QString getFname();
         QString getLname();
         QString getEmail();
         QString getAddress();
         QString getPhone();
 
+        void setID(int);
         void setFname(QString fname);
         void setLname(QString lname);
         void setEmail(QString email);
@@ -25,6 +28,7 @@ class Client{
         void setPhone(QString phone);
 
     protected:
+        int id;
         QString fname;
         QString lname;
         QString email;

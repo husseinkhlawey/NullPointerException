@@ -2,6 +2,7 @@
 
 Client::Client(){
 
+    this->id = 99;
     this->fname = "first name";
     this->lname = "last name";
     this->email = "email";
@@ -10,8 +11,9 @@ Client::Client(){
 
 }
 
-Client::Client(QString fname, QString lname , QString email, QString address, QString phone){
+Client::Client(int id, QString fname, QString lname , QString email, QString address, QString phone){
 
+    this->id = id;
     this->fname = fname;
     this->lname = lname;
     this->email = email;
@@ -20,6 +22,11 @@ Client::Client(QString fname, QString lname , QString email, QString address, QS
 
 }
 
+Client::~Client() {}
+
+int Client::getID(){
+    return id;
+}
 QString Client::getFname(){
     return fname;
 }
@@ -36,6 +43,9 @@ QString Client::getPhone(){
     return phone;
 }
 
+void Client::setID(int id){
+    this->id = id;
+}
 void Client::setFname(QString fname){
     this->fname = fname;
 }
