@@ -13,6 +13,9 @@ class Client{
         Client(int id, QString fname, QString lname, QString email, QString address, QString phone, QString numKids, QString leisure, QString salary, QString housing, QString allergies, QString lifestyle);
         ~Client();
 
+        bool operator < (Client&);
+        bool operator > (Client&);
+
         int     getID();
         QString getFname();
         QString getLname();

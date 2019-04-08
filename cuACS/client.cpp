@@ -29,6 +29,14 @@ Client::Client(int id, QString fname, QString lname, QString email, QString addr
 
 Client::~Client() {}
 
+bool Client::operator < (Client& c) {
+    return id < c.id;
+}
+
+bool Client::operator > (Client& c) {
+    return id > c.id;
+}
+
 int     Client::getID()         {return id;}
 QString Client::getFname()      {return fname;}
 QString Client::getLname()      {return lname;}

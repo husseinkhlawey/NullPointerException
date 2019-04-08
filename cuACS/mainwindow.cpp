@@ -31,6 +31,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+//user is client
 void MainWindow::on_pushButton_Client_clicked()
 {
     //setup client object
@@ -57,6 +58,7 @@ void MainWindow::on_pushButton_2_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+//user is staff
 void MainWindow::on_pushButton_Staff_clicked()
 {
     //setup staff object
@@ -681,4 +683,11 @@ void MainWindow::on_comboBox_activated(int index)
     for (int j = 0; j < breedList[index].length(); j++ ){
        ui->comboBox_2->addItem(breedList[index][j]);
     }
+}
+
+//lauch ACM
+void MainWindow::on_pushButton_27_clicked()
+{
+    staff.launchACM();
+    ui->stackedWidget->setCurrentIndex(24);
 }

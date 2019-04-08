@@ -12,11 +12,13 @@ class Animal{
   public:
 
     Animal();
-    Animal(int, QString, int, QString, QString, int, float, float, QString,
-                    QString, QString, QString, int, int, QString,
-                    QString, QString, int, QString);
+    Animal(int, QString, int, QString, QString, int, float, float, QString, QString, QString, QString, int, int, QString,
+           QString, QString, int, QString);
     Animal(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour);
     ~Animal();
+
+    bool operator < (Animal&);
+    bool operator > (Animal&);
 
     int     getID();
     QString getName();
@@ -58,10 +60,6 @@ class Animal{
     void setLoudness(QString);
     void setLifespan(int);
     void setSocialNeeds(QString);
-
-
-
-
 
   protected:
 

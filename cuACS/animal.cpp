@@ -51,6 +51,14 @@ Animal::Animal(){
 
 Animal::~Animal() {}
 
+bool Animal::operator < (Animal& a) {
+    return id < a.id;
+}
+
+bool Animal::operator > (Animal& a) {
+    return id > a.id;
+}
+
 int     Animal::getID()                   { return id;  }
 QString Animal::getName()                 { return name;  }
 int     Animal::getGender()               { return gender;  }
