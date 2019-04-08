@@ -95,7 +95,7 @@ void MainWindow::on_pushButton_9_clicked()//go to add animal page from animal li
     speciesList = {"select species", "Cat", "Dog", "Fish", "Bird", "Horse", "Turtle", "Lizard", "Rabbit", "Hamster"};
     genderList = {"select gender", "Male", "Female"};
     colourList = {"select colour", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "White", "Black", "Grey", "Pink", "Multi-Coloured"};
-    dietList = {"select diet", "1-2 meals/day", "2-3 meals/day", "3-4 meals/day", "4-5 meals/day", "5-6 meals/day"};
+    dietList = {"select diet", "1", "2", "3", "4", "5", "6"};
     hmlList = {"High", "Medium", "Low"};
 
     ui->comboBox_2->addItem("select breed");
@@ -166,7 +166,7 @@ void MainWindow::on_pushButton_6_clicked()//go to staff page
     speciesList = {"select species", "Cat", "Dog", "Fish", "Bird", "Horse", "Turtle", "Lizard", "Rabbit", "Hamster"};
     genderList = {"select gender", "Male", "Female"};
     colourList = {"select colour", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "White", "Black", "Grey", "Pink", "Multi-Coloured"};
-    dietList = {"select diet", "1-2 meals/day", "2-3 meals/day", "3-4 meals/day", "4-5 meals/day", "5-6 meals/day"};
+    dietList = {"select diet", "1", "2", "3", "4", "5", "6"};
     hmlList = {"High", "Medium", "Low"};
 
     ui->comboBox_2->addItem("select breed");
@@ -236,10 +236,10 @@ void MainWindow::on_pushButton_11_clicked()//save Animal
     inpcostOfMaintenance = ui->lineEdit_17->text().toInt();
     inptimeOfMaintenance = ui->lineEdit_18->text().toInt();
     inployalty = ui->comboBox_8->currentText();
-    inpdiet = ui->comboBox_9->currentText();
+    inpdiet = ui->comboBox_9->currentText().toInt();
     inpLoudness = ui->comboBox_10->currentText();
     inplifespan = ui->spinBox_2->text().toInt();
-    inpsocialNeeds = ui->lineEdit_21->text();
+    inpsocialNeeds = ui->lineEdit_21->text().toInt();
 
     //generate animal id
     int t = getNumAnimals();
@@ -299,7 +299,7 @@ void MainWindow::on_pushButton_14_clicked()//view client (staff side) listwidget
     qDebug() << "End of data";
 }
 
-void MainWindow::on_pushButton_15_clicked()//go to add client page from staff pagee
+void MainWindow::on_pushButton_15_clicked()//go to add client page from staff page
 {
     ui->lineEdit_9->clear();
     ui->lineEdit_10->clear();
@@ -385,35 +385,87 @@ void MainWindow::on_pushButton_20_clicked()
     qDebug() << "End of data";
 }
 
-void MainWindow::on_pushButton_21_clicked()
+void MainWindow::on_pushButton_21_clicked()//next button in the add client page
 {
-    inpFname = ui->lineEdit_9->text();
-    inpLname = ui->lineEdit_10->text();
-    inpEmail = ui->lineEdit_11->text();
-    inpAddress = ui->lineEdit_12->text();
-    inpPhone = ui->lineEdit_13->text();
-    inpKids = ui->spinBox_3->text();
-    inplTime = ui->lineEdit_43->text();
-    inpSalary = ui->lineEdit_44->text();
-    inpHouse = ui->comboBox_11->currentText();
-    inpAllergies = ui->comboBox_13->currentText();
-    inpLifestyle = ui->comboBox_12->currentText();
+    ui->comboBox_16->clear();
+    ui->comboBox_19->clear();
+    ui->comboBox_23->clear();
+    ui->comboBox_22->clear();
+    ui->lineEdit_20->clear();
+    ui->lineEdit_19->clear();
+    ui->comboBox_15->clear();
+    ui->comboBox_20->clear();
+    ui->comboBox_17->clear();
+    ui->spinBox_4->setValue(0);
+    ui->lineEdit_22->clear();
 
-    //generate animal id
-    int t = getNumClients();
-    qDebug()<<t;
-    addClients(t,inpFname,inpLname,inpEmail,inpAddress,inpPhone, inpKids,inplTime,inpSalary,inpHouse,inpAllergies,inpLifestyle);
+    speciesList = {"select species", "Cat", "Dog", "Fish", "Bird", "Horse", "Turtle", "Lizard", "Rabbit", "Hamster"};
+    dietList = {"select diet", "1", "2", "3", "4", "5", "6"};
+    hmlList = {"High", "Medium", "Low"};
 
-    ui->stackedWidget->setCurrentIndex(8);
+    ui->comboBox_19->addItem("select independence");
+    ui->comboBox_23->addItem("select obedience");
+    ui->comboBox_22->addItem("select training");
+    ui->comboBox_15->addItem("select loyalty");
+    ui->comboBox_17->addItem("select loudness");
 
-    //refresh client list
-    ui->listWidget_4->clear();
-    read_client_query = readClientTable();
-
-    while (read_client_query.next()){
-        ui->listWidget_4->addItem(read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString());
+    for (int i = 0; i < speciesList.length(); i++ ){
+       ui->comboBox_16->addItem(speciesList[i]);
     }
-    qDebug() << "End of data";
+    for (int i = 0; i < hmlList.length(); i++ ){
+        ui->comboBox_19->addItem(hmlList[i]);
+        ui->comboBox_23->addItem(hmlList[i]);
+        ui->comboBox_22->addItem(hmlList[i]);
+        ui->comboBox_15->addItem(hmlList[i]);
+        ui->comboBox_17->addItem(hmlList[i]);
+    }
+    for (int i = 0; i < dietList.length(); i++ ){
+       ui->comboBox_20->addItem(dietList[i]);
+    }
+
+    ui->stackedWidget->setCurrentIndex(15);
+
+//    inpFname = ui->lineEdit_9->text();
+//    inpLname = ui->lineEdit_10->text();
+//    inpEmail = ui->lineEdit_11->text();
+//    inpAddress = ui->lineEdit_12->text();
+//    inpPhone = ui->lineEdit_13->text();
+//    inpKids = ui->spinBox_3->text();
+//    inplTime = ui->lineEdit_43->text();
+//    inpSalary = ui->lineEdit_44->text();
+//    inpHouse = ui->comboBox_11->currentText();
+//    inpAllergies = ui->comboBox_13->currentText();
+//    inpLifestyle = ui->comboBox_12->currentText();
+//    inpSpecies = ui->comboBox_16->currentText();
+//    inpindependence = ui->comboBox_19->currentText();
+//    inpobedience = ui->comboBox_23->currentText();
+//    inptraining = ui->comboBox_22->currentText();
+//    inpcostOfMaintenance = ui->lineEdit_20->text().toInt();
+//    inptimeOfMaintenance = ui->lineEdit_19->text().toInt();
+//    inployalty = ui->comboBox_15->currentText();
+//    inpdiet = ui->comboBox_20->currentText();
+//    inpLoudness = ui->comboBox_17->currentText();
+//    inplifespan = ui->spinBox_4->text().toInt();
+//    inpsocialNeeds = ui->lineEdit_22->text().toInt();
+
+
+//    //generate animal id
+//    int t = getNumClients();
+//    qDebug()<<t;
+//    addClients(t,inpFname,inpLname,inpEmail,inpAddress,inpPhone, inpKids,inplTime,inpSalary,inpHouse,inpAllergies,inpLifestyle,inpSpecies,
+//               inpindependence,inpobedience,inptraining,inpcostOfMaintenance,inptimeOfMaintenance,inployalty,inpdiet,inpLoudness,inplifespan,
+//               inpsocialNeeds);
+
+//    ui->stackedWidget->setCurrentIndex(8);
+
+//    //refresh client list
+//    ui->listWidget_4->clear();
+//    read_client_query = readClientTable();
+
+//    while (read_client_query.next()){
+//        ui->listWidget_4->addItem(read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString());
+//    }
+//    qDebug() << "End of data";
 }
 
 void MainWindow::on_listWidget_4_itemClicked(QListWidgetItem *item)
@@ -604,13 +656,27 @@ void MainWindow::on_listWidget_6_itemClicked(QListWidgetItem *item)
     qDebug() << "While loop end: " + read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString();
 }
 
-void MainWindow::on_pushButton_24_clicked()
+void MainWindow::on_pushButton_24_clicked()//next button for the edit client
 {
-    //read_client_query is on the current client
-    editClients(read_client_query.value(0).toString(),ui->lineEdit_49->text(), ui->lineEdit_58->text(), ui->lineEdit_57->text(), ui->lineEdit_48->text(), ui->lineEdit_52->text(), ui->lineEdit_51->text(),
-                ui->lineEdit_55->text(),ui->lineEdit_54->text(), ui->lineEdit_53->text(), ui->lineEdit_56->text(), ui->lineEdit_50->text());
+//    //read_client_query is on the current client
+//    editClients(read_client_query.value(0).toString(),ui->lineEdit_49->text(), ui->lineEdit_58->text(), ui->lineEdit_57->text(), ui->lineEdit_48->text(), ui->lineEdit_52->text(), ui->lineEdit_51->text(),
+//                ui->lineEdit_55->text(),ui->lineEdit_54->text(), ui->lineEdit_53->text(), ui->lineEdit_56->text(), ui->lineEdit_50->text(),
+//                ui->lineEdit_64->text(), ui->lineEdit_61->text(), ui->lineEdit_46->text(), ui->lineEdit_65->text(), ui->lineEdit_42->text(),
+//                ui->lineEdit_62->text(), ui->lineEdit_47->text(), ui->lineEdit_60->text(), ui->lineEdit_63->text(), ui->lineEdit_45->text(), ui->lineEdit_59->text());
 
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->lineEdit_64->setText(read_client_query.value(12).toString());
+    ui->lineEdit_61->setText(read_client_query.value(13).toString());
+    ui->lineEdit_46->setText(read_client_query.value(14).toString());
+    ui->lineEdit_65->setText(read_client_query.value(15).toString());
+    ui->lineEdit_42->setText(read_client_query.value(16).toString());
+    ui->lineEdit_62->setText(read_client_query.value(17).toString());
+    ui->lineEdit_47->setText(read_client_query.value(18).toString());
+    ui->lineEdit_60->setText(read_client_query.value(19).toString());
+    ui->lineEdit_63->setText(read_client_query.value(20).toString());
+    ui->lineEdit_45->setText(read_client_query.value(21).toString());
+    ui->lineEdit_59->setText(read_client_query.value(22).toString());
+
+    ui->stackedWidget->setCurrentIndex(16);
 }
 
 void MainWindow::on_pushButton_8_clicked()
@@ -685,11 +751,76 @@ void MainWindow::on_comboBox_activated(int index)
     }
 }
 
-//lauch ACM
+void MainWindow::on_pushButton_28_clicked()
+{
+    inpFname = ui->lineEdit_9->text();
+    inpLname = ui->lineEdit_10->text();
+    inpEmail = ui->lineEdit_11->text();
+    inpAddress = ui->lineEdit_12->text();
+    inpPhone = ui->lineEdit_13->text();
+    inpKids = ui->spinBox_3->text();
+    inplTime = ui->lineEdit_43->text();
+    inpSalary = ui->lineEdit_44->text();
+    inpHouse = ui->comboBox_11->currentText();
+    inpAllergies = ui->comboBox_13->currentText();
+    inpLifestyle = ui->comboBox_12->currentText();
+    inpSpecies = ui->comboBox_16->currentText();
+    inpindependence = ui->comboBox_19->currentText();
+    inpobedience = ui->comboBox_23->currentText();
+    inptraining = ui->comboBox_22->currentText();
+    inpcostOfMaintenance = ui->lineEdit_20->text().toInt();
+    inptimeOfMaintenance = ui->lineEdit_19->text().toInt();
+    inployalty = ui->comboBox_15->currentText();
+    inpdiet = ui->comboBox_20->currentText().toInt();
+    inpLoudness = ui->comboBox_17->currentText();
+    inplifespan = ui->spinBox_4->text().toInt();
+    inpsocialNeeds = ui->lineEdit_22->text().toInt();
+
+
+    //generate animal id
+    int t = getNumClients();
+    qDebug()<<t;
+    addClients(t,inpFname,inpLname,inpEmail,inpAddress,inpPhone, inpKids,inplTime,inpSalary,inpHouse,inpAllergies,inpLifestyle,inpSpecies,
+               inpindependence,inpobedience,inptraining,inpcostOfMaintenance,inptimeOfMaintenance,inployalty,inpdiet,inpLoudness,inplifespan,
+               inpsocialNeeds);
+
+    ui->stackedWidget->setCurrentIndex(8);
+
+    //refresh client list
+    ui->listWidget_4->clear();
+    read_client_query = readClientTable();
+
+    while (read_client_query.next()){
+        ui->listWidget_4->addItem(read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString());
+    }
+    qDebug() << "End of data";
+}
+
+void MainWindow::on_pushButton_29_clicked()
+{
+    //read_client_query is on the current client
+    editClients(read_client_query.value(0).toString(),ui->lineEdit_49->text(), ui->lineEdit_58->text(), ui->lineEdit_57->text(), ui->lineEdit_48->text(), ui->lineEdit_52->text(), ui->lineEdit_51->text(),
+                ui->lineEdit_55->text(),ui->lineEdit_54->text(), ui->lineEdit_53->text(), ui->lineEdit_56->text(), ui->lineEdit_50->text(),
+                ui->lineEdit_64->text(), ui->lineEdit_61->text(), ui->lineEdit_46->text(), ui->lineEdit_65->text(), ui->lineEdit_42->text(),
+                ui->lineEdit_62->text(), ui->lineEdit_47->text(), ui->lineEdit_60->text(), ui->lineEdit_63->text(), ui->lineEdit_45->text(), ui->lineEdit_59->text());
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
 void MainWindow::on_pushButton_27_clicked()
 {
-    staff.launchACM();
+    ui->stackedWidget->setCurrentIndex(4);
 
+    //refresh animal list
+    ui->listWidget_4->clear();
+    read_client_query = readClientTable();
 
-    ui->stackedWidget->setCurrentIndex(22);
+    while (read_client_query.next()){
+        ui->listWidget_4->addItem(read_client_query.value(1).toString() + " " + read_client_query.value(2).toString() + " " + read_client_query.value(5).toString());
+    }
+    qDebug() << "End of data";
+}
+
+void MainWindow::on_pushButton_30_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
 }

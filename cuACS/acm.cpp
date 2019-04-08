@@ -114,13 +114,13 @@ int ACM::calcLMH(QString c, QString a){
     if (c == "Low" && a == "High") {
         points = 4;
     }
-    else if (c == "Medium" && a == "High" || c == "Low" && a == "Medium") {
+    else if ((c == "Medium" && a == "High") || (c == "Low" && a == "Medium")) {
         points = 3;
     }
-    else if (c == "Low" && a == "Low" || c == "Medium" && a == "Medium" || c == "High" && a == "High") {
+    else if ((c == "Low" && a == "Low") || (c == "Medium" && a == "Medium") || (c == "High" && a == "High")) {
         points = 2;
     }
-    else if (c == "Medium" && a == "Low" || c == "High" && a == "Medium") {
+    else if ((c == "Medium" && a == "Low") || (c == "High" && a == "Medium")) {
         points = 1;
     }
     else if (c == "High" && a == "Low") {
