@@ -16,9 +16,9 @@ public:
     LinkedList<Match>& makeMatches();
     int calcScore(Client* c, Animal* a);
     int calcLMH(QString c, QString a);
-    int calcTally();
-    int eliminate();
     int calcCompare();
+    int eliminate();
+    int calcTally();
 
 private:
     LinkedList<Animal> animals;

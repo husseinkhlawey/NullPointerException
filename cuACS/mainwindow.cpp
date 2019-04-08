@@ -689,5 +689,7 @@ void MainWindow::on_comboBox_activated(int index)
 void MainWindow::on_pushButton_27_clicked()
 {
     staff.launchACM();
+
+
     ui->stackedWidget->setCurrentIndex(22);
 }
