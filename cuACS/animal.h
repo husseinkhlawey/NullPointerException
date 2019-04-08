@@ -12,69 +12,78 @@ class Animal{
   public:
 
     Animal();
-    Animal(int, QString, QString, QString, int, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, int, float, float);
+    Animal(int, QString, int, QString, QString, int, float, float, QString,
+                    QString, QString, QString, int, int, QString,
+                    QString, QString, int, QString);
     Animal(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour);
     ~Animal();
 
-    int getID();
+    int     getID();
     QString getName();
+    int     getGender();
     QString getSpecies();
     QString getBreed();
-    int getGender();
+    int     getAge();
+    float   getWeight();
+    float   getHeight();
     QString getColour();
-    QString getIntelligence();
-    QString getHumor();
+    QString getIndependence();
     QString getObedience();
+    QString getTraining();
+    int     getCostOfMaintenance();
+    int     getTimeOfMaintenance();
     QString getLoyalty();
-    QString getBehaviour();
-    QString getTemperment();
-    QString getCommunication_skill();
-    QString getCourage();
-    QString getIndependent();
-    int getAge();
-    float getHeight();
-    float getWeight();
+    QString getDiet();
+    QString getLoudness();
+    int getLifespan();
+    QString getSocialNeeds();
+
 
     void setID(int);
     void setName(QString);
+    void setGender(int);
     void setSpecies(QString);
     void setBreed(QString);
-    void setGender(int);
-    void setColour(QString);
-    void setIntelligence(QString);
-    void setHumor(QString);
-    void setObedience(QString);
-    void setLoyalty(QString);
-    void setBehaviour(QString);
-    void setTemperment(QString);
-    void setCommunication_skill(QString);
-    void setCourage(QString);
-    void setIndependent(QString);
     void setAge(int);
-    void setHeight(float);
     void setWeight(float);
+    void setHeight(float);
+    void setColour(QString);
+    void setIndependence(QString);
+    void setObedience(QString);
+    void setTraining(QString);
+    void setCostOfMaintenance(int);
+    void setTimeOfMaintenance(int);
+    void setLoyalty(QString);
+    void setDiet(QString);
+    void setLoudness(QString);
+    void setLifespan(int);
+    void setSocialNeeds(QString);
+
+
+
+
 
   protected:
 
-    int id;
+    int     id;
     QString name;
+    int     gender;
     QString species;
     QString breed;
-    int gender;
+    int     age;
+    float   weight;
+    float   height;
     QString colour;
-    QString intelligence;
-    QString humor;
+    QString independence;
     QString obedience;
+    QString training;
+    int     costOfMaintenance;
+    int     timeOfMaintenance;
     QString loyalty;
-    QString behaviour;
-    QString temperment;
-    QString communication_skill;
-    QString courage;
-    QString independent;
-    int age;
-    float height;
-    float weight;
-
+    QString diet;
+    QString loudness;
+    int     lifespan;
+    QString socialNeeds;
 };
 
 #endif // ANIMAL_H
