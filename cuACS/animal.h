@@ -13,7 +13,7 @@ class Animal{
 
     Animal();
     Animal(int, QString, int, QString, QString, int, float, float, QString, QString, QString, QString, int, int, QString,
-           QString, QString, int, QString);
+           int, QString, int, int);
     Animal(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour);
     ~Animal();
 
@@ -35,11 +35,10 @@ class Animal{
     int     getCostOfMaintenance();
     int     getTimeOfMaintenance();
     QString getLoyalty();
-    QString getDiet();
+    int getDiet();
     QString getLoudness();
     int getLifespan();
-    QString getSocialNeeds();
-
+    int getSocialNeeds();
 
     void setID(int);
     void setName(QString);
@@ -56,10 +55,10 @@ class Animal{
     void setCostOfMaintenance(int);
     void setTimeOfMaintenance(int);
     void setLoyalty(QString);
-    void setDiet(QString);
+    void setDiet(int);
     void setLoudness(QString);
     void setLifespan(int);
-    void setSocialNeeds(QString);
+    void setSocialNeeds(int);
 
   protected:
 
@@ -78,10 +77,10 @@ class Animal{
     int     costOfMaintenance;
     int     timeOfMaintenance;
     QString loyalty;
-    QString diet;
+    int diet;
     QString loudness;
     int     lifespan;
-    QString socialNeeds;
+    int socialNeeds;
 };
 
 #endif // ANIMAL_H

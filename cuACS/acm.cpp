@@ -57,6 +57,7 @@ LinkedList<Match>& ACM::makeMatches() {
 int ACM::calcScore(Client * c, Animal * a) {
     int score = 0;
 
+    //elimination
     if (c->getPref_species() != a->getSpecies()){
         return 0;
     }
@@ -95,7 +96,7 @@ int ACM::calcScore(Client * c, Animal * a) {
     }
 
     //diet
-    /*if (c->getPref_diet() > a->getDiet() - 1 && c->getPref_diet() < a->getDiet() + 1){
+    if (c->getPref_diet() > a->getDiet() - 1 && c->getPref_diet() < a->getDiet() + 1){
         score += 3;
     }
     else if (c->getPref_diet() > a->getDiet() + 1) {
@@ -103,8 +104,29 @@ int ACM::calcScore(Client * c, Animal * a) {
     }
     else {
         score += 1;
-    }*/
+    }
 
+    //lifespan
+    if (c->getPref_lifespan() > a->getLifespan() - 2 && c->getPref_lifespan() < a->getLifespan() + 2){
+        score += 3;
+    }
+    else if (c->getPref_lifespan() > a->getLifespan() + 2) {
+        score += 5;
+    }
+    else {
+        score += 1;
+    }
+
+    //social needs
+    if (c->getPref_socialNeeds() > a->getSocialNeeds() - 3 && c->getPref_socialNeeds() < a->getSocialNeeds() + 3){
+        score += 3;
+    }
+    else if (c->getPref_socialNeeds() > a->getSocialNeeds() + 3) {
+        score += 5;
+    }
+    else {
+        score += 1;
+    }
     return score;
 }
 

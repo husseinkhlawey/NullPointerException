@@ -2,7 +2,7 @@
 
 Animal::Animal(int id, QString nam, int gend, QString spec, QString bree, int age, float weig, float heig, QString col,
                 QString indep, QString obedi, QString train, int costOM, int timeOM, QString loyal,
-                QString di, QString loud, int life, QString social){
+                int di, QString loud, int life, int social){
 
           this->id              = id;
           name                  = nam;
@@ -74,10 +74,10 @@ QString Animal::getTraining()             { return training; }
 int Animal::getCostOfMaintenance()    { return costOfMaintenance; }
 int Animal::getTimeOfMaintenance()    { return timeOfMaintenance; }
 QString Animal::getLoyalty()              { return loyalty; }
-QString Animal::getDiet()                 { return diet; }
+int Animal::getDiet()                 { return diet; }
 QString Animal::getLoudness() { return loudness; }
 int Animal::getLifespan()             { return lifespan; }
-QString Animal::getSocialNeeds()          { return socialNeeds; }
+int Animal::getSocialNeeds()          { return socialNeeds; }
 
 //=================================================
 void Animal::setID(int id)                           { this->id = id; }
@@ -95,7 +95,7 @@ void Animal::setTraining(QString train)              { training = train; }
 void Animal::setCostOfMaintenance(int costOM)    { costOfMaintenance = costOM; }
 void Animal::setTimeOfMaintenance(int timeOM)    { timeOfMaintenance = timeOM; }
 void Animal::setLoyalty(QString loyal)               { loyalty = loyal; }
-void Animal::setDiet(QString di)                     { diet = di; }
+void Animal::setDiet(int di)                     { diet = di; }
 void Animal::setLoudness(QString loud)               { loudness = loud; }
 void Animal::setLifespan(int life)               { lifespan = life; }
-void Animal::setSocialNeeds(QString social)          { socialNeeds = social; }
+void Animal::setSocialNeeds(int social)          { socialNeeds = social; }

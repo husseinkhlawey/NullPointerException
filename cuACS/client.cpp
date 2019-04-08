@@ -11,7 +11,9 @@ Client::Client(){
 
 }
 
-Client::Client(int id, QString fname, QString lname, QString email, QString address, QString phone, QString numKids, QString leisure, QString salary, QString housing, QString allergies, QString lifestyle){
+Client::Client(int id, QString fname, QString lname, QString email, QString address, QString phone, QString numKids, QString leisure, QString salary,
+               QString housing, QString allergies, QString lifestyle, QString species, QString indep, QString obedi, QString train, int costOM,
+               int timeOM, QString loyal, int di, QString loud, int life, int social){
 
     this->id = id;
     this->fname = fname;
@@ -25,6 +27,17 @@ Client::Client(int id, QString fname, QString lname, QString email, QString addr
     this->housing = housing;
     this->allergies = allergies;
     this->lifestyle = lifestyle;
+    pref_species = species;
+    pref_independence = indep;
+    pref_obedience = obedi;
+    pref_training = train;
+    pref_costOfMaintenance = costOM;
+    pref_timeOfMaintenance = timeOM;
+    pref_loyalty = loyal;
+    pref_diet = di;
+    pref_loudness = loud;
+    pref_lifespan = life;
+    pref_socialNeeds = social;
 }
 
 Client::~Client() {}
@@ -144,12 +157,12 @@ void Client::setPref_loyalty(const QString &value)
     pref_loyalty = value;
 }
 
-QString Client::getPref_diet() const
+int Client::getPref_diet() const
 {
     return pref_diet;
 }
 
-void Client::setPref_diet(const QString &value)
+void Client::setPref_diet(const int &value)
 {
     pref_diet = value;
 }
@@ -174,12 +187,12 @@ void Client::setPref_lifespan(int value)
     pref_lifespan = value;
 }
 
-QString Client::getPref_socialNeeds() const
+int Client::getPref_socialNeeds() const
 {
     return pref_socialNeeds;
 }
 
-void Client::setPref_socialNeeds(const QString &value)
+void Client::setPref_socialNeeds(const int &value)
 {
     pref_socialNeeds = value;
 }

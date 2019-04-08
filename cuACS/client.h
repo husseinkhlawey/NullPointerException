@@ -10,7 +10,9 @@ class Client{
 
     public:
         Client();
-        Client(int id, QString fname, QString lname, QString email, QString address, QString phone, QString numKids, QString leisure, QString salary, QString housing, QString allergies, QString lifestyle);
+        Client(int id, QString fname, QString lname, QString email, QString address, QString phone, QString numKids, QString leisure, QString salary,
+               QString housing, QString allergies, QString lifestyle, QString species, QString indep, QString obedi, QString train, int costOM, int timeOM, QString loyal,
+               int di, QString loud, int life, int social);
         ~Client();
 
         bool operator < (Client&);
@@ -67,8 +69,8 @@ class Client{
         QString getPref_loyalty() const;
         void setPref_loyalty(const QString &value);
 
-        QString getPref_diet() const;
-        void setPref_diet(const QString &value);
+        int getPref_diet() const;
+        void setPref_diet(const int &value);
 
         QString getPref_loudness() const;
         void setPref_loudness(const QString &value);
@@ -76,8 +78,8 @@ class Client{
         int getPref_lifespan() const;
         void setPref_lifespan(int value);
 
-        QString getPref_socialNeeds() const;
-        void setPref_socialNeeds(const QString &value);
+        int getPref_socialNeeds() const;
+        void setPref_socialNeeds(const int &value);
 
 protected:
         int id;
@@ -101,10 +103,10 @@ protected:
         int     pref_costOfMaintenance;
         int     pref_timeOfMaintenance;
         QString pref_loyalty;
-        QString pref_diet;
+        int pref_diet;
         QString pref_loudness;
         int     pref_lifespan;
-        QString pref_socialNeeds;
+        int pref_socialNeeds;
 
 };
 
