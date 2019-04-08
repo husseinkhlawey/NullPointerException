@@ -93,6 +93,14 @@ private slots:
 
     void on_comboBox_activated(int index);
 
+    void on_pushButton_28_clicked();
+
+    void on_pushButton_29_clicked();
+
+    void on_pushButton_27_clicked();
+
+    void on_pushButton_30_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -118,10 +126,10 @@ private:
     int inpcostOfMaintenance;
     int inptimeOfMaintenance;
     QString inployalty;
-    QString inpdiet;
+    int inpdiet;
     QString inpLoudness;
     int inplifespan;
-    QString inpsocialNeeds;
+    int inpsocialNeeds;
 
     QString inpFname;
     QString inpLname;

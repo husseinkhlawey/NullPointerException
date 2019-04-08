@@ -1,4 +1,4 @@
-﻿#include "sqlfunctions.h"
+#include "sqlfunctions.h"
 #include "animal.h"
 #include "client.h"
 #include <QtDebug>
@@ -20,7 +20,7 @@ void runQuery(QString input){
 //adds animal values to database
 void addAnimals(int id, QString name, int gender, QString species, QString breed, int age, float weight, float height, QString colour,
                 QString independence, QString obedience, QString training, int costOfMaintenance, int timeOfMaintenance, QString loyalty,
-                QString diet, QString loudness, int lifespan, QString socialNeeds)
+                int diet, QString loudness, int lifespan, int socialNeeds)
 {
     QSqlQuery qry;
     qry.prepare("INSERT OR REPLACE INTO animals VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
@@ -54,9 +54,12 @@ void addAnimals(int id, QString name, int gender, QString species, QString breed
 }
 
 //adds client values to database
-void addClients (int id, QString fname, QString lname, QString email, QString address, QString phone, QString numKids, QString leisure, QString salary, QString housing, QString allergies, QString lifestyle){
+void addClients (int id, QString fname, QString lname, QString email, QString address, QString phone, QString numKids, QString leisure,
+                 QString salary, QString housing, QString allergies, QString lifestyle, QString species, QString independence,
+                 QString obedience, QString training, int costOfMaintenance, int timeOfMaintenance, QString loyalty, int diet,
+                 QString loudness, int lifespan, int socialNeeds){
     QSqlQuery qry;
-    qry.prepare("INSERT OR REPLACE INTO clients VALUES (?,?,?,?,?,?,?,?,?,?,?,?);");
+    qry.prepare("INSERT OR REPLACE INTO clients VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
 
     qry.addBindValue(id);
     qry.addBindValue(fname);
@@ -70,6 +73,17 @@ void addClients (int id, QString fname, QString lname, QString email, QString ad
     qry.addBindValue(housing);
     qry.addBindValue(allergies);
     qry.addBindValue(lifestyle);
+    qry.addBindValue(species);
+    qry.addBindValue(independence);
+    qry.addBindValue(obedience);
+    qry.addBindValue(training);
+    qry.addBindValue(costOfMaintenance);
+    qry.addBindValue(timeOfMaintenance);
+    qry.addBindValue(loyalty);
+    qry.addBindValue(diet);
+    qry.addBindValue(loudness);
+    qry.addBindValue(lifespan);
+    qry.addBindValue(socialNeeds);
 
     if(!qry.exec()){
         qDebug() << "Can't add client values";
@@ -93,65 +107,68 @@ void buildDatabase() {
     currentQuery = "CREATE TABLE IF NOT EXISTS animals (id INTEGER PRIMARY KEY,"
                    "name TEXT, gender INTEGER, species TEXT, breed TEXT, age INTEGER,"
                    "weight INTEGER, height INTEGER, colour TEXT, independence TEXT, obedience TEXT, "
-                   "training TEXT, costOfMaintenance INTEGER, timeOfMaintenance INTEGER, loyalty TEXT, diet TEXT, "
-                   "loudness TEXT, lifespan INTEGER, socialNeeds TEXT);";
+                   "training TEXT, costOfMaintenance INTEGER, timeOfMaintenance INTEGER, loyalty TEXT, diet INTEGER, "
+                   "loudness TEXT, lifespan INTEGER, socialNeeds INTEGER);";
 
     runQuery(currentQuery);
-    currentQuery = "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY, firstName TEXT, lastName TEXT, email TEXT, address TEXT, phone TEXT, numKids TEXT, leisureTime TEXT, salary TEXT,"
-                   "housing TEXT, allergies TEXT, lifestyle TEXT);";
+    currentQuery = "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY, firstName TEXT, lastName TEXT, email TEXT, address TEXT,"
+                   "phone TEXT, numKids TEXT, leisureTime TEXT, salary TEXT, housing TEXT, allergies TEXT, lifestyle TEXT,"
+                   "species TEXT, independence TEXT, obedience TEXT, training TEXT, costOfMaintenance INTEGER, timeOfMaintenance INTEGER,"
+                   "loyalty TEXT, diet INTEGER, loudness TEXT, lifespan INTEGER, socialNeeds INTEGER);";
 
     runQuery(currentQuery);
 
     //adding values to database
-    addAnimals(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black","medium","high","easy",90,45,"high","2-3 meals","medium",12,"10 hours/week");
-    addAnimals(1,"Red",1,"Dog","Hound",9,40,2,"brown","medium","high","easy",80,40,"high","2-3 meals","high",12,"10 hours/week");
-    addAnimals(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white","high","low","none",60,3,"medium","3-4 meals","low",10,"3 hours/week");
-    addAnimals(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise","medium","high","easy",90,45,"high","2-3 meals","medium",12,"19 hours/week");
-    addAnimals(4,"Fenrir",1,"Ancient Wolf","Dire Wolf",1,30,3,"White","medium","high","easy",80,40,"high","2-3 meals","high",12,"13 hours/week");
-    addAnimals(5,"Jon Snow", 0.5, "Ape King","G.O.D",454300000,8,100,"gold","high","low","none",60,3,"medium","3-4 meals","low",10,"12 hours/week");
-    addAnimals(6,"Goku", 0, "Dog","Greyhound",2,55,8,"black","medium","high","easy",90,45,"high","2-5 meals","medium",13,"10 hours/week");
-    addAnimals(7,"Vegeta", 0, "Cat","Jaguar",21,100,10,"spotted","medium","high","easy",80,40,"high","2-4 meals","high",16,"10 hours/week");;
-    addAnimals(8,"Piccolo", 0, "Dog","Rottweiler",10,125,9,"green","high","low","none",60,3,"medium","3-4 meals","low",18,"3 hours/week");
-    addAnimals(9,"Bulma", 1, "Bird","Swallow",1,2,3,"blue","medium","high","easy",90,45,"high","2-5 meals","medium",10,"1 hours/week");
-    addAnimals(10,"Videl", 1, "Cat", "Siamese",2,5,4,"white","medium","high","easy",80,40,"high","2-3 meals","high",15,"15 hours/week");
-    addAnimals(11,"ChiChi", 1, "Cat","Scottish Fold",3,4,2,"grey","high","low","none",60,3,"medium","3-5 meals","low",10,"3 hours/week");
-    addAnimals(12,"Gohan", 0, "Reptile","Turtle",5,90,30,"dark green","medium","high","easy",90,45,"high","2-3 meals","medium",12,"10 hours/week");
-    addAnimals(13,"Goten", 0, "Reptile","Snake",3,100,1,"grey","medium","high","easy",80,40,"high","2-3 meals","high",1,"10 hours/week");
-    addAnimals(14,"Trunks", 0, "Reptile","Lizard",10,120,4,"red","high","low","none",60,3,"medium","3-4 meals","low",10,"6 hours/week");
-    addAnimals(15,"Krillin", 0, "Rabbit","Mini Rex",3,30,1,"white","medium","high","easy",90,45,"high","2-3 meals","medium",15,"10 hours/week");
-    addAnimals(16,"Bom", 0, "Dog","Tibetan Mastiff",1,20,1,"brown","medium","high","easy",80,40,"high","2-5 meals","high",12,"11 hours/week");
-    addAnimals(17,"Ted", 1, "Dog","Chiwawa",1,15,1,"black","high","low","none",60,3,"medium","3-4 meals","low",10,"5 hours/week");
-    addAnimals(18,"Mi", 1, "Cat","Sphinx",2,18,3,"black","medium","high","easy",90,45,"high","2-3 meals","medium",12,"13 hours/week");
-    addAnimals(19,"Tom", 0, "Cat","Persian",5,20,1,"gery","medium","high","easy",80,40,"high","2-5 meals","high",16,"10 hours/week");
-    addAnimals(20,"Mulk", 1, "Reptile","Lizard",2,6,2,"white","medium","high","easy",90,45,"high","2-4 meals","medium",1,"10 hours/week");
-    addAnimals(21,"Jerry", 0, "Hamster","Chinese",5,60,1,"white","medium","high","easy",80,40,"high","2-3 meals","high",12,"10 hours/week");
-    addAnimals(22,"Hulk", 1, "Hamster","Robo",2,30,1,"orange","high","low","none",60,3,"medium","3-4 meals","low",10,"3 hours/week");
-    addAnimals(23,"Kid", 0, "Bird","Parrot",3,70,3,"yellow","medium","high","easy",90,45,"high","2-3 meals","medium",18,"17 hours/week");
-    addAnimals(24,"Lame", 1, "Bird","Pigeon",4,30,2,"black","medium","high","easy",80,40,"high","2-6 meals","high",15,"12 hours/week");
-    addAnimals(25,"Tim", 0, "Fish","Golden",2,60,1,"black","high","low","none",60,3,"medium","3-4 meals","low",10,"13 hours/week");
-    addAnimals(26,"Polla", 1, "Fish","Guppy",7,55,23,"blue","medium","high","easy",90,45,"high","2-5 meals","medium",12,"15 hours/week");
+//    addAnimals(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black","medium","high","easy",90,45,"high",3,"medium",12,10);
+//    addAnimals(1,"Red",1,"Dog","Hound",9,40,2,"brown","medium","high","easy",80,40,"high","2-3 meals","high",12,"10 hours/week");
+//    addAnimals(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white","high","low","none",60,3,"medium","3-4 meals","low",10,"3 hours/week");
+//    addAnimals(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise","medium","high","easy",90,45,"high","2-3 meals","medium",12,"19 hours/week");
+//    addAnimals(4,"Fenrir",1,"Ancient Wolf","Dire Wolf",1,30,3,"White","medium","high","easy",80,40,"high","2-3 meals","high",12,"13 hours/week");
+//    addAnimals(5,"Jon Snow", 0.5, "Ape King","G.O.D",454300000,8,100,"gold","high","low","none",60,3,"medium","3-4 meals","low",10,"12 hours/week");
+//    addAnimals(6,"Goku", 0, "Dog","Greyhound",2,55,8,"black","medium","high","easy",90,45,"high","2-5 meals","medium",13,"10 hours/week");
+//    addAnimals(7,"Vegeta", 0, "Cat","Jaguar",21,100,10,"spotted","medium","high","easy",80,40,"high","2-4 meals","high",16,"10 hours/week");;
+//    addAnimals(8,"Piccolo", 0, "Dog","Rottweiler",10,125,9,"green","high","low","none",60,3,"medium","3-4 meals","low",18,"3 hours/week");
+//    addAnimals(9,"Bulma", 1, "Bird","Swallow",1,2,3,"blue","medium","high","easy",90,45,"high","2-5 meals","medium",10,"1 hours/week");
+//    addAnimals(10,"Videl", 1, "Cat", "Siamese",2,5,4,"white","medium","high","easy",80,40,"high","2-3 meals","high",15,"15 hours/week");
+//    addAnimals(11,"ChiChi", 1, "Cat","Scottish Fold",3,4,2,"grey","high","low","none",60,3,"medium","3-5 meals","low",10,"3 hours/week");
+//    addAnimals(12,"Gohan", 0, "Reptile","Turtle",5,90,30,"dark green","medium","high","easy",90,45,"high","2-3 meals","medium",12,"10 hours/week");
+//    addAnimals(13,"Goten", 0, "Reptile","Snake",3,100,1,"grey","medium","high","easy",80,40,"high","2-3 meals","high",1,"10 hours/week");
+//    addAnimals(14,"Trunks", 0, "Reptile","Lizard",10,120,4,"red","high","low","none",60,3,"medium","3-4 meals","low",10,"6 hours/week");
+//    addAnimals(15,"Krillin", 0, "Rabbit","Mini Rex",3,30,1,"white","medium","high","easy",90,45,"high","2-3 meals","medium",15,"10 hours/week");
+//    addAnimals(16,"Bom", 0, "Dog","Tibetan Mastiff",1,20,1,"brown","medium","high","easy",80,40,"high","2-5 meals","high",12,"11 hours/week");
+//    addAnimals(17,"Ted", 1, "Dog","Chiwawa",1,15,1,"black","high","low","none",60,3,"medium","3-4 meals","low",10,"5 hours/week");
+//    addAnimals(18,"Mi", 1, "Cat","Sphinx",2,18,3,"black","medium","high","easy",90,45,"high","2-3 meals","medium",12,"13 hours/week");
+//    addAnimals(19,"Tom", 0, "Cat","Persian",5,20,1,"gery","medium","high","easy",80,40,"high","2-5 meals","high",16,"10 hours/week");
+//    addAnimals(20,"Mulk", 1, "Reptile","Lizard",2,6,2,"white","medium","high","easy",90,45,"high","2-4 meals","medium",1,"10 hours/week");
+//    addAnimals(21,"Jerry", 0, "Hamster","Chinese",5,60,1,"white","medium","high","easy",80,40,"high","2-3 meals","high",12,"10 hours/week");
+//    addAnimals(22,"Hulk", 1, "Hamster","Robo",2,30,1,"orange","high","low","none",60,3,"medium","3-4 meals","low",10,"3 hours/week");
+//    addAnimals(23,"Kid", 0, "Bird","Parrot",3,70,3,"yellow","medium","high","easy",90,45,"high","2-3 meals","medium",18,"17 hours/week");
+//    addAnimals(24,"Lame", 1, "Bird","Pigeon",4,30,2,"black","medium","high","easy",80,40,"high","2-6 meals","high",15,"12 hours/week");
+//    addAnimals(25,"Tim", 0, "Fish","Golden",2,60,1,"black","high","low","none",60,3,"medium","3-4 meals","low",10,"13 hours/week");
+//    addAnimals(26,"Polla", 1, "Fish","Guppy",7,55,23,"blue","medium","high","easy",90,45,"high","2-5 meals","medium",12,"15 hours/week");
 
-    addClients(0,"Bob","Ross","bob.ross@gmail.com","1234 Some Street","561-437-6464","0","168","100,000","large","none","active");
-    addClients(1,"Boon","Jacob","Bjacob.ross@hotmail.com","123 Street Street","407-451-2131","2","43","34,000","small","fur","sedentary");
-    addClients(2,"Jay","Johnson","jj34234@hotmail.com","12 Somerset Street","360-655-3643","4","56","346,000","large","none","lazy");
-    addClients(3,"John","Dave","johnD@gmail.com","4 Henderson Street","908-754-4044","9","118","200,000","large","none","active");
-    addClients(4,"Ray","Richard","ray009s@gmail.com","256 Chapel Street","908-405-5950","3","78","70,000","medium","none","active");
-    addClients(5,"Jim","Smith","jimsmith00@hotmail.com","2655 Sweetland Street","337-626-5802","0","10","1,000,000","large","none","active");
-    addClients(6,"Alexandria","Yoder","balchen@verizon.net","8 Oak Avenue","337-965-7874","3","88","60,000","small","fur","lazy");
-    addClients(7,"Izayah","Sanders","jaesenj@yahoo.com","2329 Kyle Street","702-987-6792","0","168","100","box","fur","lazy");
-    addClients(8,"Jarrett","Haley","dbanarse@msn.com","1190 Hardman Road","702-353-1657","0","16","50,000","small","none","sedentary");
-    addClients(9,"Samir","Estrada","harryh@yahoo.ca","3668 Sycamore Street","616-431-0311","2","49","143,000","medium","none","sedentary");
-    addClients(10,"Dax","Lopez","cyrus@verizon.net","4958 Jerry Dove Drive","309-734-5292","0","123","567,000","large","fur","active");
-    addClients(11,"Tyshawn","Garza","keiji@verizon.net","2751 Valley Drive","254-381-3599","4","50","57,000","small","none","sedentary");
-    addClients(12,"Drew","Perkins","maikelnai@sbcglobal.net","920 Southern Avenue","310-777-5101","4","111","143,000","large","fur","active");
-    addClients(13,"Xander","Hester","vsprintf@yahoo.ca","3944 Jacobs Street","828-231-9403","0","153","720,000","medium","none","active");
-    addClients(14,"Giovanni","Massey","doormat@yahoo.ca","650 Rivendell Drive","917-733-5239","3","52","120,000","large","fur","sedentary");
-    addClients(15,"Denisse","Bass","ianbuck@optonline.net","3138 Brannon Avenue","337-591-9384","3","45","230,000","large","fur","lazy");
-    addClients(16,"Janessa","Parsons","world@icloud.com","4428 Rainy Day Drive","412-750-0612","1","16","70,000","medium","none","active");
-    addClients(17,"Carlee","Reilly","richard@comcast.net","2051 Rocket Drive","915-621-8279","2","24","100,000","medium","none","sedentary");
-    addClients(18,"Bailey","Patrick","sartak@yahoo.ca","2979 Hall Street","281-418-3487","3","97","50,000","small","fur","active");
-    addClients(19,"Paul","Mosley","mahbub@optonline.net","3340 John Daniel Drive","330-358-8186","5","23","80,000","medium","none","sedentary");
-    addClients(20,"Glenn","Jordan","ardagna@live.com","1788 Wyatt Street","213-639-1101","2","96","77,000","medium","none","lazy");
+    addClients(0,"Bob","Ross","bob.ross@gmail.com","1234 Some Street","561-437-6464","0","168","100,000","large","none","active","Dog", "low",
+               "high", "high", 200, 50, "high", 4, "high", 3, 4);
+//    addClients(1,"Boon","Jacob","Bjacob.ross@hotmail.com","123 Street Street","407-451-2131","2","43","34,000","small","fur","sedentary");
+//    addClients(2,"Jay","Johnson","jj34234@hotmail.com","12 Somerset Street","360-655-3643","4","56","346,000","large","none","lazy");
+//    addClients(3,"John","Dave","johnD@gmail.com","4 Henderson Street","908-754-4044","9","118","200,000","large","none","active");
+//    addClients(4,"Ray","Richard","ray009s@gmail.com","256 Chapel Street","908-405-5950","3","78","70,000","medium","none","active");
+//    addClients(5,"Jim","Smith","jimsmith00@hotmail.com","2655 Sweetland Street","337-626-5802","0","10","1,000,000","large","none","active");
+//    addClients(6,"Alexandria","Yoder","balchen@verizon.net","8 Oak Avenue","337-965-7874","3","88","60,000","small","fur","lazy");
+//    addClients(7,"Izayah","Sanders","jaesenj@yahoo.com","2329 Kyle Street","702-987-6792","0","168","100","box","fur","lazy");
+//    addClients(8,"Jarrett","Haley","dbanarse@msn.com","1190 Hardman Road","702-353-1657","0","16","50,000","small","none","sedentary");
+//    addClients(9,"Samir","Estrada","harryh@yahoo.ca","3668 Sycamore Street","616-431-0311","2","49","143,000","medium","none","sedentary");
+//    addClients(10,"Dax","Lopez","cyrus@verizon.net","4958 Jerry Dove Drive","309-734-5292","0","123","567,000","large","fur","active");
+//    addClients(11,"Tyshawn","Garza","keiji@verizon.net","2751 Valley Drive","254-381-3599","4","50","57,000","small","none","sedentary");
+//    addClients(12,"Drew","Perkins","maikelnai@sbcglobal.net","920 Southern Avenue","310-777-5101","4","111","143,000","large","fur","active");
+//    addClients(13,"Xander","Hester","vsprintf@yahoo.ca","3944 Jacobs Street","828-231-9403","0","153","720,000","medium","none","active");
+//    addClients(14,"Giovanni","Massey","doormat@yahoo.ca","650 Rivendell Drive","917-733-5239","3","52","120,000","large","fur","sedentary");
+//    addClients(15,"Denisse","Bass","ianbuck@optonline.net","3138 Brannon Avenue","337-591-9384","3","45","230,000","large","fur","lazy");
+//    addClients(16,"Janessa","Parsons","world@icloud.com","4428 Rainy Day Drive","412-750-0612","1","16","70,000","medium","none","active");
+//    addClients(17,"Carlee","Reilly","richard@comcast.net","2051 Rocket Drive","915-621-8279","2","24","100,000","medium","none","sedentary");
+//    addClients(18,"Bailey","Patrick","sartak@yahoo.ca","2979 Hall Street","281-418-3487","3","97","50,000","small","fur","active");
+//    addClients(19,"Paul","Mosley","mahbub@optonline.net","3340 John Daniel Drive","330-358-8186","5","23","80,000","medium","none","sedentary");
+//    addClients(20,"Glenn","Jordan","ardagna@live.com","1788 Wyatt Street","213-639-1101","2","96","77,000","medium","none","lazy");
 }
 
 //reading from the db
@@ -288,18 +305,23 @@ void editAnimals(QString id, QString name, QString gender, QString species, QStr
     qDebug() <<"UPDATE animals SET name = '" + name + "', gender = " + gender + ", species = '" + species + "', breed = '" + breed + "', age = " + age + ", weight = "
                      + weight + ", height = " + height + ", colour = '" + colour + "', independence = '" + independence + "', obedience = '"
                      + obedience + "', training = '" + training + "', costOfMaintenance = " + costOfMaintenance + ", timeOfMaintenance = " + timeOfMaintenance +
-                     ", loyalty = '" + loyalty + "', diet = '" + diet + "', loudness = '" + loudness + "', lifespan = " + lifespan + ", socialNeeds = '" + socialNeeds +
-                     "' WHERE id = " + id;
+                     ", loyalty = '" + loyalty + "', diet = " + diet + ", loudness = '" + loudness + "', lifespan = " + lifespan + ", socialNeeds = " + socialNeeds +
+                     " WHERE id = " + id;
     //runQuery(currentQuery);
 }
 
-void editClients(QString id, QString fname, QString lname, QString email, QString address, QString phone, QString kids, QString leisure, QString salary, QString house,
-                QString allergies, QString lifestyle){
+void editClients(QString id, QString fName, QString lName, QString email, QString address, QString phone, QString numKids, QString leisure,
+                 QString salary, QString housing, QString allergies, QString lifestyle, QString species, QString independence, QString obedience,
+                 QString training, QString costOfMaintenance, QString timeOfMaintenance, QString loyalty, QString diet, QString loudness,
+                 QString lifespan, QString socialNeeds){
 
     QSqlQuery qry;
-    qry.prepare("UPDATE clients SET firstName = '" + fname + "', lastName = '" + lname + "', email = '" + email + "', address = '" + address + "', phone = '" + phone + "', numKids = '"
-                + kids + "', leisureTime = '" + leisure + "', salary = '" + salary + "', housing = '" + house + "', allergies = '"
-                + allergies + "', lifestyle = '" + lifestyle + "' WHERE id = " + id + ";");
+    qry.prepare("UPDATE clients SET firstName = '" + fName + "', lastName = '" + lName + "', email = '" + email + "', address = '" + address +
+                "', phone = '" + phone + "', numKids = '" + numKids + "', leisureTime = '" + leisure + "', salary = '" + salary + "', housing = '"
+                + housing + "', allergies = '" + allergies + "', lifestyle = '" + lifestyle + "', species = '" + species + "', independence = '"
+                + independence + "', obedience = '" + obedience + "', training = '" + training + "', costOfMaintenance = " + costOfMaintenance +
+                ", timeOfMaintenance = " + timeOfMaintenance + ", loyalty = '" + loyalty + "', diet = " + diet + ", loudness = '" + loudness +
+                "', lifespan = " + lifespan + ", socialNeeds = " + socialNeeds +" WHERE id = " + id + ";");
 
     //qry.prepare("UPDATE animals SET name = \"" + name + "\" WHERE id = 0" + ";");
 
@@ -310,7 +332,10 @@ void editClients(QString id, QString fname, QString lname, QString email, QStrin
         qDebug()<<"client updated";
     }
 
-    qDebug() <<"UPDATE clients SET firstName = '" + fname + "', lastName = '" + lname + "', email = '" + email + "', address = '" + address + "', phone = '" + phone + "', numKids = '"
-            + kids + "', leisureTime = '" + leisure + "', salary = '" + salary + "', housing = '" + house + "', allergies = '"
-            + allergies + "', lifestyle = '" + lifestyle + "' WHERE id = " + id + ";";
+    qDebug() <<"UPDATE clients SET firstName = '" + fName + "', lastName = '" + lName + "', email = '" + email + "', address = '" + address +
+               "', phone = '" + phone + "', numKids = '" + numKids + "', leisureTime = '" + leisure + "', salary = '" + salary + "', housing = '"
+               + housing + "', allergies = '" + allergies + "', lifestyle = '" + lifestyle + "', species = '" + species + "', independence = '"
+               + independence + "', obedience = '" + obedience + "', training = '" + training + "', costOfMaintenance = " + costOfMaintenance +
+               ", timeOfMaintenance = " + timeOfMaintenance + ", loyalty = '" + loyalty + "', diet = " + diet + ", loudness = '" + loudness +
+               "', lifespan = " + lifespan + ", socialNeeds = " + socialNeeds + " WHERE id = " + id + ";";
 }
