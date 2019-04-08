@@ -63,3 +63,123 @@ void Client::setSalary(QString salary)             {this->salary = salary;}
 void Client::setHousing(QString housing)           {this->housing = housing;}
 void Client::setAllergies(QString allergies)       {this->allergies = allergies;}
 void Client::setLifestyle(QString lifestyle)       {this->lifestyle = lifestyle;}
+
+QString Client::getPref_species() const
+{
+    return pref_species;
+}
+
+void Client::setPref_species(const QString &value)
+{
+    pref_species = value;
+}
+
+QString Client::getPref_breed() const
+{
+    return pref_breed;
+}
+
+void Client::setPref_breed(const QString &value)
+{
+    pref_breed = value;
+}
+
+QString Client::getPref_independence() const
+{
+    return pref_independence;
+}
+
+void Client::setPref_independence(const QString &value)
+{
+    pref_independence = value;
+}
+
+QString Client::getPref_obedience() const
+{
+    return pref_obedience;
+}
+
+void Client::setPref_obedience(const QString &value)
+{
+    pref_obedience = value;
+}
+
+QString Client::getPref_training() const
+{
+    return pref_training;
+}
+
+void Client::setPref_training(const QString &value)
+{
+    pref_training = value;
+}
+
+int Client::getPref_costOfMaintenance() const
+{
+    return pref_costOfMaintenance;
+}
+
+void Client::setPref_costOfMaintenance(int value)
+{
+    pref_costOfMaintenance = value;
+}
+
+int Client::getPref_timeOfMaintenance() const
+{
+    return pref_timeOfMaintenance;
+}
+
+void Client::setPref_timeOfMaintenance(int value)
+{
+    pref_timeOfMaintenance = value;
+}
+
+QString Client::getPref_loyalty() const
+{
+    return pref_loyalty;
+}
+
+void Client::setPref_loyalty(const QString &value)
+{
+    pref_loyalty = value;
+}
+
+QString Client::getPref_diet() const
+{
+    return pref_diet;
+}
+
+void Client::setPref_diet(const QString &value)
+{
+    pref_diet = value;
+}
+
+QString Client::getPref_loudness() const
+{
+    return pref_loudness;
+}
+
+void Client::setPref_loudness(const QString &value)
+{
+    pref_loudness = value;
+}
+
+int Client::getPref_lifespan() const
+{
+    return pref_lifespan;
+}
+
+void Client::setPref_lifespan(int value)
+{
+    pref_lifespan = value;
+}
+
+QString Client::getPref_socialNeeds() const
+{
+    return pref_socialNeeds;
+}
+
+void Client::setPref_socialNeeds(const QString &value)
+{
+    pref_socialNeeds = value;
+}

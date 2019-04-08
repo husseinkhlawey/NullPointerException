@@ -75,6 +75,7 @@ int Animal::getCostOfMaintenance()    { return costOfMaintenance; }
 int Animal::getTimeOfMaintenance()    { return timeOfMaintenance; }
 QString Animal::getLoyalty()              { return loyalty; }
 QString Animal::getDiet()                 { return diet; }
+QString Animal::getLoudness() { return loudness; }
 int Animal::getLifespan()             { return lifespan; }
 QString Animal::getSocialNeeds()          { return socialNeeds; }
 

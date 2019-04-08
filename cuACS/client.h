@@ -43,7 +43,43 @@ class Client{
         void setLifestyle(QString);
 
 
-    protected:
+        QString getPref_species() const;
+        void setPref_species(const QString &value);
+
+        QString getPref_breed() const;
+        void setPref_breed(const QString &value);
+
+        QString getPref_independence() const;
+        void setPref_independence(const QString &value);
+
+        QString getPref_obedience() const;
+        void setPref_obedience(const QString &value);
+
+        QString getPref_training() const;
+        void setPref_training(const QString &value);
+
+        int getPref_costOfMaintenance() const;
+        void setPref_costOfMaintenance(int value);
+
+        int getPref_timeOfMaintenance() const;
+        void setPref_timeOfMaintenance(int value);
+
+        QString getPref_loyalty() const;
+        void setPref_loyalty(const QString &value);
+
+        QString getPref_diet() const;
+        void setPref_diet(const QString &value);
+
+        QString getPref_loudness() const;
+        void setPref_loudness(const QString &value);
+
+        int getPref_lifespan() const;
+        void setPref_lifespan(int value);
+
+        QString getPref_socialNeeds() const;
+        void setPref_socialNeeds(const QString &value);
+
+protected:
         int id;
         QString fname;
         QString lname;
@@ -56,6 +92,19 @@ class Client{
         QString housing;
         QString allergies;
         QString lifestyle;
+
+        QString pref_species;
+        QString pref_breed;
+        QString pref_independence;
+        QString pref_obedience;
+        QString pref_training;
+        int     pref_costOfMaintenance;
+        int     pref_timeOfMaintenance;
+        QString pref_loyalty;
+        QString pref_diet;
+        QString pref_loudness;
+        int     pref_lifespan;
+        QString pref_socialNeeds;
 
 };
 

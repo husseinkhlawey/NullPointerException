@@ -17,6 +17,8 @@ public:
     int calcScore(Client* c, Animal* a);
     int calcLMH(QString c, QString a);
     int calcTally();
+    int eliminate();
+    int calcCompare();
 
 private:
     LinkedList<Animal> animals;

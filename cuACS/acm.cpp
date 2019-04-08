@@ -1,10 +1,13 @@
 #include "acm.h"
+#include <QDebug>
 
 ACM::ACM() {  }
 
 ACM::~ACM() {}
 
 LinkedList<Match>& ACM::makeMatches() {
+
+    qDebug() << "Starting ACM";
 
     int highScore = 0, newScore = 0 ;
     Animal* potAnml = 0;
@@ -47,9 +50,23 @@ LinkedList<Match>& ACM::makeMatches() {
 
     } //matched all clients
 
+    qDebug() << "Ending ACM";
     return matches;
 }
 
 int ACM::calcScore(Client * c, Animal * a) {
+    int score = 0;
+    c->getPref_species();
+
+    score += calcLMH(c->getPref_independence(), a->getIndependence());
+    score += calcLMH(c->getPref_obedience(), a->getObedience());
+    score += calcLMH(c->getPref_training(), a->getTraining());
+    score += calcLMH(c->getPref_loyalty(), a->getLoyalty());
+    score += calcLMH(c->getPref_loudness(), a->getLoudness());
+
+    return 0;
+}
+
+int ACM::calcLMH(QString c, QString a){
     return 0;
 }
