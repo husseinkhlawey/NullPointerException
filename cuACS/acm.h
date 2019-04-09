@@ -21,9 +21,10 @@ public:
     int calcCompare();
     int eliminate();
     int calcTally();
-    void printClients();
+    void printLists();
+    void printMatches();
+    void clearLists();
 
-private:
     LinkedList<Animal> animals;
     LinkedList<Client> clients;
     LinkedList<Match> matches;

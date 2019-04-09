@@ -119,55 +119,56 @@ void buildDatabase() {
     runQuery(currentQuery);
 
     //adding values to database
-    addAnimals(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black","medium","high","easy",90,45,"high",2,"medium",12,10);
-    addAnimals(1,"Red",1,"Dog","Hound",9,40,2,"brown","medium","high","easy",80,40,"high",2,"high",12,10);
-    addAnimals(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white","high","low","none",60,3,"medium",3,"low",10,3);
-    addAnimals(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise","medium","high","easy",90,45,"high",3,"medium",12,19);
-    addAnimals(4,"Fenrir",1,"Ancient Wolf","Dire Wolf",1,30,3,"White","medium","high","easy",80,40,"high",2,"high",12,13);
-    addAnimals(5,"Jon Snow", 0.5, "Ape King","G.O.D",454300000,8,100,"gold","high","low","none",60,3,"medium",4,"low",10,12);
-    addAnimals(6,"Goku", 0, "Dog","Greyhound",2,55,8,"black","medium","high","easy",90,45,"high",5,"medium",13,10);
-    addAnimals(7,"Vegeta", 0, "Cat","Jaguar",21,100,10,"spotted","medium","high","easy",80,40,"high",4,"high",16,10);
-    addAnimals(8,"Piccolo", 0, "Dog","Rottweiler",10,125,9,"green","high","low","none",60,3,"medium",4,"low",18,3);
-    addAnimals(9,"Bulma", 1, "Bird","Swallow",1,2,3,"blue","medium","high","easy",90,45,"high",2,"medium",10,1);
-    addAnimals(10,"Videl", 1, "Cat", "Siamese",2,5,4,"white","medium","high","easy",80,40,"high",2,"high",15,15);
-    addAnimals(11,"ChiChi", 1, "Cat","Scottish Fold",3,4,2,"grey","high","low","none",60,3,"medium",5,"low",10,3);
-    addAnimals(12,"Gohan", 0, "Reptile","Turtle",5,90,30,"dark green","medium","high","easy",90,45,"high",3,"medium",12,10);
-    addAnimals(13,"Goten", 0, "Reptile","Snake",3,100,1,"grey","medium","high","easy",80,40,"high",2,"high",1,10);
-    addAnimals(14,"Trunks", 0, "Reptile","Lizard",10,120,4,"red","high","low","none",60,3,"medium",4,"low",10,6);
-    addAnimals(15,"Krillin", 0, "Rabbit","Mini Rex",3,30,1,"white","medium","high","easy",90,45,"high",2,"medium",15,10);
-    addAnimals(16,"Bom", 0, "Dog","Tibetan Mastiff",1,20,1,"brown","medium","high","easy",80,40,"high",5,"high",12,11);
-    addAnimals(17,"Ted", 1, "Dog","Chiwawa",1,15,1,"black","high","low","none",60,3,"medium",3,"low",10,5);
-    addAnimals(18,"Mi", 1, "Cat","Sphinx",2,18,3,"black","medium","high","easy",90,45,"high",3,"medium",12,13);
-    addAnimals(19,"Tom", 0, "Cat","Persian",5,20,1,"gery","medium","high","easy",80,40,"high",5,"high",16,10);
-    addAnimals(20,"Mulk", 1, "Reptile","Lizard",2,6,2,"white","medium","high","easy",90,45,"high",4,"medium",1,10);
-    addAnimals(21,"Jerry", 0, "Hamster","Chinese",5,60,1,"white","medium","high","easy",80,40,"high",3,"high",12,10);
-    addAnimals(22,"Hulk", 1, "Hamster","Robo",2,30,1,"orange","high","low","none",60,3,"medium",3,"low",10,3);
-    addAnimals(23,"Kid", 0, "Bird","Parrot",3,70,3,"yellow","medium","high","easy",90,45,"high",6,"medium",18,17);
-    addAnimals(24,"Lame", 1, "Bird","Pigeon",4,30,2,"black","medium","high","easy",80,40,"high",6,"high",15,12);
-    addAnimals(25,"Tim", 0, "Fish","Golden",2,60,1,"black","high","low","none",60,3,"medium",4,"low",10,13);
-    addAnimals(26,"Polla", 1, "Fish","Guppy",7,55,23,"blue","medium","high","easy",90,45,"high",5,"medium",12,15);
+    addAnimals(0,"Bloo",1,"Dog","Rottweiler",7,55,2.5,"black","medium","high","medium",90,45,"high",2,"medium",12,10);
+    addAnimals(1,"Red",1,"Dog","Hound",9,40,2,"brown","medium","high","medium",80,40,"high",2,"high",12,10);
+    addAnimals(2,"Frisk",1,"Cat","Balinese",6,3,0.8,"white","high","low","medium",60,3,"medium",3,"low",10,3);
+    addAnimals(3,"Falcon",0,"Bird","Humming Bird",5567,0,567.13,"turquoise","medium","high","low",90,45,"high",3,"medium",12,19);
+    addAnimals(4,"Fenrir",1,"Horse","Wild",1,3,3,"White","high","low","high",800,40,"high",2,"high",12,13);
+    addAnimals(5,"Jon Snow", 1, "Horse","Zebra",7,8,100,"black","high","low","high",700,55,"medium",4,"low",10,12);
+    addAnimals(6,"Goku", 0, "Dog","Greyhound",2,55,8,"black","medium","high","low",90,45,"high",5,"medium",13,10);
+    addAnimals(7,"Vegeta", 0, "Cat","Jaguar",21,100,10,"spotted","medium","high","low",80,40,"high",4,"high",16,10);
+    addAnimals(8,"Piccolo", 0, "Dog","Rottweiler",10,125,9,"green","high","low","medium",60,3,"medium",4,"low",18,3);
+    addAnimals(9,"Bulma", 1, "Bird","Swallow",1,2,3,"blue","medium","high","low",90,45,"high",2,"medium",10,1);
+    addAnimals(10,"Videl", 1, "Rabbit", "Snow",2,5,4,"white","medium","high","low",80,40,"high",2,"high",15,15);
+    addAnimals(11,"ChiChi", 1, "Hamster","Scottish",3,4,2,"grey","high","low","",60,3,"medium",5,"low",10,3);
+    addAnimals(12,"Gohan", 0, "Lizard","Turtle",5,90,30,"dark green","medium","high","medium",90,45,"high",3,"medium",12,10);
+    addAnimals(13,"Goten", 0, "Lizard","Snake",3,100,1,"grey","medium","high","medium",80,40,"high",2,"high",1,10);
+    addAnimals(14,"Trunks", 0, "Lizard","Lizard",10,120,4,"red","high","low","medium",60,3,"medium",4,"low",10,6);
+    addAnimals(15,"Krillin", 0, "Rabbit","Mini Rex",3,30,1,"white","medium","high","medium",90,45,"high",2,"medium",15,10);
+    addAnimals(16,"Bom", 0, "Turtle","Ocean",1,20,1,"green","medium","high","medium",80,40,"high",5,"high",12,11);
+    addAnimals(17,"Ted", 1, "Dog","Chiwawa",1,15,1,"black","high","low","medium",60,3,"medium",3,"low",10,5);
+    addAnimals(18,"Mi", 1, "Turtle","Snapping",2,18,3,"black","medium","high","medium",90,45,"high",3,"medium",12,13);
+    addAnimals(19,"Tom", 0, "Cat","Persian",5,20,1,"gery","medium","high","medium",80,40,"high",5,"high",16,10);
+    addAnimals(20,"Mulk", 1, "Lizard","Lizard",2,6,2,"white","medium","high","medium",90,45,"high",4,"medium",1,10);
+    addAnimals(21,"Jerry", 0, "Hamster","Chinese",5,60,1,"white","medium","high","medium",80,40,"high",3,"high",12,10);
+    addAnimals(22,"Hulk", 1, "Hamster","Robo",2,30,1,"orange","high","low","medium",60,3,"medium",3,"low",10,3);
+    addAnimals(23,"Kid", 0, "Bird","Parrot",3,70,3,"yellow","low","low","medium",90,45,"high",6,"medium",18,17);
+    addAnimals(24,"Lame", 1, "Bird","Pigeon",4,30,2,"black","medium","high","medium",80,40,"high",6,"high",15,12);
+    addAnimals(25,"Tim", 0, "Fish","Golden",2,60,1,"black","high","low","medium",60,3,"medium",4,"low",10,13);
+    addAnimals(26,"Polla", 1, "Fish","Guppy",7,55,23,"blue","medium","high","medium",90,45,"high",5,"medium",12,15);
 
     addClients(0,"Bob","Ross","bob.ross@gmail.com","1234 Some Street","561-437-6464","0","168","100,000","large","none","active",               "Dog", "low", "high", "high", 200, 50, "high", 4, "high", 3, 4);
-    addClients(1,"Boon","Jacob","Bjacob.ross@hotmail.com","123 Street Street","407-451-2131","2","43","34,000","small","fur","sedentary",       "Cat", "low", "high", "medium", 20, 20, "high", 1, "low", 4, 4);
+    addClients(1,"Boon","Jacob","Bjacob.ross@hotmail.com","123 Street Street","407-451-2131","2","43","34,000","small","none","sedentary",       "Cat", "high", "low", "medium", 50, 20, "high", 1, "low", 4, 4);
     addClients(2,"Jay","Johnson","jj34234@hotmail.com","12 Somerset Street","360-655-3643","4","56","346,000","large","none","lazy",            "Hamster", "low", "medium", "medium", 10, 50, "high", 1, "high", 4, 3);
     addClients(3,"John","Dave","johnD@gmail.com","4 Henderson Street","908-754-4044","9","118","200,000","large","none","active",               "Bird", "high", "low", "low", 10, 30, "high", 6, "high", 3, 1);
     addClients(4,"Ray","Richard","ray009s@gmail.com","256 Chapel Street","908-405-5950","3","78","70,000","medium","none","active",             "Horse", "high", "low", "high", 700, 70, "high", 4, "high", 9, 6);
     addClients(5,"Jim","Smith","jimsmith00@hotmail.com","2655 Sweetland Street","337-626-5802","0","10","1,000,000","large","none","active",    "Turtle", "low", "high", "medium", 150, 20, "medium,", 4, "low", 10, 2);
-    addClients(6,"Alexandria","Yoder","balchen@verizon.net","8 Oak Avenue","337-965-7874","3","88","60,000","small","fur","lazy",               "Fish", "low", "low", "high", 40, 35, "high", 4, "low", 2, 1);
-    addClients(7,"Izayah","Sanders","jaesenj@yahoo.com","2329 Kyle Street","702-987-6792","0","168","100","box","fur","lazy",                   "Lizard", "low", "low", "high", 100, 50, "medium", 3, "low", 4, 4);
+    addClients(6,"Alexandria","Yoder","balchen@verizon.net","8 Oak Avenue","337-965-7874","3","88","60,000","small","none","lazy",               "Fish", "low", "low", "high", 40, 35, "high", 4, "low", 2, 1);
+    addClients(7,"Izayah","Sanders","jaesenj@yahoo.com","2329 Kyle Street","702-987-6792","0","168","100","box","none","lazy",                   "Lizard", "low", "low", "high", 100, 50, "medium", 3, "low", 4, 4);
     addClients(8,"Jarrett","Haley","dbanarse@msn.com","1190 Hardman Road","702-353-1657","0","16","50,000","small","none","sedentary",          "Dog", "low", "high", "high", 200, 10, "medium", 5, "high", 8, 6);
     addClients(9,"Samir","Estrada","harryh@yahoo.ca","3668 Sycamore Street","616-431-0311","2","49","143,000","medium","none","sedentary",      "Dog", "high", "medium", "high", 200, 50, "high", 3, "medium", 12, 4);
-    addClients(10,"Dax","Lopez","cyrus@verizon.net","4958 Jerry Dove Drive","309-734-5292","0","123","567,000","large","fur","active",          "Hamster", "low", "high", "Low", 40, 40, "mdeium", 5, "high", 4, 0);
+    addClients(10,"Dax","Lopez","cyrus@verizon.net","4958 Jerry Dove Drive","309-734-5292","0","123","567,000","large","none","active",          "Hamster", "low", "high", "Low", 40, 40, "mdeium", 5, "high", 4, 0);
     addClients(11,"Tyshawn","Garza","keiji@verizon.net","2751 Valley Drive","254-381-3599","4","50","57,000","small","none","sedentary",        "Fish", "low", "low", "low", 25, 10, "low", 4, "low", 3, 2);
-    addClients(12,"Drew","Perkins","maikelnai@sbcglobal.net","920 Southern Avenue","310-777-5101","4","111","143,000","large","fur","active",   "Turtle", "low", "high", "low", 120, 5, "low", 4, "low", 15, 0);
+    addClients(12,"Drew","Perkins","maikelnai@sbcglobal.net","920 Southern Avenue","310-777-5101","4","111","143,000","large","none","active",   "Turtle", "low", "high", "low", 120, 5, "low", 4, "low", 15, 0);
     addClients(13,"Xander","Hester","vsprintf@yahoo.ca","3944 Jacobs Street","828-231-9403","0","153","720,000","medium","none","active",       "Rabbit", "medium", "high", "medium", 20, 20, "low", 4, "low", 8, 7);
-    addClients(14,"Giovanni","Massey","doormat@yahoo.ca","650 Rivendell Drive","917-733-5239","3","52","120,000","large","fur","sedentary",     "Lizard", "medium", "medium", "high", 400, 20, "high", 3, "low", 6, 3);
-    addClients(15,"Denisse","Bass","ianbuck@optonline.net","3138 Brannon Avenue","337-591-9384","3","45","230,000","large","fur","lazy",        "Cat", "high", "low", "low", 180, 30, "low", 4, "medium", 10, 7);
+    addClients(14,"Giovanni","Massey","doormat@yahoo.ca","650 Rivendell Drive","917-733-5239","3","52","120,000","large","none","sedentary",     "Lizard", "medium", "medium", "high", 400, 20, "high", 3, "low", 6, 3);
+    addClients(15,"Denisse","Bass","ianbuck@optonline.net","3138 Brannon Avenue","337-591-9384","3","45","230,000","large","none","lazy",        "Cat", "high", "low", "low", 180, 30, "low", 4, "medium", 10, 7);
     addClients(16,"Janessa","Parsons","world@icloud.com","4428 Rainy Day Drive","412-750-0612","1","16","70,000","medium","none","active",      "Rabbit", "low", "low", "low", 350, 5, "low", 5, "high", 6, 0);
     addClients(17,"Carlee","Reilly","richard@comcast.net","2051 Rocket Drive","915-621-8279","2","24","100,000","medium","none","sedentary",    "Dog", "medium", "medium", "high", 230, 50, "high", 2, "low", 13, 10);
-    addClients(18,"Bailey","Patrick","sartak@yahoo.ca","2979 Hall Street","281-418-3487","3","97","50,000","small","fur","active",              "Bird", "low", "high", "low", 30, 20, "dedium", 6, "high", 6, 1);
+    addClients(18,"Bailey","Patrick","sartak@yahoo.ca","2979 Hall Street","281-418-3487","3","97","50,000","small","none","active",              "Bird", "low", "high", "low", 30, 20, "dedium", 6, "high", 6, 1);
     addClients(19,"Paul","Mosley","mahbub@optonline.net","3340 John Daniel Drive","330-358-8186","5","23","80,000","medium","none","sedentary", "Hamster", "high", "high", "low", 20, 10, "low", 4, "high", 4, 1);
     addClients(20,"Glenn","Jordan","ardagna@live.com","1788 Wyatt Street","213-639-1101","2","96","77,000","medium","none","lazy",              "Horse", "medium", "high", "high", 750, 60, "medium", 3, "high", 10, 4);
+    addClients(21,"Marshall","Cramer","m.cramer@gmail.com","1546 Elven Street","613-729-8006","0","40","52,000","Large","none","active",          "Bird","high","high","medium",11,24,"high",1,"low",4,1);
 }
 
 //reading from the db
@@ -193,7 +194,7 @@ QSqlQuery readClientTable() {
         qDebug()<<"Can't read clients";
     }
     else{
-        qDebug()<<"Read from db";
+        qDebug()<<"Read clients from db";
     }
     return query;
 }

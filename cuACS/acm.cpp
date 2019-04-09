@@ -4,12 +4,11 @@
 
 ACM::ACM(LinkedList<Client> c, LinkedList<Animal> a) { clients = c; animals = a; }
 
-ACM::ACM() {
-}
+ACM::ACM() {}
 
 ACM::~ACM() {}
 
-void ACM::printClients() {
+void ACM::printLists() {
     read_animal_query = readAnimalTable();
     read_client_query = readClientTable();
 
@@ -25,7 +24,8 @@ void ACM::printClients() {
                             read_client_query.value(21).toInt(),read_client_query.value(22).toInt());
             clients += client;
     }
-    qDebug() << "added clients";
+    qDebug() << "added clients ACM";
+
     while(read_animal_query.next()) {
         animal = new Animal(read_animal_query.value(0).toInt(),read_animal_query.value(1).toString(),read_animal_query.value(2).toInt(),read_animal_query.value(3).toString(),
                             read_animal_query.value(4).toString(),read_animal_query.value(5).toInt(),read_animal_query.value(6).toFloat(),read_animal_query.value(7).toFloat(),
@@ -34,19 +34,39 @@ void ACM::printClients() {
                             read_animal_query.value(16).toString(),read_animal_query.value(17).toInt(),read_animal_query.value(18).toInt());
         animals += animal;
     }
-    qDebug() << "added animals";
-    qDebug() << "size animals: " << clients.size();
+    qDebug() << "added animals ACM";
 
-
-    qDebug() << "printing clients";
     qDebug() << "size clients: " << clients.size();
-
+    qDebug() << "size animals: " << animals.size();
+    qDebug() << "printing clients";
     for(int i = 0; i < clients.size(); i++){
         qDebug() << clients[i]->getFname();
     }
+    qDebug() << "printing animals";
     for(int i = 0; i < animals.size(); i++){
         qDebug() << animals[i]->getName();
     }
+}
+
+void ACM::printMatches()
+{
+    qDebug() << "size great: " << greatMatches.size();
+    for(int i = 0; i < greatMatches.size(); i++){
+        qDebug() << greatMatches[i]->getClient() << " " << greatMatches[i]->getAnimal() << " " << greatMatches[i]->getScore();
+    }
+    qDebug() << "size good: " << goodMatches.size();
+    for(int i = 0; i < goodMatches.size(); i++){
+        qDebug() << goodMatches[i]->getClient() << " " << goodMatches[i]->getAnimal() << " " << goodMatches[i]->getScore();
+    }
+    qDebug() << "size bad: " << badMatches.size();
+    for(int i = 0; i < badMatches.size(); i++){
+        qDebug() << badMatches[i]->getClient() << " " << badMatches[i]->getAnimal() << " " << badMatches[i]->getScore();
+    }
+}
+
+void ACM::clearLists()
+{
+
 }
 
 LinkedList<Match>& ACM::makeMatches() {
@@ -54,51 +74,62 @@ LinkedList<Match>& ACM::makeMatches() {
     qDebug() << "Starting ACM";
 
     int highScore = 0, newScore = 0 ;
-    Animal* potAnml = 0;
-    Match* newMatch = 0;
+    Client* potClient = 0;
+    Match* newMatch;
 
-    //for each client
-    for(int i = 0; i < clients.size(); i++) {
+    //for each animal
+    for(int i = 0; i < animals.size(); i++) {
 
-        //go through each animal
-        for(int j = 0; j < animals.size(); j++) {
+        //go through each client
+        for(int j = 0; j < clients.size(); j++) {
 
-            newScore = calcScore(clients[i], animals[j]);
+            newScore = calcScore(clients[j], animals[i]);
             if(newScore > highScore) {
                 highScore = newScore;
-                potAnml = animals[j];
+                potClient = clients[j];
+                qDebug() << "found better animal";
+
             }
-        } //compared all animals with client
+
+        } //compared all clients with animal
 
         //found best one, check match quality then add
-        if (highScore > 80) {
-            newMatch = new Match(*clients[i], *potAnml, "Great", highScore);
-            greatMatches += newMatch;
-            //animals -= potAnml; //decide later
-        }
-        else if (highScore > 60) {
-            newMatch = new Match(*clients[i], *potAnml, "Great", highScore);
-            goodMatches += newMatch;
-            //animals -= potAnml;
-        }
-        else {
-            newMatch = new Match(*clients[i], *potAnml, "Great", highScore);
-            greatMatches += newMatch;
-            //animals -= potAnml;
+
+        if (highScore != 0) {
+
+            if (highScore > 29) {
+                qDebug() << "adding to great";
+                newMatch = new Match(potClient->getFname(), animals[i]->getName(), "Great", highScore);
+                greatMatches += newMatch;
+                clients -= potClient;
+            }
+            else if (highScore > 15) {
+                qDebug() << "adding to good";
+                newMatch = new Match(potClient->getFname(), animals[i]->getName(), "Good", highScore);
+                goodMatches += newMatch;
+                clients -= potClient;
+            }
+            else {
+                qDebug() << "adding to bad";
+                newMatch = new Match(potClient->getFname(), animals[i]->getName(), "Bad", highScore);
+                badMatches += newMatch;
+                clients -= potClient;
+            }
         }
 
         //reset
         highScore = 0;
         newScore = 0;
-        potAnml = 0;
 
-    } //matched all clients
+    } //matched all animals
 
     qDebug() << "Ending ACM";
     return matches;
 }
 
 int ACM::calcScore(Client * c, Animal * a) {
+    qDebug() << "calcing score";
+
     int score = 0;
 
     //elimination
@@ -177,20 +208,25 @@ int ACM::calcScore(Client * c, Animal * a) {
 int ACM::calcLMH(QString c, QString a){
     int points = 0;
 
-    if (c == "Low" && a == "High") {
+    if (c == "low" && a == "high") {
         points = 4;
+        qDebug() << "gave points";
     }
-    else if ((c == "Medium" && a == "High") || (c == "Low" && a == "Medium")) {
+    else if ((c == "medium" && a == "high") || (c == "low" && a == "medium")) {
         points = 3;
+        qDebug() << "gave points";
     }
-    else if ((c == "Low" && a == "Low") || (c == "Medium" && a == "Medium") || (c == "High" && a == "High")) {
+    else if ((c == "low" && a == "low") || (c == "medium" && a == "medium") || (c == "high" && a == "high")) {
         points = 2;
+        qDebug() << "gave points";
     }
-    else if ((c == "Medium" && a == "Low") || (c == "High" && a == "Medium")) {
+    else if ((c == "medium" && a == "low") || (c == "high" && a == "medium")) {
         points = 1;
+        qDebug() << "gave points";
     }
-    else if (c == "High" && a == "Low") {
+    else if (c == "high" && a == "low") {
         points = 0;
+        qDebug() << "gave points";
     }
 
     return points;

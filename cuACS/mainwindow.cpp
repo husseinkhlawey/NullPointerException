@@ -835,8 +835,33 @@ void MainWindow::on_pushButton_30_clicked()
 //launch ACM
 void MainWindow::on_pushButton_31_clicked()
 {
-    //staff.launchACM();
-    acm.printClients();
+    acm.printLists();
     acm.makeMatches();
+    acm.printMatches();
+    ui->listWidget->clear();
+
+    //acm.greatMatches[i]->getClient() + " " + acm.greatMatches[i]->getAnimal() + " " + acm.greatMatches[i]->getScore()
+
+    ui->listWidget->addItem("Great Matches:");
+    for(int i = 0; i < acm.greatMatches.size(); i++){
+        ui->listWidget->addItem(acm.greatMatches[i]->toString());
+    }
+
+    ui->listWidget->addItem("Good Matches:");
+    for(int i = 0; i < acm.goodMatches.size(); i++){
+        ui->listWidget->addItem(acm.goodMatches[i]->toString());
+    }
+
+    ui->listWidget->addItem("Bad Matches:");
+    for(int i = 0; i < acm.badMatches.size(); i++){
+        ui->listWidget->addItem(acm.badMatches[i]->toString());
+    }
+
     ui->stackedWidget->setCurrentIndex(17);
+}
+
+void MainWindow::on_pushButton_32_clicked()
+{
+    acm.clearLists();
+    ui->stackedWidget->setCurrentIndex(4);
 }

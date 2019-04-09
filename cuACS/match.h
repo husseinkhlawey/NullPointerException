@@ -9,8 +9,13 @@ class Match
 
 public:
     Match() {}
-    Match(Client c, Animal a, QString r, int s): client(c), animal(a), rating(r), score(s) {}
+    Match(QString c, QString a, QString r, int s): client(c), animal(a), rating(r), score(s) {}
     ~Match() {}
+
+    QString toString()
+    {
+        return client + " and " + animal;
+    }
 
     //used for storing in sorted order cause why not
     bool operator < (Match& m) {
@@ -21,11 +26,11 @@ public:
         return score > m.score;
     }
 
-    Client getClient() {
+    QString getClient() {
         return client;
     }
 
-    Animal getAnimal() {
+    QString getAnimal() {
         return animal;
     }
 
@@ -37,8 +42,8 @@ public:
         return score;
     }
 protected:
-    Client client;
-    Animal animal;
+    QString client;
+    QString animal;
     QString rating;
     int score;
 };
