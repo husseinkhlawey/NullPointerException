@@ -9,6 +9,7 @@ class Staff {
 
 public:
     Staff();
+    Staff(LinkedList<Client> c, LinkedList<Animal> a);
     ~Staff();
 
     //need to implement all staff features

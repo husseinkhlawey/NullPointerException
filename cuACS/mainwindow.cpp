@@ -61,8 +61,15 @@ void MainWindow::on_pushButton_2_clicked()
 //user is staff
 void MainWindow::on_pushButton_Staff_clicked()
 {
-    //setup staff object
+    read_animal_query = readAnimalTable();
+    read_client_query = readClientTable();
+
     staff = Staff();
+
+    //setup staff object
+    //staff = Staff(clients, animals);
+    //acm = ACM(clients, animals);
+
     ui->stackedWidget->setCurrentIndex(4);
 }
 
@@ -823,4 +830,13 @@ void MainWindow::on_pushButton_27_clicked()
 void MainWindow::on_pushButton_30_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+//launch ACM
+void MainWindow::on_pushButton_31_clicked()
+{
+    //staff.launchACM();
+    acm.printClients();
+    acm.makeMatches();
+    ui->stackedWidget->setCurrentIndex(17);
 }

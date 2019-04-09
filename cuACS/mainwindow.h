@@ -101,14 +101,20 @@ private slots:
 
     void on_pushButton_30_clicked();
 
+    void on_pushButton_31_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     Staff staff;
     Client client;
+    ACM acm;
 
     QSqlQuery read_animal_query;
     QSqlQuery read_client_query;
+
+    LinkedList<Animal> animals;
+    LinkedList<Client> clients;
 
     //for getting user input
     int inpId;

@@ -13,12 +13,15 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(138, 226, 52);</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_6">
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>17</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_1">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -198,6 +201,19 @@ Staff</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_31">
+          <property name="font">
+           <font>
+            <family>DejaVu Sans</family>
+            <pointsize>30</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Launch ACM</string>
           </property>
          </widget>
         </item>
@@ -2798,7 +2814,15 @@ Preferences</string>
        </widget>
       </widget>
       <widget class="QWidget" name="page_22">
-       <layout class="QVBoxLayout" name="verticalLayout_3"/>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_98">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;ACM Results&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>

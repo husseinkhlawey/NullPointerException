@@ -1,9 +1,13 @@
 #include "staff.h"
 #include "QDebug"
 
-Staff::Staff() {}
+Staff::Staff(LinkedList<Client> c, LinkedList<Animal> a) {
+    acm = ACM(c, a);
+}
 
 Staff::~Staff() {}
+
+Staff::Staff() { acm = ACM(); }
 
 void Staff::buildDB() {
     //calls buildDatabase();

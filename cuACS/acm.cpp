@@ -1,9 +1,53 @@
 #include "acm.h"
 #include <QDebug>
+#include "sqlfunctions.h"
 
-ACM::ACM() {  }
+ACM::ACM(LinkedList<Client> c, LinkedList<Animal> a) { clients = c; animals = a; }
+
+ACM::ACM() {
+}
 
 ACM::~ACM() {}
+
+void ACM::printClients() {
+    read_animal_query = readAnimalTable();
+    read_client_query = readClientTable();
+
+    Client* client;
+    Animal* animal;
+
+    while(read_client_query.next()){
+            client = new Client(read_client_query.value(0).toInt(),read_client_query.value(1).toString(),read_client_query.value(2).toString(),read_client_query.value(3).toString(),read_client_query.value(4).toString(),
+                            read_client_query.value(5).toString(),read_client_query.value(6).toString(),read_client_query.value(7).toString(),read_client_query.value(8).toString(),
+                            read_client_query.value(9).toString(),read_client_query.value(10).toString(),read_client_query.value(11).toString(),read_client_query.value(12).toString(),
+                            read_client_query.value(13).toString(),read_client_query.value(14).toString(),read_client_query.value(15).toString(),read_client_query.value(16).toInt(),
+                            read_client_query.value(17).toInt(),read_client_query.value(18).toString(),read_client_query.value(19).toInt(),read_client_query.value(20).toString(),
+                            read_client_query.value(21).toInt(),read_client_query.value(22).toInt());
+            clients += client;
+    }
+    qDebug() << "added clients";
+    while(read_animal_query.next()) {
+        animal = new Animal(read_animal_query.value(0).toInt(),read_animal_query.value(1).toString(),read_animal_query.value(2).toInt(),read_animal_query.value(3).toString(),
+                            read_animal_query.value(4).toString(),read_animal_query.value(5).toInt(),read_animal_query.value(6).toFloat(),read_animal_query.value(7).toFloat(),
+                            read_animal_query.value(8).toString(),read_animal_query.value(9).toString(),read_animal_query.value(10).toString(),read_animal_query.value(11).toString(),
+                            read_animal_query.value(12).toInt(),read_animal_query.value(13).toInt(),read_animal_query.value(14).toString(),read_animal_query.value(15).toInt(),
+                            read_animal_query.value(16).toString(),read_animal_query.value(17).toInt(),read_animal_query.value(18).toInt());
+        animals += animal;
+    }
+    qDebug() << "added animals";
+    qDebug() << "size animals: " << clients.size();
+
+
+    qDebug() << "printing clients";
+    qDebug() << "size clients: " << clients.size();
+
+    for(int i = 0; i < clients.size(); i++){
+        qDebug() << clients[i]->getFname();
+    }
+    for(int i = 0; i < animals.size(); i++){
+        qDebug() << animals[i]->getName();
+    }
+}
 
 LinkedList<Match>& ACM::makeMatches() {
 

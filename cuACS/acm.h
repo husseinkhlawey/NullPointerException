@@ -5,11 +5,13 @@
 #include "animal.h"
 #include "client.h"
 #include "match.h"
+#include <QtSql>
 
 class ACM
 {
 
 public:
+    ACM(LinkedList<Client>, LinkedList<Animal>);
     ACM();
     ~ACM();
 
@@ -19,6 +21,7 @@ public:
     int calcCompare();
     int eliminate();
     int calcTally();
+    void printClients();
 
 private:
     LinkedList<Animal> animals;
@@ -27,6 +30,9 @@ private:
     LinkedList<Match> badMatches;
     LinkedList<Match> goodMatches;
     LinkedList<Match> greatMatches;
+
+    QSqlQuery read_animal_query;
+    QSqlQuery read_client_query;
 };
 
 #endif // ACM_H
