@@ -66,7 +66,45 @@ void ACM::printMatches()
 
 void ACM::clearLists()
 {
+    Match* match = 0;
+    Animal* animal = 0;
+    Client* client = 0;
 
+    while(greatMatches.size() > 0) {
+        match = greatMatches[0];
+        greatMatches -= match;
+    }
+    while(goodMatches.size() > 0) {
+        match = goodMatches[0];
+        goodMatches -= match;
+    }
+    while(badMatches.size() > 0) {
+        match = badMatches[0];
+        badMatches -= match;
+    }
+
+    while(animals.size() > 0) {
+        animal = animals[0];
+        animals -= animal;
+    }
+    while(clients.size() > 0) {
+        client = clients[0];
+        clients -= client;
+    }
+
+    qDebug() << "########################";
+    qDebug() << "size great: " << greatMatches.size();
+    for(int i = 0; i < greatMatches.size(); i++){
+        qDebug() << greatMatches[i]->getClient() << " " << greatMatches[i]->getAnimal() << " " << greatMatches[i]->getScore();
+    }
+    qDebug() << "size good: " << goodMatches.size();
+    for(int i = 0; i < goodMatches.size(); i++){
+        qDebug() << goodMatches[i]->getClient() << " " << goodMatches[i]->getAnimal() << " " << goodMatches[i]->getScore();
+    }
+    qDebug() << "size bad: " << badMatches.size();
+    for(int i = 0; i < badMatches.size(); i++){
+        qDebug() << badMatches[i]->getClient() << " " << badMatches[i]->getAnimal() << " " << badMatches[i]->getScore();
+    }
 }
 
 LinkedList<Match>& ACM::makeMatches() {
