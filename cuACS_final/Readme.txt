@@ -10,7 +10,11 @@ Use the build script to make the project.
 
 Run the command "./buildScript.txt" to build the project.
 
+(You may need to run "chmod +x buildScript.txt".)
+
 Use run command "./cuACS" to run the program.
 
 To view the detailed information of a client or animal, click on it's name when viewing the
 list of either animals or staff.
+
+Made by NullPointerException Team.
